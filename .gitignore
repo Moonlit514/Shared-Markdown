@@ -1,0 +1,35 @@
+# conway
+conway/doc
+conway/conway
+
+# LaTeX 编译生成的中间文件
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.blg
+*.bbl
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.vrb
+*.run.xml
+*.bcf
+
+# 最终 PDF 文件
+*.pdf
+
+# 编译生成文件
+*.o
+*.a
+*.so
+*.out
+*.bak
+
+.vscode/
+
+# 编辑器临时文件
+*.swp
+*~
