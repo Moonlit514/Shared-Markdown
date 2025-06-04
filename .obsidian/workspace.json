@@ -11,10 +11,14 @@
             "id": "8402fd38bef42267",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "数学分析(习题)/按章节/定积分习题.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "定积分习题"
             }
           }
         ]
@@ -74,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 305.5
   },
   "right": {
     "id": "dc9d80cc496af68c",
@@ -143,13 +147,23 @@
               "icon": "lucide-list",
               "title": "大纲"
             }
+          },
+          {
+            "id": "78d01ac799b11093",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -158,9 +172,22 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8402fd38bef42267",
-  "lastOpenFiles": []
+  "active": "78d01ac799b11093",
+  "lastOpenFiles": [
+    "README.md",
+    "数学分析(复习)/定积分.md",
+    "数学分析(习题)/按章节/定积分习题.md",
+    "数学分析(复习)/反常积分.md",
+    "数学分析(习题)/工具箱",
+    "数学分析(习题)/按章节",
+    "按章节",
+    "按章节",
+    "数学分析(习题)",
+    "未命名.canvas",
+    "2025-06-03.md"
+  ]
 }
