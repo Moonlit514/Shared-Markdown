@@ -1,9 +1,0 @@
-{
-  "theme": "obsidian",
-  "baseFontSizeAction": true,
-  "baseFontSize": 20,
-  "enabledCssSnippets": [
-    "custom-proof-callout"
-  ],
-  "cssTheme": "Tokyo Night"
-}
