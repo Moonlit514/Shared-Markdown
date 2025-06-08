@@ -89,14 +89,14 @@ $$f(x)=f(t)+\int_t^xf^{\prime}(s)ds$$
 两边对$t$进行积分，得
 $$\int_a^bf(x)dt=\int_a^b\left(f(t)+\int_t^xf^{\prime}(s)ds\right)dt$$
 $$f(x)(b-a)=\int_a^bf(t)dt+\int_a^b\left(\int_t^xf^{\prime}(s)ds\right)dt$$
-$$|f(x)|(b-a)\leq\left|\int_a^bf(x)dx\right|+\left|\int_a^b\left(\int_t^xf^{\prime}(s)ds\right)dt\right|$$从而
-$$|f(x)|(b-a)\leq\left|\int_a^bf(x)dx\right|+\int_a^b\left(\int_{\min(t,x)}^{\max(t,x)}|f^{\prime}(s)|ds\right)dt\leq\left|\int_a^bf(x)dx\right|+\int_a^b\left(\int_a^b|f^{\prime}(s)|ds\right)dt$$
+$$|f(x)|(b-a)\leqslant\left|\int_a^bf(x)dx\right|+\left|\int_a^b\left(\int_t^xf^{\prime}(s)ds\right)dt\right|$$从而
+$$|f(x)|(b-a)\leqslant\left|\int_a^bf(x)dx\right|+\int_a^b\left(\int_{\min(t,x)}^{\max(t,x)}|f^{\prime}(s)|ds\right)dt\leqslant\left|\int_a^bf(x)dx\right|+\int_a^b\left(\int_a^b|f^{\prime}(s)|ds\right)dt$$
 注意，内层积分 $\int_{a}^{b} |f'(s)|ds$ 对于外层积分变量 $t$ 来说是常数. 从而
-$$|f(x)|(b-a)\leq\left|\int_a^bf(x)dx\right|+\left(\int_a^b|f^{\prime}(s)|ds\right)\int_a^bdt=\left|\int_a^bf(x)dx\right|+\left(\int_a^b|f^{\prime}(s)|ds\right)(b-a)$$
+$$|f(x)|(b-a)\leqslant\left|\int_a^bf(x)dx\right|+\left(\int_a^b|f^{\prime}(s)|ds\right)\int_a^bdt=\left|\int_a^bf(x)dx\right|+\left(\int_a^b|f^{\prime}(s)|ds\right)(b-a)$$
 于是得到
-$$|f(x)|\leq\frac{1}{b-a}\left|\int_a^bf(x)dx\right|+\int_a^b|f^{\prime}(s)|ds$$
+$$|f(x)|\leqslant\frac{1}{b-a}\left|\int_a^bf(x)dx\right|+\int_a^b|f^{\prime}(s)|ds$$
 对$x\in[a,b]$都成立，自然
-$$\max_{a\leq x\leq b}|f(x)|\leq\frac{1}{b-a}\left|\int_a^bf(x)dx\right|+\int_a^b|f^{\prime}(x)|dx$$
+$$\max_{a\leq x\leq b}|f(x)|\leqslant\frac{1}{b-a}\left|\int_a^bf(x)dx\right|+\int_a^b|f^{\prime}(x)|dx$$
 
 
 
