@@ -1,4 +1,4 @@
-
+	
 这三者有类似之处：构建一个原函数与导函数的关系.
 看题目情况选择合适的工具。
 >[!NOTE] 例1 多阶可导可使用$Taylor$公式
@@ -17,7 +17,7 @@
 
 $Taylor$定理是表达 $f(x)$与其导数（包括 $f''(x)$ 在其余项中）之间关系最直接的方法。这使其成为连接函数与其二阶导数上界的自然工具。
 
-泰勒公式的**带积分余项的Taylor公式**（或称为$Peaon$余项的积分形式）实际上就是通过多次分部积分推导出来的。
+**带积分余项的Taylor公式**（或称为$Peaon$余项的积分形式）实际上就是通过多次分部积分推导出来的。
 $$f(x)-f(a)=\int_a^xf^{\prime}(t)dt$$
 $$\begin{aligned}\int_a^xf^{\prime}(t)dt&=[f^{\prime}(t)(t-x)]_a^x-\int_a^xf^{\prime\prime}(t)(t-x)dt\\&=f^{\prime}(x)(x-x)-f^{\prime}(a)(a-x)-\int_a^x(t-x)f^{\prime\prime}(t)dt\\&=f^{\prime}(a)(x-a)+\int_a^x(x-t)f^{\prime\prime}(t)dt\end{aligned}$$
 
@@ -81,7 +81,7 @@ $$=\frac{s^{2}}{2}-sa+\frac{a^{2}}{2}=\frac{1}{2}(s^{2}-2sa+a^{2})=\frac{1}{2}(s
 >设$f'(x)$在$[a,b]$上**连续**，证明：
 >$$\max_{a\leqslant x\leqslant b}|f(x)|\leqslant\left|\frac{1}{b-a}\int_{a}^{b}f(x)\mathrm{d}x\right|+\int_{a}^{b}\left|f^{\prime}(x)\right|\mathrm{d}x$$
 
-在定积分习题中，我们综合运用了微积分基本定理与积分第一中值定理来求证。
+在[[定积分习题#^34eec7|定积分习题例8]]中，我们综合运用了微积分基本定理与积分第一中值定理来求证。
 现在我们只利用微积分基本定理来进行证明：
 >[!PROOF]+
 对于任意$x\in[a,b]$,由微积分基本定理，我们有：
@@ -96,7 +96,7 @@ $$|f(x)|(b-a)\leqslant\left|\int_a^bf(x)dx\right|+\left(\int_a^b|f^{\prime}(s)|d
 于是得到
 $$|f(x)|\leqslant\frac{1}{b-a}\left|\int_a^bf(x)dx\right|+\int_a^b|f^{\prime}(s)|ds$$
 对$x\in[a,b]$都成立，自然
-$$\max_{a\leq x\leq b}|f(x)|\leqslant\frac{1}{b-a}\left|\int_a^bf(x)dx\right|+\int_a^b|f^{\prime}(x)|dx$$
+$$\max_{a\leqslant x\leqslant b}|f(x)|\leqslant\frac{1}{b-a}\left|\int_a^bf(x)dx\right|+\int_a^b|f^{\prime}(x)|dx$$
 
 
 
