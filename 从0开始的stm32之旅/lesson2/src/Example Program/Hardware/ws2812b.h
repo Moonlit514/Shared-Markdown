@@ -1,0 +1,62 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2015 Aleksandr Aleshin <silencer@quadrius.net>
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+#ifndef __WS2812B_H
+#define __WS2812B_H
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
+#include <stdint.h>
+#include "bitmap.h"
+
+void ws2812b_Init(void);
+
+int ws2812b_IsReady(void);
+
+void ws2812b_H3_SendRGB(RGB_t *rgb, unsigned count);
+void ws2812b_H3_SendHSV(HSV_t *hsv, unsigned count);
+
+void ws2812b_H4_SendRGB(RGB_t *rgb, unsigned count);
+void ws2812b_H4_SendHSV(HSV_t *hsv, unsigned count);
+
+void ws2812b_H6_SendRGB(RGB_t *rgb, unsigned count);
+void ws2812b_H6_SendHSV(HSV_t *hsv, unsigned count);
+
+void ws2812b_H7_SendRGB(RGB_t *rgb, unsigned count);
+void ws2812b_H7_SendHSV(HSV_t *hsv, unsigned count);
+
+void ws2812b_H8_SendRGB(RGB_t *rgb, unsigned count);
+void ws2812b_H8_SendHSV(HSV_t *hsv, unsigned count);
+
+void ws2812b_SW1_SendRGB(RGB_t *rgb, unsigned count);
+void ws2812b_SW1_SendHSV(HSV_t *hsv, unsigned count);
+void DMA1_Channel1_IRQHandler(void);
+void DMA1_Channel2_IRQHandler(void);
+void DMA1_Channel5_IRQHandler(void);
+void DMA1_Channel6_IRQHandler(void);
+void DMA1_Channel7_IRQHandler(void);
+void DMA1_Channel3_IRQHandler(void);
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
+#endif //__WS2812B_H
