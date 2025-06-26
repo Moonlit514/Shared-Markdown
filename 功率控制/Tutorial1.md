@@ -10,7 +10,7 @@
 
 ### Buck电路分析
 
-<img src="..\img\buck_circuit.png", alt="Buck Circuit", width="500",format="svg">
+<img src="\img\buck_circuit.png", alt="Buck Circuit", width="500">
 
 这三种电路的核心元件都是线圈（L）。线圈电流不可突变，且其两端电压$V_L = L \cdot \frac{di}{dt}$，积分后得到伏秒平衡定理：
 $\int_0^{T_s} V_L dt = L \cdot \Delta i = 0$
@@ -32,7 +32,7 @@ $\Rightarrow \frac{V_i}{V_o} = D \text{（占空比）}$
 
 ### Boost电路分析
 
-<img src="..\img\boost_circuit.png", alt="Boost Circuit", width="500",format="svg">
+<img src="\img\boost_circuit.png", alt="Boost Circuit", width="500">
 
 **伏秒平衡定理：**
 $\int_0^{T_s} V_L dt = L \cdot \Delta i = 0$
