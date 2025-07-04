@@ -33,3 +33,5 @@ conway/conway
 # 编辑器临时文件
 *.swp
 *~
+
+*.Zone.Identifier
