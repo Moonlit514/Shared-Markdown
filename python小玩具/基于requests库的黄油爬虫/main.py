@@ -63,7 +63,16 @@ data_1 = []
 for key, value in dictionary.items():
     combolist = [key]+value
     data_1.append(combolist)
-df = pd.DataFrame(data_1, columns=["游戏名称"] + [f"游戏链接{i+1}" for i in range(len(data_1[0])-1)])
+
+# 确保所有行的长度一致
+max_length = max(len(row) for row in data_1)
+for row in data_1:
+    if len(row) < max_length:
+        row.extend([''] * (max_length - len(row)))
+
+# 动态生成列名
+columns = ["游戏名称"] + [f"游戏链接{i+1}" for i in range(max_length - 1)]
+df = pd.DataFrame(data_1, columns=columns)
 df.to_excel('ygames.xlsx', index=False)
 print("正在爬取中..."+20*"●"+"100.00%",end="\n")
 print("放在ygames.xlsx了，注意身体哦",end="\n")
