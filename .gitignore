@@ -1,6 +1,10 @@
+# 数据结构和算法
+
 # conway
 conway/doc
 conway/conway
+
+# mandelbrot
 
 # LaTeX 编译生成的中间文件
 *.aux
