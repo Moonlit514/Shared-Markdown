@@ -1,0 +1,219 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\e}{\mathrm{e}}
+
+\begin{document}
+\section*{11.2}
+\textbf{1.}确定下列函数的自然定义域：
+
+(3)\(u = \sqrt{R^2 - x^2 - y^2 - z^2} + \sqrt{x^2 + y^2 + z^2 - r^2} \quad (R > r)\).
+
+解：
+\[
+\begin{cases}
+R^2 - x^2 - y^2 - z^2 \geq 0 \\
+x^2 + y^2 + z^2 - r^2 \geq 0
+\end{cases}, \Rightarrow r^2 \leq x^2 + y^2 + z^2 \leq R^2.
+\]
+
+(4)\(u = \arcsin \dfrac{z}{x^2 + y^2}\).
+
+解：
+\[x^2 + y^2 \neq 0, -1 \leq \dfrac{z}{x^2 + y^2} \leq 1 \Rightarrow x^2 + y^2 \neq 0, - (x^2 + y^2) \leq z \leq x^2 + y^2.\]
+
+\textbf{3.}若函数
+\[z(x, y) = \sqrt{y} + f(\sqrt{x} - 1),\]
+且当\(y = 4\)时\(z = x + 1\), 求\(f(x)\)和\(z(x, y)\).
+
+解：由\(y = 4\)时\(z = x + 1\)，得
+\[f(\sqrt{x} - 1) = x - 1.\]
+令\(\sqrt{x} - 1 = t\)，则\(x = (t + 1)^2 = t^2 + 2t + 1\)，
+\[f(t) = t^2 + 2t, \quad t \geq -1.\]
+所以
+\[z(x, y) = \sqrt{y} + f(\sqrt{x} - 1) = \sqrt{y} + (\sqrt{x} - 1)^2 + 2(\sqrt{x} - 1) = x + y - 1.\]
+
+\textbf{5.}对多元函数证明其极限唯一性、局部有界性、局部保序性和局部夹逼性.
+
+解：
+
+(1)极限唯一性：设\(\lim\limits_{x \to x_0} f(x) = A\)，\(\lim\limits_{x \to x_0} f(x) = B\)，则\(\forall \varepsilon > 0\)，\(\exists \delta_1 > 0\)，当\(0 < \|x - x_0\| < \delta_1\)时，有\(|f(x) - A| < \varepsilon\)，\(\exists \delta_2 > 0\)，当\(0 < \|x - x_0\| < \delta_2\)时，有\(|f(x) - B| < \varepsilon\)，令\(\delta = \min\{\delta_1, \delta_2\}\)，则当\(0 < \|x - x_0\| < \delta\)时，有
+\[|A - B| = |A - f(x) + f(x) - B| \leq |A - f(x)| + |f(x) - B| < 2\varepsilon.\]
+所以\(A = B\). 
+
+(2)局部有界性：设\(\lim\limits_{x \to x_0} f(x) = A\)，则\(\forall \varepsilon > 0\)，\(\exists \delta > 0\)，当\(0 < \|x - x_0\| < \delta\)时，有\(|f(x) - A| < \varepsilon\)，即
+\[|f(x)| < |A| + \varepsilon.\]
+
+(3)局部保序性：设\(\lim\limits_{x \to x_0} f(x) = A\)，\(\lim\limits_{x \to x_0} g(x) = B\)，且在\(O(x_0, \delta_0)\)内，\(f(x) \leq g(x)\)，则\(\forall \varepsilon > 0\)，\(\exists \delta_1 > 0\)，当\(0 < \|x - x_0\| < \delta_1\)时，有\(|f(x) - A| < \varepsilon\)，\(\exists \delta_2 > 0\)，当\(0 < \|x - x_0\| < \delta_2\)时，有\(|g(x) - B| < \varepsilon\)，令\(\delta = \min\{\delta_0, \delta_1, \delta_2\}\)，则当\(0 < \|x - x_0\| < \delta\)时，有
+\[A - \varepsilon < f(x) \leq g(x) < B + \varepsilon.\]
+因此\(A \leq B\).
+
+(4)局部夹逼性：设\(\lim\limits_{x \to x_0} f(x) = \lim\limits_{x \to x_0} g(x) = A\)，且在\(O(x_0, \delta_0)\)内，\(f(x) \leq h(x) \leq g(x)\)，则\(\forall \varepsilon > 0\)，\(\exists \delta_1 > 0\)，当\(0 < \|x - x_0\| < \delta_1\)时，有\(|f(x) - A| < \varepsilon\)，\(\exists \delta_2 > 0\)，当\(0 < \|x - x_0\| < \delta_2\)时，有\(|g(x) - A| < \varepsilon\)，令\(\delta = \min\{\delta_0, \delta_1, \delta_2\}\)，则当\(0 < \|x - x_0\| < \delta\)时，有
+\[A - \varepsilon < f(x) \leq h(x) \leq g(x) < A + \varepsilon.\]
+故\(\lim\limits_{x \to x_0} h(x) = A\).
+
+\textbf{6.}对多元函数证明极限的四则运算法则：假设当\(x\)趋于\(x_0\)时函数\(f(x)\)和\(g(x)\)的极限存在，则
+
+(3)\(\lim\limits_{x \to x_0} (f(x) / g(x)) = \lim\limits_{x \to x_0} f(x) / \lim\limits_{x \to x_0} g(x) \quad (\lim\limits_{x \to x_0} g(x) \neq 0)\).
+
+解：设\(\lim\limits_{x \to x_0} f(x) = A\)，\(\lim\limits_{x \to x_0} g(x) = B\)，且\(B \neq 0\)，则\(\forall \varepsilon > 0\)，\(\exists \delta_1 > 0\)，当\(0 < \|x - x_0\| < \delta_1\)时，有\(|f(x) - A| < \varepsilon\)，\(\exists \delta_2 > 0\)，当\(0 < \|x - x_0\| < \delta_2\)时，有\(|g(x) - B| < \varepsilon\)，令\(\delta = \min\{\delta_1, \delta_2\}\)，则当\(0 < \|x - x_0\| < \delta\)时，有
+\[\lim_{x \to x_0} \dfrac{f(x)}{g(x)} - \frac{A}{B} = \frac{B(f(x) - A) - A(g(x) - B)}{Bg(x)}.\]
+\[\left|\lim_{x \to x_0} \dfrac{f(x)}{g(x)} - \frac{A}{B}\right| = \left|\frac{B(f(x) - A) - A(g(x) - B)}{Bg(x)}\right| \leq \frac{|B|\varepsilon + |A|\varepsilon}{|B||g(x)|}.\]
+所以\(\lim\limits_{x \to x_0} (f(x) / g(x)) = A / B\).
+
+\textbf{7.}求下列极限：
+
+(2)
+\begin{align*}
+\lim_{(x, y) \to (0, 0)} \frac{1 + x^2 + y^2}{x^2 + y^2} &= \lim_{(x, y) \to (0, 0)} \left(1 + \frac{1}{x^2 + y^2}\right) \\
+&\overset{r^2 = x^2 + y^2}{=} \lim_{r \to 0} \left(1 + \frac{1}{r^2}\right) \\
+&= +\infty.
+\end{align*}
+
+(3)
+\begin{align*}
+\lim_{(x, y) \to (0, 0)} \frac{\sqrt{1 + xy} - 1}{xy} &= \lim_{(x, y) \to (0, 0)} \frac{(\sqrt{1 + xy} - 1)(\sqrt{1 + xy} + 1)}{xy(\sqrt{1 + xy} + 1)} \\
+&= \lim_{(x, y) \to (0, 0)} \frac{1}{\sqrt{1 + xy} + 1} \\
+&= \frac{1}{2}.
+\end{align*}
+
+(6)
+\begin{align*}
+\lim_{(x, y) \to (0, 0)} \frac{\sin(x^3 + y^3)}{x^2 + y^2} &= \lim_{(x, y) \to (0, 0)} \frac{\sin(x^3 + y^3)}{x^3 + y^3} \cdot \frac{x^3 + y^3}{x^2 + y^2} \\
+&= \lim_{(x, y) \to (0, 0)} \frac{\sin(x^3 + y^3)}{x^3 + y^3} \cdot \lim_{(x, y) \to (0, 0)} \frac{x^3 + y^3}{x^2 + y^2} \\
+&= 0.
+\end{align*}
+
+(8)
+\begin{align*}
+0 \leq \lim_{\substack{x \to +\infty \\ y \to +\infty}} (x^2 + y^2)\e^{-(x + y)} &\leq \lim_{\substack{x \to +\infty \\ y \to +\infty}} (x^2 + y^2) \lim_{\substack{x \to +\infty \\ y \to +\infty}} \e^{-\sqrt{x^2 + y^2}} \\
+&\overset{\substack{x = r\cos\theta \\ y = r\sin\theta}}{=} \lim_{r \to +\infty} r^2 \e^{-r} = 0.\\
+\end{align*}
+故\(\lim\limits_{\substack{x \to +\infty \\ y \to +\infty}} (x^2 + y^2)\e^{-(x + y)} = 0.\)
+
+\textbf{8.}讨论下列函数在原点的二重极限和二次极限：
+
+(2)\(f(x, y) = \dfrac{x^2(1 + x^2) - y^2(1 + y^2)}{x^2 + y^2}\).
+
+解：
+\[\lim_{\substack{x \to 0 \\ y = kx}}f(x, y) = \lim_{x \to 0}\dfrac{x^2(1 + x^2) - k^2x^2(1 + k^2x^2)}{x^2 + k^2x^2} = \dfrac{1 - k^2}{1 + k^2},\]
+故二重极限不存在.
+\[\lim_{y \to 0} \lim_{x \to 0} f(x, y) = \lim_{y \to 0} \dfrac{0 - y^2(1 + y^2)}{0 + y^2} = -1.\]
+\[\lim_{x \to 0} \lim_{y \to 0} f(x, y) = \lim_{x \to 0} \dfrac{x^2(1 + x^2) - 0}{x^2 + 0} = 1.\]
+
+(3)\(f(x, y) = x\sin\dfrac{1}{y} + y\sin\dfrac{1}{x}\).
+
+解：
+\[\lim_{\substack{x \to 0 \\ y \to 0}} f(x, y) = \lim_{\substack{x \to 0 \\ y \to 0}} \left(x\sin\dfrac{1}{y} + y\sin\dfrac{1}{x}\right) \leq \lim\limits_{\substack{x \to 0 \\ y \to 0}} |x| + |y| = 0.\]
+由\(\lim\limits_{x \to 0} y\sin\dfrac{1}{x}\)和\(\lim\limits_{y \to 0} x\sin\dfrac{1}{y}\)均不存在，故二次极限不存在.
+
+\textbf{9.}验证函数
+\[f(x, y) = \begin{cases}
+\dfrac{2}{x^2}\left(y - \dfrac{1}{2}x^2\right), & x > 0\text{且}\dfrac{1}{2}x^2 < y \leq x^2, \\
+\dfrac{1}{x^2}(2x^2 - y), & x > 0\text{且}x^2 < y < 2x^2, \\
+0, & \text{其他点}
+\end{cases}\]
+在原点不连续，而在其他点连续.
+
+解：当\(x > 0\)且\(\dfrac{1}{2}x^2 < y \leq x^2\)时，
+\[\lim_{\substack{x \to 0 \\ y = kx^2}} f(x, y) = \lim_{x \to 0} \dfrac{2}{x^2}\left(kx^2 - \dfrac{1}{2}x^2\right) = 2k - 1,\]
+故二重极限不存在，所以在原点不连续.
+
+只需考虑在\(y = \dfrac{1}{2}x^2, y = x^2, y = 2x^2\)，其中\(x > 0\)上的连续性.设\(x_0 > 0\)，则
+\[\lim_{\substack{(x, y) \to (x_0, \frac{1}{2}x_0^2) \\ y > \frac{1}{2}x^2}} f(x, y) = \lim_{(x, y) \to (x_0, \frac{1}{2}x_0^2)} \dfrac{2}{x^2}\left(y - \dfrac{1}{2}x^2\right) = 0 = f(x_0, \dfrac{1}{2}x_0^2),\]
+\[\lim_{\substack{(x, y) \to (x_0, \frac{1}{2}x_0^2) \\ y \leq \frac{1}{2}x^2}} f(x, y) = 0.\]
+故\(f(x, y)\)在\(y = \dfrac{1}{2}x^2\)上连续.
+\[\lim_{\substack{(x, y) \to (x_0, x_0^2) \\ y \leq x^2}} f(x, y) = \lim_{(x, y) \to (x_0, x_0^2)} \dfrac{2}{x^2}\left(y - \dfrac{1}{2}x^2\right) = 1 = f(x_0, x_0^2),\]
+\[\lim_{\substack{(x, y) \to (x_0, x_0^2) \\ x^2 < y < 2x^2}} f(x, y) = \lim_{(x, y) \to (x_0, x_0^2)} \dfrac{1}{x^2}(2x^2 - y) = 1.\]
+故\(f(x, y)\)在\(y = x^2\)上连续.
+\[\lim_{\substack{(x, y) \to (x_0, 2x_0^2) \\ x^2 < y < 2x^2}} f(x, y) = \lim_{(x, y) \to (x_0, 2x_0^2)} \dfrac{1}{x^2}(2x^2 - y) = 0 = f(x_0, 2x_0^2),\]
+\[\lim_{\substack{(x, y) \to (x_0, 2x_0^2) \\ y \geq 2x^2}} f(x, y) = 0.\]
+故\(f(x, y)\)在\(y = 2x^2\)上连续.
+
+综上，\(f(x, y)\)在除原点外的其他点均连续.
+
+\textbf{11.}设\(f(t)\)在区间\((a, b)\)上具有连续导数，\(D = (a, b) \times (a, b)\).定义\(D\)上的函数
+\[F(x, y) = \begin{cases}
+\dfrac{f(x) - f(y)}{x - y}, & x \neq y, \\
+f'(x), & x = y.
+\end{cases}\]
+证明：对于任何\(c \in (a, b)\)成立
+\[\lim_{(x, y) \to (c, c)} F(x, y) = f'(c),\]
+
+解：由拉格朗日中值定理，\(\exists \xi\)介于\(x, y\)之间使得\(f(x) - f(y) = f'(\xi)(x - y)\).
+\[\lim_{\substack{(x, y) \to (c, c) \\ x \neq y}} F(x, y) = \lim_{(x, y) \to (c, c)} \frac{f(x) - f(y)}{x - y} = f'(\xi) = f'(c),\]
+\[\lim_{\substack{(x, y) \to (c, c) \\ x = y}} F(x, y) = \lim_{(x, y) \to (c, c)} f'(x) = f'(c).\]
+综上，\(\lim\limits_{(x, y) \to (c, c)} F(x, y) = f'(c)\).
+
+\textbf{13.}证明：若\(f\)和\(g\)是\(D \subset \RR^n\)上的连续映射，则映射\(f + g\)与函数\(\langle f, g \rangle\)在\(D\)上都是连续的.
+
+解：\(\forall x \in D, \lim\limits_{x \to x_0} (f + g)(x) = \lim\limits_{x \to x_0} f(x) + \lim\limits_{x \to x_0} g(x) = f(x_0) + g(x_0) = (f + g)(x_0)\).
+
+\(\forall x \in D, \lim\limits_{x \to x_0} \langle f, g \rangle (x) = \langle \lim\limits_{x \to x_0} f(x), \lim\limits_{x \to x_0} g(x) \rangle = \langle f(x_0), g(x_0) \rangle = \langle f, g \rangle (x_0)\).
+
+\section*{11.3}
+\textbf{1.}设\(D \subset \RR^n\)，\(f: D \to \RR^m\)为连续映射. 如果\(D\)中的点列\(\{x_k\}\)满足\(\lim\limits_{k \to \infty} x_k = a\)，且\(a \in D\)，证明
+\[\lim_{k \to \infty} f(x_k) = f(a).\]
+
+解：\(\forall \varepsilon > 0\)，由\(f\)在\(D\)上连续，\(\exists \delta > 0\)，当\(\|x - a\| < \delta\)时，有\(\|f(x) - f(a)\| < \varepsilon\).又由\(\lim\limits_{k \to \infty} x_k = a\)，\(\exists N > 0\)，当\(k > N\)时，有\(\|x_k - a\| < \delta\)，所以当\(k > N\)时，有
+\[\|f(x_k) - f(a)\| < \varepsilon.\]
+故\(\lim\limits_{k \to \infty} f(x_k) = f(a)\).
+
+\textbf{2.}设\(f\)是\(\RR^n\)上的连续函数，\(c\)为实数. 设
+\[A_c = \{x \in \RR^n | f(x) < c\}, \quad B_c = \{x \in \RR^n | f(x) \leq c\}.\]
+证明：\(A_c\)为\(\RR^n\)上的开集，\(B_c\)为\(\RR^n\)上的闭集.
+
+解：设\(x_0 \in A_c\)，则\(f(x_0) < c\)，令\(\varepsilon = c - f(x_0) > 0\)，由\(f\)在\(\RR^n\)上连续，\(\exists \delta > 0\)，当\(\|x - x_0\| < \delta\)时，有\(|f(x) - f(x_0)| < \varepsilon\)，即
+\[f(x) < f(x_0) + \varepsilon = c.\]
+所以\(x \in A_c\)，故\(A_c\)为\(\RR^n\)上的开集.
+
+设\(x_0\)为\(B_c\)的任意聚点，则\(\forall \varepsilon > 0\)，\(\exists x \in B_c\)，使得\(\|x - x_0\| < \varepsilon\)，即\(f(x) \leq c\).由\(f\)在\(\RR^n\)上连续，得
+\[\lim_{x \to x_0} f(x) = f(x_0) \leq c.\]
+所以\(x_0 \in B_c\)，故\(B_c\)为\(\RR^n\)上的闭集.
+
+\textbf{3.}设二元函数
+\[f(x, y) = \dfrac{1}{1 - xy}, \quad (x, y) \in D = [0, 1) \times [0, 1),\]
+证明：\(f\)在\(D\)上连续，但不一致连续.
+
+解：由初等函数的连续性，\(f\)在\(D\)上连续. \(n \to \infty\)时，
+\[\left|(1 - \frac{1}{n}, 1 - \frac{1}{n}) - (1 - \frac{1}{2n}, 1 - \frac{1}{2n})\right| \to 0,\]
+\[\left|f(1 - \frac{1}{n}, 1 - \frac{1}{n}) - f(1 - \frac{1}{2n}, 1 - \frac{1}{2n})\right| = \left|\frac{(4n - 3)n^2}{(4n - 1)(2n - 1)}\right| \to \infty.\]
+故\(f\)在\(D\)上不一致连续.
+
+\textbf{6.}设\(f\)是\(\RR^n\)上的连续函数，满足
+
+(1)当\(x \neq 0\)时成立\(f(x) > 0\);
+
+(2)对于任意\(x\)与\(c > 0\)，成立\(f(cx) = cf(x)\)，
+
+证明：存在\(a > 0, b > 0\)使得
+\[a|x| \leq f(x) \leq b|x|.\]
+
+解：由\(f\)在\(\RR^n\)上连续，得\(f\)在单位球面\(S = \{x | |x| = 1\}\)上连续，而\(S\)为闭有界集，故\(f\)在\(S\)上必有界，设\(b = \max\limits_{x \in S} f(x)\)，则对任意\(x \neq 0\)，有
+\[f(x) = f\left(\frac{x}{|x|}|x|\right) = |x|f\left(\frac{x}{|x|}\right) \leq b|x|.\]
+又由\(f\)在\(S\)上连续，且\(f(x) > 0\)，故\(f\)在\(S\)上必有最小值，设\(a = \min\limits_{x \in S} f(x)\)，则对任意\(x \neq 0\)，有
+\[f(x) = f\left(\frac{x}{|x|}|x|\right) = |x|f\left(\frac{x}{|x|}\right) \geq a|x|.\]
+综上，存在\(a > 0, b > 0\)使得
+\[a|x| \leq f(x) \leq b|x|.\]
+
+\textbf{8.}设\(f\)是有界开区域\(D \subset \RR^2\)上的一致连续函数，证明：
+
+(1)可以将\(f\)连续延拓到\(D\)的边界上，即存在定义在\(\bar{D}\)上的连续函数\(\tilde{f}\)，使得\(\tilde{f}|_D = f\)；
+
+(2)\(f\)在\(D\)上有界.
+
+解：(1)设\(x_0 \in \partial D\)，则\(\forall \varepsilon > 0\)，由\(f\)在\(D\)上一致连续，\(\exists \delta > 0\)，当\(\|x - y\| < \delta\)时，有\(|f(x) - f(y)| < \varepsilon\).又由\(x_0\)为\(D\)的边界点，\(\exists x \in D\)，使得\(\|x - x_0\| < \delta\)，所以对任意\(y \in D\)，当\(\|y - x_0\| < \delta\)时，有
+\[\|x - y\| \leq \|x - x_0\| + \|y - x_0\| < 2\delta,\]
+\[|f(x) - f(y)| < \varepsilon.\]
+所以\(\lim\limits_{y \to x_0} f(y)\)存在，记为\(f(x_0)\)，则\(\tilde{f}(x) = f(x)\)当\(x \in D\)，\(\tilde{f}(x) = f(x_0)\)当\(x = x_0\)，则\(\tilde{f}\)在\(D\)上连续.
+
+(2)由\(f\)在\(D\)上一致连续，\(\exists \delta > 0\)，当\(\|x - y\| < \delta\)时，有\(|f(x) - f(y)| < 1\).又由\(D\)为有界开区域，得\(D \subset O(O, R)\)，其中\(O(O, R) = \{x | |x| < R\}\).取\(x_1, x_2, \cdots, x_m \in D\)，使得
+\[D \subset \bigcup_{i = 1}^m O(x_i, \delta),\]
+则对任意\(x \in D\)，存在\(i\in \{1, 2, \cdots, m\}\)，使得\(\|x - x_i\| < \delta\)，所以
+\[|f(x)| \leq |f(x) - f(x_i)| + |f(x_i)| < 1 + \max_{1 \leq i \leq m} |f(x_i)|.\]
+\end{document}
