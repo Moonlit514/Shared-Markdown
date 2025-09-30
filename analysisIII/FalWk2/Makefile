@@ -1,9 +1,12 @@
 .PHONY: all clean
 
-all: FalWk2.pdf
+TARGET = FalWk2.pdf
+SRC = FalWk2.tex
 
-FalWk2.pdf: FalWk2.tex
-	xelatex FalWk2.tex
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	xelatex $(SRC)
 
 clean:
 	rm -f *.aux *.bbl *.blg *.log *.out *.toc *.lof *.lot *.lol *.loa *.lox *.xdv *.pdf
