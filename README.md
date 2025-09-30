@@ -2,7 +2,7 @@
 ## 内容
 这个分支用来记录一些本人在课程或其他项目中碰到的好玩的东西，目前有以下内容——
 
-- [`数据结构和算法`](数据结构和算法/): 《数据结构和算法》课上记的笔记.
+- [`数据结构和算法`](数据结构和算法/): 《数据结构和算法》[老妖](https://person.zju.edu.cn/wangheyu)课上记的笔记及部分代码.
 - [`analysisIII`](analysisIII/): 数学分析III的作业，使用 LaTeX 实现，包含题目和解答.
 - [`conway`](conway/): 生命游戏 (Conway's Game of Life).
 - [`mandelbrot`](mandelbrot/): Mandelbrot 集的实现及可视化.
