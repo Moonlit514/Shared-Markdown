@@ -1,0 +1,100 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dif}{\mathrm{d}}
+
+\begin{document}
+\section*{12.1}
+\textbf{1.}求下列函数的偏导数：
+
+(6)\(z = \tan\left(\dfrac{x^2}{y}\right)\).
+\begin{align*}
+&\frac{\partial z}{\partial x} = \sec^2\left(\frac{x^2}{y}\right)\frac{2x}{y}\\
+&\frac{\partial z}{\partial y} = -\sec^2\left(\frac{x^2}{y}\right)\frac{x^2}{y^2}
+\end{align*}
+
+(8)\(z = (1 + xy)^y\).
+\begin{align*}
+&\frac{\partial z}{\partial x} = y(1 + xy)^{y-1}y = y^2(1 + xy)^{y-1}\\
+&\frac{\partial z}{\partial y} = (1 + xy)^y\ln(1 + xy) + (1 + xy)^{y-1}x
+\end{align*}
+
+(12)\(u = x^{\frac{y}{z}}\).
+\begin{align*}
+&\frac{\partial u}{\partial x} = \frac{y}{z}x^{\frac{y}{z}-1}\\
+&\frac{\partial u}{\partial y} = x^{\frac{y}{z}}\ln x\\
+&\frac{\partial u}{\partial z} = -\frac{y}{z^2}x^{\frac{y}{z}}\ln x
+\end{align*}
+
+(14)\(u = x^{y^z}\).
+\begin{align*}
+&\frac{\partial u}{\partial x} = y^zx^{y^z-1}\\
+&\frac{\partial u}{\partial y} = x^{y^z}z\ln x y^{z-1}\\
+&\frac{\partial u}{\partial z} = x^{y^z}y^z\ln x \ln y
+\end{align*}
+
+(16)\(u = \sum\limits_{i,j = 1}^n a_{ij}x_iy_j\) \(\quad\) (\(a_{ij} = a_{ji}\)且为常数).
+\begin{align*}
+&\frac{\partial u}{\partial x_k} = \sum\limits_{j=1}^n a_{kj}y_j\\
+&\frac{\partial u}{\partial y_k} = \sum\limits_{i=1}^n a_{ik}x_i
+\end{align*}
+
+\textbf{3.}设\(z = \e^{\frac{x}{y^2}}\)，验证\(2x\dfrac{\partial z}{\partial x} + y\dfrac{\partial z}{\partial y} = 0\).
+
+解：
+\begin{align*}
+&\frac{\partial z}{\partial x} = \frac{1}{y^2}\e^{\frac{x}{y^2}}\\
+&\frac{\partial z}{\partial y} = -\frac{2x}{y^3}\e^{\frac{x}{y^2}}
+\end{align*}
+\[2x\frac{\partial z}{\partial x} + y\frac{\partial z}{\partial y} = 2x\frac{1}{y^2}\e^{\frac{x}{y^2}} + y\left(-\frac{2x}{y^3}\e^{\frac{x}{y^2}}\right) = 0.\]
+
+\textbf{4.}曲线\(\begin{cases}
+z = \dfrac{x^2 + y^2}{4},\\
+y = 4
+\end{cases}\)在点\((2, 4, 5)\)处的切线与\(x\)轴的正向所夹的角度是多少？
+
+解：\(z = \dfrac{x^2 + 16}{4}\)，\(\dfrac{\partial z}{\partial x} = \dfrac{x}{2}\)，在点\((2, 4, 5)\)处，\(\dfrac{\partial z}{\partial x} = 1\)，\(\tan\alpha = 1\)，\(\alpha = \dfrac{\pi}{4}\).
+
+\textbf{5.}求下列函数在指定点的全微分：
+
+(2)\(f(x, y) = \ln(1 + x^2 + y^2)\)，在点\((2, 4)\).
+\[\dif f(2, 4) = \frac{2x}{1 + x^2 + y^2}\dif x + \frac{2y}{1 + x^2 + y^2}\dif y = \frac{4}{21}\dif x + \frac{8}{21}\dif y.\]
+
+(3)\(f(x, y) = \dfrac{\sin x}{y}\)，在点\((0, 1)\)和\(\left(\dfrac{\pi}{4}, 2\right)\).
+\begin{align*}
+&\dif f(0, 1) = \frac{\cos x}{y}\dif x - \frac{\sin x}{y^2}\dif y = \dif x.\\
+&\dif f\left(\frac{\pi}{4}, 2\right) = \frac{\cos x}{y}\dif x - \frac{\sin x}{y^2}\dif y = \frac{\sqrt{2}}{4}\dif x - \frac{\sqrt{2}}{8}\dif y.
+\end{align*}
+
+\textbf{6.}求下列函数的全微分：
+
+(5)\(u = \sqrt{x^2 + y^2 + z^2}\).
+\[\dif u = \frac{x}{\sqrt{x^2 + y^2 + z^2}}\dif x + \frac{y}{\sqrt{x^2 + y^2 + z^2}}\dif y + \frac{z}{\sqrt{x^2 + y^2 + z^2}}\dif z.\]
+
+(6)\(u = \ln(x^2 + y^2 + z^2)\).
+\[\dif u = \frac{2x}{x^2 + y^2 + z^2}\dif x + \frac{2y}{x^2 + y^2 + z^2}\dif y + \frac{2z}{x^2 + y^2 + z^2}\dif z.\]
+
+\textbf{8.}设\(z = x^2 - xy + y^2\)，求它在点\((1, 1)\)处的沿方向\(\vec{v} = (\cos\alpha, \sin\alpha)\)的方向导数，并指出：
+
+(1)沿哪个方向的方向导数最大？
+
+(2)沿哪个方向的方向导数最小？
+
+(3)沿哪个方向的方向导数为零？
+
+解：\(\dfrac{\partial z}{\partial x} = 2x - y\)，\(\dfrac{\partial z}{\partial y} = -x + 2y\)，在点\((1, 1)\)处，\(\dfrac{\partial z}{\partial x} = 1\)，\(\dfrac{\partial z}{\partial y} = 1\)，
+\[\frac{\partial z}{\partial \vec{v}} = \frac{\partial z}{\partial x}\cos\alpha + \frac{\partial z}{\partial y}\sin\alpha = \cos\alpha + \sin\alpha = \sqrt{2}\sin\left(x + \frac{\pi}{4}\right).\]
+
+(1)当\(\alpha = \dfrac{\pi}{4} + 2k\pi, k \in \mathbb{Z}\)时，方向导数最大，为\(\sqrt{2}\).
+
+(2)当\(\alpha = \dfrac{5\pi}{4} + 2k\pi, k \in \mathbb{Z}\)时，方向导数最小，为\(-\sqrt{2}\).
+
+(3)当\(\alpha = \dfrac{3\pi}{4} + k\pi, k \in \mathbb{Z}\)时，方向导数为零.
+
+\end{document}
