@@ -1,13 +1,22 @@
-.PHONY: all clean
+# 作业文件名
+PROJ = FalWk2
 
-TARGET = FalWk2.pdf
-SRC = FalWk2.tex
+all: $(PROJ).pdf
 
-all: $(TARGET)
 
-$(TARGET): $(SRC)
-	xelatex $(SRC)
+# 没有参考文献用这个
+$(PROJ).pdf: $(PROJ).tex
+	xelatex $(PROJ).tex
+	xelatex $(PROJ).tex
+
+
+# 有参考文献用这个
+# $(PROJ).pdf: $(PROJ).tex
+# 	xelatex $(PROJ).tex
+# 	bibtex $(PROJ)
+# 	xelatex $(PROJ).tex
+# 	xelatex $(PROJ).tex
+
 
 clean:
-	rm -f *.aux *.bbl *.blg *.log *.out *.toc *.lof *.lot *.lol *.loa *.lox *.xdv *.pdf
-	rm -f *.fdb_latexmk *.fls *.synctex.gz
+	rm -f *.aux *.log *.out *.toc *.bbl *.blg *.lof *.lot *.pdf
