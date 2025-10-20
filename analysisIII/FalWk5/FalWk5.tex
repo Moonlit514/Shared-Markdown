@@ -1,0 +1,257 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dif}{\mathrm{d}}
+
+\begin{document}
+\section*{12.1}
+\textbf{16.}计算下列函数的高阶导数:
+
+(2)\(z = x\sin(x + y) + y\cos(x + y)\)，求\(\dfrac{\partial^2 z}{\partial x^2}, \dfrac{\partial^2 z}{\partial x \partial y}, \dfrac{\partial^2 z}{\partial y^2}\).
+\begin{align*}
+\frac{\partial z}{\partial x} &= x\cos(x + y) + \sin(x + y) - y\sin(x + y) \\
+\frac{\partial z}{\partial y} &= -x\sin(x + y) + \cos(x + y) + y\cos(x + y) \\
+\frac{\partial^2 z}{\partial x^2} &= -x\sin(x + y) + 2\cos(x + y) - y\cos(x + y) \\
+\frac{\partial^2 z}{\partial x \partial y} &= (1 - y)\cos(x + y) - (1 + x)\sin(x + y) \\
+\frac{\partial^2 z}{\partial y^2} &= -x\sin(x + y) - 2\cos(x + y) - y\cos(x + y) \\
+\end{align*}
+
+(4)\(u = \ln(ax + by + cz)\)，求\(\dfrac{\partial^4 u}{\partial x^4}, \dfrac{\partial^4 u}{\partial x^2 \partial y^2}\).
+\begin{align*}
+\frac{\partial u}{\partial x} &= \frac{a}{ax + by + cz} \\
+\frac{\partial^2 u}{\partial x^2} &= -\frac{a^2}{(ax + by + cz)^2} \\
+\frac{\partial^3 u}{\partial x^3} &= \frac{2a^3}{(ax + by + cz)^3} \\
+\frac{\partial^4 u}{\partial x^4} &= -\frac{6a^4}{(ax + by + cz)^4} \\
+\frac{\partial^2 u}{\partial y^2} &= -\frac{b^2}{(ax + by + cz)^2} \\
+\frac{\partial^4 u}{\partial x^2 \partial y^2} &= -\frac{6a^2b^2}{(ax + by + cz)^4} \\
+\end{align*}
+
+\textbf{17.}计算下列函数的高阶微分：
+
+(2)\(z = \sin^2 (ax + by)\)，求\(\dif^3 z\).
+\begin{align*}
+\dif z &= 2\sin(ax + by)\cos(ax + by)(a \dif x + b \dif y) = \sin(2(ax + by))(a \dif x + b \dif y) \\
+\dif^2 z &= 2\cos(2(ax + by))(a \dif x + b \dif y)^2 \\
+\dif^3 z &= -4\sin(2(ax + by))(a \dif x + b \dif y)^3 \\
+\end{align*}
+(4)\(z = \e^x \sin y\)，求\(\dif^k z\).
+\begin{align*}
+\dif^k z &= \left(\frac{\partial}{\partial x}\dif x + \frac{\partial}{\partial y}\dif y\right)^k  z \\
+&= \sum_{i = 0}^{k} \binom{k}{i} \frac{\partial^i \e^x}{\partial x^i} \frac{\partial^{k - i} \sin y}{\partial y^{k - i}} \dif x^i \dif y^{k - i} \\
+&= \sum_{i = 0}^{k} \binom{k}{i} \e^x \sin\left(y + \frac{(k - i)\pi}{2}\right) \dif x^i \dif y^{k - i} \\
+\end{align*}
+
+\textbf{19.}验证：
+
+(2)\(u = z\arctan \dfrac{x}{y}\)满足Laplace方程\(\dfrac{\partial^2 u}{\partial x^2} + \dfrac{\partial^2 u}{\partial y^2} + \dfrac{\partial^2 u}{\partial z^2} = 0\).
+\begin{align*}
+\frac{\partial^2 u}{\partial x^2} &= z \cdot \frac{-2xy}{(x^2 + y^2)^2} \\
+\frac{\partial^2 u}{\partial y^2} &= z \cdot \frac{2xy}{(x^2 + y^2)^2} \\
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} &= z \cdot \frac{-2xy}{(x^2 + y^2)^2} + z \cdot \frac{2xy}{(x^2 + y^2)^2} + 0 = 0 \\
+\end{align*}
+
+\textbf{21.}求下列向量值函数在指定点的导数：
+
+(2)\(f(x, y, z) = (3x + e^y \cot t, x^3 + y^3 \tan z)^\mathrm{T}\)，在\(\left(1, 2, \dfrac{\pi}{4}\right)\)点.
+\[f_x = \begin{pmatrix} 3 \\ 3x^2 \end{pmatrix}, \quad f_y = \begin{pmatrix} e^y \cot t \\ 3y^2 \tan z \end{pmatrix}, \quad f_z = \begin{pmatrix} -e^y \csc^2 t \\ y^3 \sec^2 z \end{pmatrix}\]
+\[f'\left(1, 2, \frac{\pi}{4}\right) = \begin{pmatrix} 3 & e^2 \cot \frac{\pi}{4} & -e^2 \csc^2 \frac{\pi}{4} \\ 3 & 12 \tan \frac{\pi}{4} & 8 \sec^2 \frac{\pi}{4} \end{pmatrix} = \begin{pmatrix} 3 & e^2 & -2e^2 \\ 3 & 12 & 16 \end{pmatrix}\]
+
+(3)\(g(u, v) = (u \cos v, u \sin v, v)^\mathrm{T}\)，在\((1, \pi)\)点.
+\[g_u = \begin{pmatrix} \cos v \\ \sin v \\ 0 \end{pmatrix}, \quad g_v = \begin{pmatrix} -u \sin v \\ u \cos v \\ 1 \end{pmatrix}\]
+\[g'(1, \pi) = \begin{pmatrix} \cos \pi & -1 \cdot \sin \pi \\ \sin \pi & 1 \cdot \cos \pi \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} -1 & 0 \\ 0 & -1 \\ 0 & 1 \end{pmatrix}\]
+
+\textbf{22.}设\(f: \RR^3 \rightarrow \RR^3\)为向量值函数.
+
+(1)如果坐标分量函数\(f_1(x, y, z) = x, f_2(x, y, z) = y, f_3(x, y, z) = z\)，证明\(f\)的导数是单位阵.
+
+(2)写出坐标分量函数的一般形式，使\(f\)的导数是单位阵.
+
+(3)如果已知\(f\)的导数是对角阵\(\mathrm{diag}(p(x), q(y), r(z))\)，那么坐标分量函数应该具有什么样的形式？
+
+解：(1)由题意可知
+\[f' = \begin{pmatrix} \dfrac{\partial f_1}{\partial x} & \dfrac{\partial f_1}{\partial y} & \dfrac{\partial f_1}{\partial z} \\ \dfrac{\partial f_2}{\partial x} & \dfrac{\partial f_2}{\partial y} & \dfrac{\partial f_2}{\partial z} \\ \dfrac{\partial f_3}{\partial x} & \dfrac{\partial f_3}{\partial y} & \dfrac{\partial f_3}{\partial z} \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}\]
+
+(2)显然\(f_1(x, y, z) = f_1(x) = x + C_1, f_2(x, y, z) = f_2(y) = y + C_2, f_3(x, y, z) = f_3(z) = z + C_3\)，其中\(C_1, C_2, C_3\)为任意常数.
+
+(3)同理可得\(f_1(x, y, z) = \int p(x) \dif x, f_2(x, y, z) = \int q(y) \dif y, f_3(x, y, z) = \int r(z) \dif z\).
+
+\section*{12.2}
+\textbf{1.}利用链式法则求导数：
+
+(2)\(z = e^{x - 2y}, x = \sin t, y = t^3\)，求\(\dfrac{\dif^2 z}{\dif t^2}\).
+\[\frac{\dif z}{\dif t} = \frac{\partial z}{\partial x} \frac{\dif x}{\dif t} + \frac{\partial z}{\partial y} \frac{\dif y}{\dif t} = e^{\sin t - 2t^3}(\cos t - 6t^2)\]
+\[\frac{\dif^2 z}{\dif t^2} = \frac{\dif}{\dif t}\left[e^{\sin t - 2t^3}(\cos t - 6t^2)\right] = e^{\sin t - 2t^3}[(\cos t - 6t^2)^2 - \sin t - 12t]\]
+
+(4)\(z = u^2 \ln v, u = \dfrac{x}{y}, v = 3x - 2y\)，求\(\dfrac{\partial z}{\partial x}, \dfrac{\partial z}{\partial y}\).
+\[\frac{\partial z}{\partial x} = 2u \ln v \cdot \frac{1}{y} + u^2 \cdot \frac{1}{v} \cdot 3 = \frac{2x}{y^2} \ln(3x - 2y) + \frac{3x^2}{y^2(3x - 2y)}\]
+\[\frac{\partial z}{\partial y} = 2u \ln v \cdot \left(-\frac{x}{y^2}\right) + u^2 \cdot \frac{1}{v} \cdot (-2) = -\frac{2x^2}{y^3} \ln(3x - 2y) - \frac{2x^2}{y^2(3x - 2y)}\]
+
+(7)\(z = x^2 + y^2 + \cos(x + y), x = u + v, y = \arcsin v\)，求\(\dfrac{\partial z}{\partial u}, \dfrac{\partial^2 z}{\partial v \partial u}\).
+\[\frac{\partial z}{\partial u} = 2x \cdot 1 + 2y \cdot 0 - \sin(x + y) \cdot 1 = 2(u + v) - \sin(u + v + \arcsin v)\]
+\begin{align*}
+\frac{\partial^2 z}{\partial v \partial u} &= \frac{\partial}{\partial v}\left[2(u + v) - \sin(u + v + \arcsin v)\right] \\
+&= 2 - \cos(u + v + \arcsin v) \left(1 + \frac{1}{\sqrt{1 - v^2}}\right)
+\end{align*}
+
+(9)\(u = f(x^2 + y^2 + z^2)\)，求\(\dfrac{\partial u}{\partial x}, \dfrac{\partial u}{\partial y}, \dfrac{\partial u}{\partial z}, \dfrac{\partial^2 u}{\partial x^2}, \dfrac{\partial^2 u}{\partial x \partial y}\).
+\[\frac{\partial u}{\partial x} = 2x f'(x^2 + y^2 + z^2)\]
+\[\frac{\partial u}{\partial y} = 2y f'(x^2 + y^2 + z^2)\]
+\[\frac{\partial u}{\partial z} = 2z f'(x^2 + y^2 + z^2)\]
+\[\frac{\partial^2 u}{\partial x^2} = 2f'(x^2 + y^2 + z^2) + 4x^2 f''(x^2 + y^2 + z^2)\]
+\[\frac{\partial^2 u}{\partial x \partial y} = 4xy f''(x^2 + y^2 + z^2)\]
+
+\textbf{7.}设\(z = f(x, y)\)具有二阶连续偏导数，写出\(\dfrac{\partial^2 f}{\partial x^2} + \dfrac{\partial^2 f}{\partial y^2}\)在坐标变换
+\[\begin{cases}
+u = x^2 - y^2 \\
+v = 2xy
+\end{cases}\]
+下的表达式.
+
+解：由链式法则可知
+\[\frac{\partial f}{\partial x} = 2x\frac{\partial f}{\partial u} + 2y\frac{\partial f}{\partial v}\]
+\[\frac{\partial f}{\partial y} = -2y\frac{\partial f}{\partial u} + 2x\frac{\partial f}{\partial v}\]
+\[\frac{\partial^2 f}{\partial x^2} = 4x^2 \frac{\partial^2 f}{\partial u^2} + 8xy \frac{\partial^2 f}{\partial u \partial v} + 4y^2 \frac{\partial^2 f}{\partial v^2} + 2\frac{\partial f}{\partial u}\]
+\[\frac{\partial^2 f}{\partial y^2} = 4y^2 \frac{\partial^2 f}{\partial u^2} - 8xy \frac{\partial^2 f}{\partial u \partial v} + 4x^2 \frac{\partial^2 f}{\partial v^2} - 2\frac{\partial f}{\partial u}\]
+因此
+\[\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = 4(x^2 + y^2) \frac{\partial^2 f}{\partial u^2} + 4(x^2 + y^2) \frac{\partial^2 f}{\partial v^2} = 4\sqrt{u^2 + v^2}(\frac{\partial^2 f}{\partial u^2} + \frac{\partial^2 f}{\partial v^2})\]
+
+\textbf{8.}设\(f(x, y) = \int_{0}^{xy} \e^{-t^2} \dif t\)，求\(\dfrac{x}{y} \dfrac{\partial^2 f}{\partial x^2} - 2\dfrac{\partial^2 f}{\partial x \partial y} + \dfrac{y}{x} \dfrac{\partial^2 f}{\partial y^2}\).
+
+解：由题意可知
+\[\frac{\partial f}{\partial x} = y \e^{-(xy)^2}, \quad \frac{\partial f}{\partial y} = x \e^{-(xy)^2}\]
+\[\frac{\partial^2 f}{\partial x^2} = -2x y^3 \e^{-(xy)^2}, \quad \frac{\partial^2 f}{\partial y^2} = -2x^3 y \e^{-(xy)^2}, \quad \frac{\partial^2 f}{\partial x \partial y} = \e^{-(xy)^2} - 2x^2 y^2 \e^{-(xy)^2}\]
+因此
+\[\frac{x}{y} \frac{\partial^2 f}{\partial x^2} - 2\frac{\partial^2 f}{\partial x \partial y} + \frac{y}{x} \frac{\partial^2 f}{\partial y^2} = -2x^2 y^2 \e^{-(xy)^2} - 2\e^{-(xy)^2} + 4x^2 y^2 \e^{-(xy)^2} - 2x^2 y^2 \e^{-(xy)^2} = -2\e^{-(xy)^2}\]
+
+\textbf{9.}如果函数\(f(x, y)\)满足：对于任意的实数\(t\)及\(x, y\)，成立
+\[f(tx, ty) = t^nf(x, y),\]
+那么称\(f\)为\(n\)次齐次函数.
+
+(1)证明\(n\)次齐次函数\(f\)满足方程
+\[x \frac{\partial f}{\partial x} + y \frac{\partial f}{\partial y} = n f.\]
+
+(2)利用上述性质，对于\(z = \sqrt{x^2 + y^2}\)求出\(x \dfrac{\partial f}{\partial x} + y \dfrac{\partial f}{\partial y}\).
+
+解：(1)对等式两边分别对\(t\)求导，得
+\[\frac{\partial f(tx, ty)}{\partial x} \cdot x + \frac{\partial f(tx, ty)}{\partial y} \cdot y = n t^{n - 1} f(x, y)\]
+令\(t = 1\)，得
+\[x \frac{\partial f}{\partial x} + y \frac{\partial f}{\partial y} = n f\]
+
+(2)由题意可知，\(z = \sqrt{x^2 + y^2}\)为一次齐次函数，因此
+\[x \frac{\partial f}{\partial x} + y \frac{\partial f}{\partial y} = 1 \cdot f = \sqrt{x^2 + y^2}\]
+
+\textbf{11.}设向量值函数\(f:\RR^2 \rightarrow \RR^3\)的坐标分量函数为
+\[\begin{cases}
+x = u^2 + v^2, \\
+y = u^2 - v^2, \\
+z = uv.
+\end{cases}\]
+向量值函数\(g:\RR^2 \rightarrow \RR^2\)的坐标分量函数为
+\[\begin{cases}
+u = r\cos \theta, \\
+v = r\sin \theta.
+\end{cases}\]
+求复合函数\(f \circ g\)的导数.
+
+解：
+\[f' = \begin{pmatrix} 2u & 2v \\ 2u & -2v \\ v & u \end{pmatrix}, \quad g' = \begin{pmatrix} \cos \theta & -r \sin \theta \\ \sin \theta & r \cos \theta \end{pmatrix}\]
+\[(f \circ g)' = f'(g(r, \theta)) \cdot g'(r, \theta) = \begin{pmatrix} 2r & 0 \\ 2r \cos 2\theta & -2r \sin 2\theta \\ r \sin 2\theta & r \cos 2\theta \end{pmatrix}\]
+
+\textbf{14.}设\(z = (x^2 + y^2)\e^{-\arctan\frac{y}{x}}\)，求\(\dif z\)和\(\dfrac{\partial^2 z}{\partial x \partial y}\).
+
+解：
+\[\dif z = e^{-\arctan\frac{y}{x}} \left[ (2x + y)\,\dif x + (2y - x)\,\dif y \right]\]
+\[\frac{\partial z}{\partial x} = \e^{-\arctan\frac{y}{x}} (2x + y),\]
+\[\frac{\partial^{2}z}{\partial x\partial y} = \e^{-\arctan\frac{y}{x}}\frac{y^{2} - xy - x^2}{x^{2} + y^{2}}\]
+
+\textbf{15.}求下列函数的全微分：
+
+(3)\(u = f\left(\ln(1 + x^2 + y^2 + z^2), \e^{x + y + z}\right)\).
+
+令\(\alpha := \ln(1 + x^2 + y^2 + z^2), \beta := \e^{x + y + z},\)
+\begin{align*}
+\dif u &= \frac{\partial}{\partial \alpha}\dif \alpha + \frac{\partial}{\partial \beta}\dif \beta \\
+&= \frac{\partial f}{\partial \alpha} \frac{2x \dif x + 2y \dif y + 2z \dif z}{1 + x^2 + y^2 + z^2} + \frac{\partial f}{\partial \beta} \e^{x + y + z}(\dif x + \dif y + \dif z) \\
+&= \left(\frac{\partial f}{\partial \alpha} \frac{2x}{1 + x^2 + y^2 + z^2} + \frac{\partial f}{\partial \beta} \e^{x + y + z}\right) \dif x \\
+&+ \left(\frac{\partial f}{\partial \alpha} \frac{2y}{1 + x^2 + y^2 + z^2} + \frac{\partial f}{\partial \beta} \e^{x + y + z}\right) \dif y \\
+&+ \left(\frac{\partial f}{\partial \alpha} \frac{2z}{1 + x^2 + y^2 + z^2} + \frac{\partial f}{\partial \beta} \e^{x + y + z}\right) \dif z \\
+\end{align*}
+
+\textbf{18.}设\(n\)元函数\(f\)在\(\RR^n\)上具有连续偏导数，证明对于任意的\(x = (x_1, x_2, \cdots, x_n)\)，\(y = (y_1, y_2, \cdots, y_n) \in \RR^n\)，成立下述Hadamard公式：
+\[f(y) - f(x) = \sum_{i = 1}^{n} \int_{0}^{1} (y_i - x_i) \frac{\partial f}{\partial x_i}(x + t(y - x)) \dif t.\]
+
+解：令\(\varphi(t) := f(x + t(y - x))\)，则\(\varphi(0) = f(x), \varphi(1) = f(y)\).
+\[\varphi'(t) = \sum_{i = 1}^{n} \frac{\partial f}{\partial x_i}(x + t(y - x)) (y_i - x_i).\]
+\[f(y) - f(x) = \varphi(1) - \varphi(0) = \int_{0}^{1} \varphi'(t) \dif t = \sum_{i = 1}^{n} \int_{0}^{1} (y_i - x_i) \frac{\partial f}{\partial x_i}(x + t(y - x)) \dif t.\]
+
+\section*{12.3}
+\textbf{1.}对函数\(f(x, y) = \sin x \cos y\)应用中值定理证明：存在\(\theta \in (0, 1)\)，使得
+\[\frac{3}{4} = \frac{\pi}{3}\cos\frac{\pi\theta}{3}\cos\frac{\pi\theta}{6} - \frac{\pi}{6}\sin\frac{\pi\theta}{3}\sin\frac{\pi\theta}{6}.\]
+
+解：由中值定理，存在\(\theta \in (0, 1)\)，使得
+\begin{align*}
+\frac{3}{4} &= f\left(\frac{\pi}{3}, \frac{\pi}{6}\right) - f(0, 0) = \frac{\pi}{3}f_x\left(\frac{\pi\theta}{3}, \frac{\pi\theta}{6}\right) + f_y\left(\frac{\pi\theta}{3}, \frac{\pi}{6}\frac{\pi\theta}{6}\right) \\
+&= \frac{\pi}{3}\cos\frac{\pi\theta}{3}\cos\frac{\pi\theta}{6} - \frac{\pi}{6}\sin\frac{\pi\theta}{3}\sin\frac{\pi\theta}{6}
+\end{align*}
+
+\textbf{4.}求\(f(x, y) = \e^{x + y}\)在\((0, 0)\)点的\(n\)阶Taylor展开式，并写出余项.
+
+解：
+\[f(x, y) = 1 + (x + y) + \frac{1}{2!} (x + y)^2 + \cdots + \frac{1}{n!} (x + y)^n + \frac{1}{(n + 1)!} (x + y)^{n + 1} \e^{\theta x + \theta y},\]
+其中\(0 < \theta < 1.\)
+
+\textbf{5.}设\(f(x, y) = \dfrac{\cos y}{x}, x > 0.\)
+
+(1)求\(f(x, y)\)在\((1, 0)\)点的Taylor展开式（展开到二阶导数），并计算余项\(R_2\).
+
+(2)求\(f(x, y)\)在\((1, 0)\)点的\(k\)阶Taylor展开式，并证明在\((1, 0)\)点的某个邻域内，余项\(R_k\)满足当\(k \to \infty\)时，\(R_k \to 0\).
+
+解：(1)
+\[f(x, y) = 1 - (x - 1) + (x - 1)^2 - \frac{1}{2}y^2 + R_2,\]
+其中\(R_2 = -\dfrac{\cos \theta y}{(1 + \theta (x - 1))^4}(x - 1)^3 - \dfrac{\sin \theta y}{1 + \theta (x - 1)^3}(x - 1)^2y + \dfrac{\cos \theta y}{2(1 + \theta (x - 1))^2}(x - 1)y^2 + \dfrac{\sin \theta y}{6(1 + \theta (x - 1))}y^3, 0 < \theta < 1\).
+
+(2)
+\[f(x, y) = 1 + \sum_{n = 1}^{k} \left[\frac{1}{n!} \sum_{i = 0}^{n} \binom{n}{i} (-1)^i i! \cos\frac{(n - i)\pi}{2} (x - 1)^iy^{n - i}\right] + R_k,\]
+其中
+\[R_k = \frac{1}{(k + 1)!} \sum_{i = 0}^{k + 1} \binom{k + 1}{i} \frac{(-1)^i i!}{(1 + \theta (x - 1))^{i + 1}} \cos\left(\theta y + \frac{(k + 1 - i)\pi}{2}\right) (x - 1)^iy^{k + 1 - i}.\]
+
+\(x = 1\)时，\(R_k = 0\).
+
+\(0 < |x - 1| < \dfrac{1}{3}\)时，\(\dfrac{2}{3} < 1 + \theta (x - 1) < \dfrac{4}{3}, \left|\dfrac{x}{1 + \theta (x - 1)}\right| < \dfrac{1}{2}, \forall y \in \RR, k \to \infty\)时，
+\begin{align*}
+0 \leq |R_k| &\leq \sum_{i = 0}^{k + 1} \left|\frac{1}{(k + 1 - i)!} \frac{1}{1 + \theta (x - 1)} \left(\frac{x - 1}{1 + \theta (x - 1)}\right)^i y^{k + 1 - i}\right| \\
+&\leq \left|\frac{1}{1 + \theta (x - 1)}\right| \left|\frac{x - 1}{1 + \theta (x - 1)}\right|^{k + 1} \sum_{j = 0}^{k + 1} \frac{1}{j!}\left|\frac{y(1 + \theta (x - 1))}{x - 1}\right|^j \\
+&= \frac{1}{|1 + \theta (x - 1)|} \left|\frac{x - 1}{1 + \theta (x - 1)}\right|^{k + 1} \e^{\left|\frac{y(1 + \theta (x - 1))}{x - 1}\right|} \\
+&\leq \frac{3}{2} \frac{1}{2^{k + 1}} \e^{\left|\frac{y(1 + \theta (x - 1))}{x - 1}\right|} \to 0
+\end{align*}
+故\(R_k \to 0(k \to \infty)\).
+
+\textbf{7.}设\(f(x, y)\)在\(\RR^2\)上可微.\(l_1\)与\(l_2\)是\(\RR^2\)上两个线性无关的单位向量.若
+\[\frac{\partial f}{\partial l_i}(x, y) \equiv 0, \quad i = 1, 2,\]
+证明：在\(\RR^2\)上\(f(x, y) \equiv \text{常数}\).
+
+解：由\(l_1 = (x_1, y_1), l_2 = (x_2, y_2)\)线性无关，\(\forall (\Delta x, \Delta y) \in \RR^2, \exists \lambda_1, \lambda_2 \in \RR:\)
+\[(\Delta x, \Delta y) = \lambda_1 l_1 + \lambda_2 l_2 = (\lambda_1 x_1 + \lambda_2 x_2, \lambda_1 y_1 + \lambda_2 y_2).\]
+又由\(\dfrac{\partial f}{\partial l_i}(x, y) \equiv 0, i = 1, 2, \forall (x_0, y_0) \in \RR^2, \forall \lambda \in \RR:\)
+\[f(x_0 + \lambda x_i, y_0 + \lambda y_i) \equiv f(x_0, y_0), \quad i = 1, 2.\]
+于是
+\begin{align*}
+f(x_0 + \Delta x, y_0 + \Delta y) &= f(x_0 + \lambda_1 x_1 + \lambda_2 x_2, y_0 + \lambda_1 y_1 + \lambda_2 y_2) \\
+&= f(x_0 + \lambda_2 x_2, y_0 + \lambda_2 y_2) = f(x_0, y_0)
+\end{align*}
+故\(f(x, y) \equiv \text{常数}\).
+
+\textbf{8.}设\(f(x, y) = \sin\dfrac{y}{x} (x \neq 0)\)，证明：
+\[\left(x \frac{\partial}{\partial x} + y \frac{\partial}{\partial y}\right)^k f(x, y) \equiv 0, \quad k \geq 1.\]
+
+解：注意到\(\forall t \in \RR, f(tx, ty) = t^0f(x, y)\)，故\(f\)为零次齐次函数.由习题\(12.2.9\)，成立
+\[x \frac{\partial f}{\partial x} + y \frac{\partial f}{\partial y} = 0f = 0.\]
+于是
+\[\left(x \frac{\partial}{\partial x} + y \frac{\partial}{\partial y}\right)^k f(x, y) \equiv 0, \quad k \geq 1.\]
+\end{document}
