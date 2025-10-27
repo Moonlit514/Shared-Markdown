@@ -19,4 +19,4 @@ $(PROJ).pdf: $(PROJ).tex
 
 
 clean:
-	rm -f *.aux *.log *.out *.toc *.bbl *.blg *.lof *.lot *.pdf
+	rm -f *.aux *.log *.out *.toc *.bbl *.blg *.lof *.lot *.pdf *.gz
