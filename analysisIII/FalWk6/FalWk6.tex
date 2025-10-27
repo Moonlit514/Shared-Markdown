@@ -1,0 +1,304 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dif}{\mathrm{d}}
+
+\begin{document}
+\section*{12.4}
+\textbf{1.}求下列方程所确定的隐函数的导数或偏导数：
+
+(5)\(\dfrac{x}{z} = \ln\dfrac{x}{y}\)，求\(\dfrac{\partial z}{\partial x}\)和\(\dfrac{\partial z}{\partial y}\).
+\[F(x, y, z) = \frac{x}{z} - \ln\frac{x}{y} = 0,\]
+\[\frac{\partial F}{\partial x} = \frac{1}{z} - \frac{1}{x}, \quad \frac{\partial F}{\partial y} = \frac{1}{y}, \quad \frac{\partial F}{\partial z} = -\frac{x}{z^2}.\]
+\[\frac{\partial z}{\partial x} = -\frac{\dfrac{\partial F}{\partial x}}{\dfrac{\partial F}{\partial z}} = \frac{z(x - z)}{x^2},\]
+\[\frac{\partial z}{\partial y} = -\frac{\dfrac{\partial F}{\partial y}}{\dfrac{\partial F}{\partial z}} = \frac{z^2}{xy}.\]
+
+(7)\(z^3 - 3xyz = a^3\)，求\(\dfrac{\partial z}{\partial x}, \dfrac{\partial z}{\partial y}, \dfrac{\partial^2 z}{\partial x^2}\)和\(\dfrac{\partial^2 z}{\partial x \partial y}\).
+\[F(x, y, z) = z^3 - 3xyz - a^3 = 0,\]
+\[\frac{\partial F}{\partial x} = -3yz, \quad \frac{\partial F}{\partial y} = -3xz, \quad \frac{\partial F}{\partial z} = 3z^2 - 3xy.\]
+\[\frac{\partial z}{\partial x} = -\frac{\dfrac{\partial F}{\partial x}}{\dfrac{\partial F}{\partial z}} = \frac{yz}{z^2 - xy},\]
+\[\frac{\partial z}{\partial y} = -\frac{\dfrac{\partial F}{\partial y}}{\dfrac{\partial F}{\partial z}} = \frac{xz}{z^2 - xy}.\]
+
+\[\frac{\partial^2 z}{\partial x^2} = \frac{\partial}{\partial x} \left( \frac{yz}{z^2 - xy} \right) = -\frac{2xy^3z}{(z^2 - xy)^3}.\]
+\[\frac{\partial^2 z}{\partial x \partial y} = \frac{\partial}{\partial x} \left( \frac{xz}{z^2 - xy} \right) = \frac{z(z^4 - 2xyz^2 - x^2y^2)}{(z^2 - xy)^3}.\]
+
+(9)\(z = f(xz, z - y)\)，求\(\dfrac{\partial z}{\partial x}, \dfrac{\partial z}{\partial y}\)和\(\dfrac{\partial^2 z}{\partial x^2}\).
+
+令\(u = xz, v = z - y, F(x, y, z) = z - f(u, v) = 0\),
+\[\frac{\partial F}{\partial x} = -\frac{\partial f}{\partial u} z, \quad \frac{\partial F}{\partial y} = \frac{\partial f}{\partial v}, \quad \frac{\partial F}{\partial z} = 1 - \frac{\partial f}{\partial u} x - \frac{\partial f}{\partial v}.\]
+\[\frac{\partial z}{\partial x} = -\frac{\dfrac{\partial F}{\partial x}}{\dfrac{\partial F}{\partial z}} = \frac{\dfrac{\partial f}{\partial u} z}{1 - \dfrac{\partial f}{\partial u} x - \dfrac{\partial f}{\partial v}},\]
+\[\frac{\partial z}{\partial y} = -\frac{\dfrac{\partial F}{\partial y}}{\dfrac{\partial F}{\partial z}} = -\frac{\dfrac{\partial f}{\partial v}}{1 - \dfrac{\partial f}{\partial u} x - \dfrac{\partial f}{\partial v}}.\]
+\begin{align*}
+\frac{\partial^2 z}{\partial x^2} &= \frac{\partial}{\partial x} \left( \frac{\dfrac{\partial f}{\partial u} z}{1 - \dfrac{\partial f}{\partial u} x - \dfrac{\partial f}{\partial v}} \right) \\
+&= \frac{\dfrac{\partial^2 f}{\partial u^2}\left(z + x\dfrac{\partial z}{\partial x}\right)^2 + 2\dfrac{\partial^2 f}{\partial u \partial v}\left(z + x\dfrac{\partial z}{\partial x}\right) + \dfrac{\partial^2 f}{\partial v^2}\left(\dfrac{\partial z}{\partial x}\right)^2 + 2\dfrac{\partial f}{\partial u}\dfrac{\partial z}{\partial x}}{1 - x\dfrac{\partial f}{\partial u} - \dfrac{\partial f}{\partial v}}.
+\end{align*}
+
+(10)\(f(x, x + y, x + y + z) = 0\)，求\(\dfrac{\partial z}{\partial x}, \dfrac{\partial z}{\partial y}, \dfrac{\partial^2 z}{\partial x^2}\)和\(\dfrac{\partial^2 z}{\partial x \partial y}\).
+
+令\(u = x, v = x + y, w = x + y + z, F(x, y, z) = f(u, v, w) = 0\),
+\[\frac{\partial F}{\partial x} = \frac{\partial f}{\partial u} + \frac{\partial f}{\partial v} + \frac{\partial f}{\partial w}, \quad \frac{\partial F}{\partial y} = \frac{\partial f}{\partial v} + \frac{\partial f}{\partial w}, \quad \frac{\partial F}{\partial z} = \frac{\partial f}{\partial w}.\]
+\[\frac{\partial z}{\partial x} = -\frac{\dfrac{\partial F}{\partial x}}{\dfrac{\partial F}{\partial z}} = -\frac{\dfrac{\partial f}{\partial u} + \dfrac{\partial f}{\partial v} + \dfrac{\partial f}{\partial w}}{\dfrac{\partial f}{\partial w}},\]
+\[\frac{\partial z}{\partial y} = -\frac{\dfrac{\partial F}{\partial y}}{\dfrac{\partial F}{\partial z}} = -\frac{\dfrac{\partial f}{\partial v} + \dfrac{\partial f}{\partial w}}{\dfrac{\partial f}{\partial w}}.\]
+\begin{align*}
+\frac{\partial^2 z}{\partial x^2} &= \frac{\partial}{\partial x} \left( -\frac{\dfrac{\partial f}{\partial u} + \dfrac{\partial f}{\partial v} + \dfrac{\partial f}{\partial w}}{\dfrac{\partial f}{\partial w}} \right) \\
+&= -\frac{f_3^2(f_{11} + 2f_{12} + f_{22}) - 2f_3(f_1 + f_2)(f_{13} + f_{23}) + (f_1 + f_2)^2f_{33}}{f_3^3}.
+\end{align*}
+\begin{align*}
+\frac{\partial^2 z}{\partial x \partial y} &= \frac{\partial}{\partial y} \left( -\frac{\dfrac{\partial f}{\partial u} + \dfrac{\partial f}{\partial v} + \dfrac{\partial f}{\partial w}}{\dfrac{\partial f}{\partial w}} \right) \\
+&= -\frac{f_3^2(f_{12} + f_{22}) - f_2f_3f_{13} + f_2(f_1 + f_2)f_{33} - f_3(f_1 + 2f_2)f_{23}}{f_3^3}.
+\end{align*}
+
+\textbf{3.}设\(\varphi\)是可微函数，证明由\(\varphi(cx - az, cy - bz) = 0\)所确定的隐函数\(z = f(x, y)\)满足方程
+\[a\frac{\partial z}{\partial x} + b\frac{\partial z}{\partial y} = c.\]
+
+解：令\(u = cx - az, v = cy - bz, F(x, y, z) = \varphi(u, v) = 0\),
+\[\frac{\partial F}{\partial x} = c\frac{\partial \varphi}{\partial u}, \quad \frac{\partial F}{\partial y} = c\frac{\partial \varphi}{\partial v}, \quad \frac{\partial F}{\partial z} = -a\frac{\partial \varphi}{\partial u} - b\frac{\partial \varphi}{\partial v}.\]
+\[\frac{\partial z}{\partial x} = -\frac{\dfrac{\partial F}{\partial x}}{\dfrac{\partial F}{\partial z}} = \frac{c\dfrac{\partial \varphi}{\partial u}}{a\dfrac{\partial \varphi}{\partial u} + b\dfrac{\partial \varphi}{\partial v}},\]
+\[\frac{\partial z}{\partial y} = -\frac{\dfrac{\partial F}{\partial y}}{\dfrac{\partial F}{\partial z}} = \frac{c\dfrac{\partial \varphi}{\partial v}}{a\dfrac{\partial \varphi}{\partial u} + b\dfrac{\partial \varphi}{\partial v}}.\]
+\[a\frac{\partial z}{\partial x} + b\frac{\partial z}{\partial y} = \frac{ac\dfrac{\partial \varphi}{\partial u} + bc\dfrac{\partial \varphi}{\partial v}}{a\dfrac{\partial \varphi}{\partial u} + b\dfrac{\partial \varphi}{\partial v}} = c.\]
+
+\textbf{5.}求下列方程组所确定的隐函数的导数或偏导数：
+
+(2)\(\begin{cases}
+xu + yv = 0, \\
+yu + xv = 1,
+\end{cases} \quad\)求\(\dfrac{\partial u}{\partial x}, \dfrac{\partial u}{\partial y}, \dfrac{\partial^2 u}{\partial x^2}\)和\(\dfrac{\partial^2 u}{\partial x \partial y}\).
+
+解：对\(x\)求导得
+\[\begin{cases}
+u + x\dfrac{\partial u}{\partial x} + y\dfrac{\partial v}{\partial x} = 0, \\
+y\dfrac{\partial u}{\partial x} + v + x\dfrac{\partial v}{\partial x} = 0,
+\end{cases}\]
+解得
+\[\begin{cases}
+\dfrac{\partial u}{\partial x} = \dfrac{vy - ux}{x^2 - y^2}, \\
+\dfrac{\partial v}{\partial x} = \dfrac{uy - vx}{x^2 - y^2}.
+\end{cases}\]
+
+对\(y\)求导得
+\[\begin{cases}
+x\dfrac{\partial u}{\partial y} + u + y\dfrac{\partial v}{\partial y} = 0, \\
+u + y\dfrac{\partial u}{\partial y} + x\dfrac{\partial v}{\partial y} = 0,
+\end{cases}\]
+解得
+\[\begin{cases}
+\dfrac{\partial u}{\partial y} = \dfrac{vy - ux}{x^2 - y^2}, \\
+\dfrac{\partial v}{\partial y} = \dfrac{uy - vx}{x^2 - y^2}.
+\end{cases}\]
+
+\[\frac{\partial^2 u}{\partial x^2} = \frac{2u(x^2 + y^2) - 4xyv}{(x^2 - y^2)^2}.\]
+\[\frac{\partial^2 u}{\partial x \partial y} = \frac{2v(x^2 + y^2) - 4xyu}{(x^2 - y^2)^2}.\]
+
+(4)\(\begin{cases}
+x = u + v, \\
+y = u - v, \\
+z = u^2v^2,
+\end{cases} \quad\)求\(\dfrac{\partial z}{\partial x}\)和\(\dfrac{\partial z}{\partial y}\).
+
+解：对\(x\)求导得
+\[\begin{cases}
+1 = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial x}, \\
+0 = \dfrac{\partial u}{\partial x} - \dfrac{\partial v}{\partial x}. \\
+\dfrac{\partial z}{\partial x} = 2uv(v \dfrac{\partial u}{\partial x} + u \dfrac{\partial v}{\partial x}).
+\end{cases}\]
+解得
+\[\begin{cases}
+\dfrac{\partial u}{\partial x} = \dfrac{1}{2}, \\
+\dfrac{\partial v}{\partial x} = \dfrac{1}{2}. \\
+\dfrac{\partial z}{\partial x} = uv(u + v).
+\end{cases}\]
+对\(y\)求导得
+\[\begin{cases}
+0 = \dfrac{\partial u}{\partial y} + \dfrac{\partial v}{\partial y}, \\
+1 = \dfrac{\partial u}{\partial y} - \dfrac{\partial v}{\partial y}. \\
+\dfrac{\partial z}{\partial y} = 2uv(v \dfrac{\partial u}{\partial y} + u \dfrac{\partial v}{\partial y}).
+
+\end{cases}\]
+解得
+\[\begin{cases}
+\dfrac{\partial u}{\partial y} = \dfrac{1}{2}, \\
+\dfrac{\partial v}{\partial y} = -\dfrac{1}{2}. \\
+\dfrac{\partial z}{\partial y} = uv(v - u).
+\end{cases}\]
+
+(5)\(\begin{cases}
+x = e^u \cos v, \\
+y = e^u \sin v, \\
+z = u^2 + v^2,
+\end{cases} \quad\)求\(\dfrac{\partial z}{\partial x}\)和\(\dfrac{\partial z}{\partial y}\).
+
+解：对\(x\)求导得
+\[\begin{cases}
+1 = \e^u \cos v \dfrac{\partial u}{\partial x} - \e^u \sin v \dfrac{\partial v}{\partial x}, \\
+0 = \e^u \sin v \dfrac{\partial u}{\partial x} + \e^u \cos v \dfrac{\partial v}{\partial x}.
+\end{cases}\]
+解得
+\[\begin{cases}
+\dfrac{\partial u}{\partial x} = \dfrac{\cos v}{\e^u}, \\
+\dfrac{\partial v}{\partial x} = -\dfrac{\sin v}{\e^u}.
+\end{cases}\]
+对\(y\)求导得
+\[\begin{cases}
+0 = \e^u \cos v \dfrac{\partial u}{\partial y} - \e^u \sin v \dfrac{\partial v}{\partial y}, \\
+1 = \e^u \sin v \dfrac{\partial u}{\partial y} + \e^u \cos v \dfrac{\partial v}{\partial y}.
+\end{cases}\]
+解得
+\[\begin{cases}
+\dfrac{\partial u}{\partial y} = -\dfrac{\sin v}{\e^u}, \\
+\dfrac{\partial v}{\partial y} = \dfrac{\cos v}{\e^u}.
+\end{cases}\]
+\[\frac{\partial z}{\partial x} = 2u \dfrac{\partial u}{\partial x} + 2v \dfrac{\partial v}{\partial x} = \dfrac{2(u \cos v - v \sin v)}{\e^u},\]
+\[\frac{\partial z}{\partial y} = 2u \dfrac{\partial u}{\partial y} + 2v \dfrac{\partial v}{\partial y} = \dfrac{2(v \cos v + u \sin v)}{\e^u}.\]
+
+\textbf{6.}求微分：
+
+(2)\(\begin{cases}
+x + y = u + v, \\
+\dfrac{x}{y} = \dfrac{\sin u}{\sin v},
+\end{cases} \quad\)，求\(\dif u\)与\(\dif v\).
+
+解：对\(x\)和\(y\)求全微分得
+\[\begin{cases}
+\dif x + \dif y = \dif u + \dif v, \\
+\dfrac{y \dif x - x \dif y}{y^2} = \dfrac{\cos u \sin v \dif u - \sin u \cos v \dif v}{\sin^2 v}.
+\end{cases}\]
+解得
+\[\begin{cases}
+\dif u = \dfrac{\sin v + x \cos v}{x \cos v + y \cos u}\dif x + \dfrac{x \cos v - \sin u}{x \cos v + y \cos u}\dif y, \\
+\dif v = \dfrac{y \cos u - \sin v}{x \cos v + y \cos u}\dif x + \dfrac{y \cos u + \sin u}{x \cos v + y \cos u}\dif y.
+\end{cases}\]
+
+\textbf{8.}设\(f(x, y)\)具有二阶连续偏导数.在极坐标\(\begin{cases}
+x = r \cos\theta, \\
+y = r \sin\theta
+\end{cases}\)变换下，求
+\[\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}\]
+关于极坐标的表达式.
+
+解：由链式法则得
+\[\frac{\partial f}{\partial r} = \frac{\partial f}{\partial x} \cos\theta + \frac{\partial f}{\partial y} \sin\theta,\]
+\[\frac{\partial f}{\partial \theta} = -r \frac{\partial f}{\partial x} \sin\theta + r \frac{\partial f}{\partial y} \cos\theta.\]
+解得
+\[\frac{\partial f}{\partial x} = \cos\theta \frac{\partial f}{\partial r} - \frac{\sin\theta}{r} \frac{\partial f}{\partial \theta},\]
+\[\frac{\partial f}{\partial y} = \sin\theta \frac{\partial f}{\partial r} + \frac{\cos\theta}{r} \frac{\partial f}{\partial \theta}.\]
+\begin{align*}
+\frac{\partial^2 f}{\partial x^2} &= \cos\theta \frac{\partial}{\partial r} \left( \cos\theta \frac{\partial f}{\partial r} - \frac{\sin\theta}{r} \frac{\partial f}{\partial \theta} \right) - \frac{\sin\theta}{r} \frac{\partial}{\partial \theta} \left( \cos\theta \frac{\partial f}{\partial r} - \frac{\sin\theta}{r} \frac{\partial f}{\partial \theta} \right) \\
+&= \cos^2\theta \frac{\partial^2 f}{\partial r^2} - 2 \frac{\sin\theta \cos\theta}{r} \frac{\partial^2 f}{\partial r \partial \theta} + \frac{\sin^2\theta}{r^2} \frac{\partial^2 f}{\partial \theta^2} + \frac{\sin^2\theta}{r} \frac{\partial f}{\partial r} + \frac{\sin\theta \cos\theta}{r^2} \frac{\partial f}{\partial \theta}.
+\end{align*}
+\begin{align*}
+\frac{\partial^2 f}{\partial y^2} &= \sin\theta \frac{\partial}{\partial r} \left( \sin\theta \frac{\partial f}{\partial r} + \frac{\cos\theta}{r} \frac{\partial f}{\partial \theta} \right) + \frac{\cos\theta}{r} \frac{\partial}{\partial \theta} \left( \sin\theta \frac{\partial f}{\partial r} + \frac{\cos\theta}{r} \frac{\partial f}{\partial \theta} \right) \\
+&= \sin^2\theta \frac{\partial^2 f}{\partial r^2} + 2 \frac{\sin\theta \cos\theta}{r} \frac{\partial^2 f}{\partial r \partial \theta} + \frac{\cos^2\theta}{r^2} \frac{\partial^2 f}{\partial \theta^2} + \frac{\cos^2\theta}{r} \frac{\partial f}{\partial r} - \frac{\sin\theta \cos\theta}{r^2} \frac{\partial f}{\partial \theta}.
+\end{align*}
+综上可得
+\[\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = \frac{\partial^2 f}{\partial r^2} + \frac{1}{r} \frac{\partial f}{\partial r} + \frac{1}{r^2} \frac{\partial^2 f}{\partial \theta^2}.\]
+
+\textbf{9.}设二元函数\(f\)具有二阶连续偏导数.证明：通过适当线性变换
+\[\begin{cases}
+u = x + \lambda y, \\
+v = x + \mu y,
+\end{cases}\]
+可以将方程
+\[A \frac{\partial^2 f}{\partial x^2} + 2B \frac{\partial^2 f}{\partial x \partial y} + C \frac{\partial^2 f}{\partial y^2} = 0 \quad (AC - B^2 < 0)\]
+化简为
+\[\frac{\partial^2 f}{\partial u \partial v} = 0.\]
+
+解：
+\[\frac{\partial f}{\partial x} = \frac{\partial f}{\partial u} + \frac{\partial f}{\partial v},\]
+\[\frac{\partial f}{\partial y} = \lambda \frac{\partial f}{\partial u} + \mu \frac{\partial f}{\partial v}.\]
+
+\[\frac{\partial^2 f}{\partial x^2} = \frac{\partial^2 f}{\partial u^2} + 2 \frac{\partial^2 f}{\partial u \partial v} + \frac{\partial^2 f}{\partial v^2}.\]
+\[\frac{\partial^2 f}{\partial x \partial y} = \lambda \frac{\partial^2 f}{\partial u^2} + (\lambda + \mu) \frac{\partial^2 f}{\partial u \partial v} + \mu \frac{\partial^2 f}{\partial v^2}.\]
+\[\frac{\partial^2 f}{\partial y^2} = \lambda^2 \frac{\partial^2 f}{\partial u^2} + 2 \lambda \mu \frac{\partial^2 f}{\partial u \partial v} + \mu^2 \frac{\partial^2 f}{\partial v^2}.\]
+
+代入方程得
+\[(A + 2B \lambda + C \lambda^2) \frac{\partial^2 f}{\partial u^2} + [2A + 2B(\lambda + \mu) + 2C \lambda \mu] \frac{\partial^2 f}{\partial u \partial v} + (A + 2B \mu + C \mu^2) \frac{\partial^2 f}{\partial v^2} = 0.\]
+令
+\[A + 2B \lambda + C \lambda^2 = 0,\]
+\[A + 2B \mu + C \mu^2 = 0,\]
+解得
+\[\lambda = \frac{-B + \sqrt{B^2 - AC}}{A}, \quad \mu = \frac{-B - \sqrt{B^2 - AC}}{A}.\]
+则方程化简为
+\[\frac{4(AC - B^2)}{C}\frac{\partial^2 f}{\partial u \partial v} = 0,\]
+即
+\[\frac{\partial^2 f}{\partial u \partial v} = 0.\]
+
+\textbf{11.}通过自变量变换\(\begin{cases}
+u = x - 2\sqrt{y}, \\
+v = x + 2\sqrt{y}
+\end{cases}\)变换方程
+\[\frac{\partial^2 z}{\partial x^2} - y\frac{\partial^2 z}{\partial y^2} = \frac{1}{2}\frac{\partial z}{\partial y}, \quad y > 0.\]
+
+解：
+\[\frac{\partial z}{\partial x} = \frac{\partial z}{\partial u} + \frac{\partial z}{\partial v},\]
+\[\frac{\partial z}{\partial y} = -\frac{1}{\sqrt{y}} \frac{\partial z}{\partial u} + \frac{1}{\sqrt{y}} \frac{\partial z}{\partial v}.\]
+\[\frac{\partial^2 z}{\partial x^2} = \frac{\partial^2 z}{\partial u^2} + 2 \frac{\partial^2 z}{\partial u \partial v} + \frac{\partial^2 z}{\partial v^2}.\]
+\[\frac{\partial^2 z}{\partial y^2} = -\frac{1}{2y^{\frac{3}{2}}}\left(\frac{\partial z}{\partial v} - \frac{\partial z}{\partial u}\right) + \frac{1}{y}\left(\frac{\partial^2 z}{\partial u^2} - 2\frac{\partial^2 z}{\partial u \partial v} + \frac{\partial^2 z}{\partial v^2}\right).\]
+代入方程得
+\[\frac{\partial^2 z}{\partial u \partial v} = 0.\]
+
+\textbf{12.}导出新的因变量关于新的自变量的偏导数所满足的方程：
+
+(2)用\(\begin{cases}
+u = x, \\
+v = x + y
+\end{cases}\)及\(w = x + y + z\)变换方程
+\[\frac{\partial^2 z}{\partial x^2} - 2\frac{\partial^2 z}{\partial x \partial y} + \left(1 + \frac{y}{x}\right)\frac{\partial^2 z}{\partial y^2} = 0.\]
+
+解：
+\[\begin{cases}
+x = u, \\
+y = v - u, \\
+\end{cases}\]
+
+\[\frac{\partial z}{\partial x} = \frac{\partial w}{\partial x} - 1 = \frac{\partial w}{\partial u} + \frac{\partial w}{\partial v} - 1,\]
+\[\frac{\partial z}{\partial y} = \frac{\partial w}{\partial y} - 1 = \frac{\partial w}{\partial v} - 1.\]
+
+\[\frac{\partial^2 z}{\partial x^2} = \frac{\partial^2 w}{\partial u^2} + 2 \frac{\partial^2 w}{\partial u \partial v} + \frac{\partial^2 w}{\partial v^2},\]
+\[\frac{\partial^2 z}{\partial x \partial y} = \frac{\partial^2 w}{\partial u \partial v} + \frac{\partial^2 w}{\partial v^2},\]
+\[\frac{\partial^2 z}{\partial y^2} = \frac{\partial^2 w}{\partial v^2}.\]
+代入方程得
+\[\frac{\partial^2 w}{\partial u^2} + \frac{v - u}{u} \frac{\partial^2 w}{\partial v^2} = 0.\]
+
+(3)用\(\begin{cases}
+u = x + y, \\
+v = \dfrac{y}{x}
+\end{cases}\)及\(w = \dfrac{z}{x}\)变换方程
+\[\frac{\partial^2 z}{\partial x^2} - 2\frac{\partial^2 z}{\partial x \partial y} + \frac{\partial^2 z}{\partial y^2} = 0.\]
+
+解：
+\[\begin{cases}
+x = \dfrac{u}{v + 1}, \\
+y = \dfrac{uv}{v + 1}, \\
+z = \dfrac{u}{v + 1} w,
+\end{cases}\]
+\[\frac{\partial z}{\partial x} = w + x \frac{\partial w}{\partial u} - v \frac{\partial w}{\partial v},\]
+\[\frac{\partial z}{\partial y} = x \frac{\partial w}{\partial u} + \frac{\partial w}{\partial v}.\]
+
+\[\frac{\partial^2 z}{\partial x^2} = 2 \frac{\partial w}{\partial u} + x \frac{\partial^2 w}{\partial u^2} - 2v \frac{\partial^2 w}{\partial u \partial v} + \frac{v^2}{x} \frac{\partial^2 w}{\partial v^2},\]
+\[\frac{\partial^2 z}{\partial x \partial y} = 2 \frac{\partial w}{\partial u} + x \frac{\partial^2 w}{\partial u^2} + (1 - v) \frac{\partial^2 w}{\partial u \partial v} - \frac{v}{x} \frac{\partial^2 w}{\partial v^2},\]
+\[\frac{\partial^2 z}{\partial y^2} = x \frac{\partial^2 w}{\partial u^2} + 2 \frac{\partial^2 w}{\partial u \partial v} + \frac{1}{x} \frac{\partial^2 w}{\partial v^2}.\]
+代入方程化简得
+\[-2\frac{\partial w}{\partial u} + \frac{(v + 1)^2}{x} \frac{\partial^2 w}{\partial v^2} = 0.\]
+代入\(x = \dfrac{u}{v + 1}\)得
+\[2u\frac{\partial w}{\partial u} - (v + 1)^3 \frac{\partial^2 w}{\partial v^2} = 0.\]
+
+
+\textbf{14.}设二元函数\(f(x, y):\RR^2 \to \RR\)具有连续偏导数，证明：存在一对一的连续的向量值函数\(G(t):\RR \to \RR^2\)，使得
+\[f \circ G \equiv \text{常数}.\]
+
+解：(1)\(f\)为常数函数时，取任意一对一的连续向量值函数\(G(t)\)即可.
+
+(2)若\(f\)非常数函数，则存在点\((x_0, y_0)\)，使得\(\nabla f(x_0, y_0) \neq 0\).不妨设\(f_y(x_0, y_0) \neq 0\).由隐函数定理可知，在点\((x_0, y_0)\)的某邻域\(O(x_0, r)\)内，方程
+\[f(x, y) - f(x_0, y_0) = 0\]
+唯一确定连续可导且单调的隐函数\(y = g(x), x \in O(x_0, r)\)，使得
+\[f(x, g(x)) - f(x_0, y_0) = 0.\]
+取
+\[G(t) = (x(t), g(x(t)))\]
+即可满足条件，其中\(x(t)\)为\(O(x_0, r)\)内任意一对一的连续函数.
+\end{document}
