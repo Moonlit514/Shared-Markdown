@@ -1,0 +1,10 @@
+{
+  "cssTheme": "Tokyo Night",
+  "enabledCssSnippets": [
+    "proof",
+    "Theorem",
+    "theorem"
+  ],
+  "baseFontSizeAction": true,
+  "baseFontSize": 18
+}
