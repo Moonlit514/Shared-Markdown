@@ -2,7 +2,7 @@
 
 .callout[data-callout="theorem"] {
     /* 主色调：202, 93, 245 (洋红色) */
-    --callout-color: 245, 248, 220; 
+    --callout-color: 255, 153, 51; 
     /* 图标：铅笔和尺子 */
     --callout-icon: lucide-pi;
     
@@ -19,5 +19,5 @@
 /* （可选）PROOF标题的样式 */
 .callout[data-callout="theorem"] .callout-title {
     font-weight: bold; /* 标题加粗 */
-    color: rgb(var(--callout-color)); /* 标题颜色与 Callout 主色一致 */
+    color: rgb(var(--callout-color));
 }
