@@ -24,9 +24,6 @@ conway/conway
 *.run.xml
 *.bcf
 
-# 最终 PDF 文件
-*.pdf
-
 # 编译生成文件
 *.o
 *.a
