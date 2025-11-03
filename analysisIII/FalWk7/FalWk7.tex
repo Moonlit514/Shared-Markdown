@@ -1,0 +1,240 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{bm}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dif}{\mathrm{d}}
+
+\begin{document}
+\section*{12.5}
+\textbf{1.}求下列曲线在指定点处的切线与法平面方程：
+
+(2)\(\begin{cases}
+x = t - \sin t, \\
+y = 1 - \cos t, \\
+z = 4 \sin\dfrac{t}{2},
+\end{cases} \quad\)在\(t = \dfrac{\pi}{2}\)对应的点.
+\[r\left(\dfrac{\pi}{2}\right) = \left(\dfrac{\pi}{2} - 1, 1, 2\sqrt{2}\right), \quad r'\left(\dfrac{\pi}{2}\right) = \left(1 - \cos\dfrac{\pi}{2}, \sin\dfrac{\pi}{2}, 2\cos\dfrac{\pi}{4}\right) = \left(1, 1, \sqrt{2}\right).\]
+\[\text{切线}:x - \frac{\pi}{2} + 1 = y - 1 = \frac{z - 2\sqrt{2}}{\sqrt{2}}.\]
+\[\text{法平面}: (x - \frac{\pi}{2} + 1) + (y - 1) + \sqrt{2}(z - 2\sqrt{2}) = 0 \Rightarrow x + y + \sqrt{2}z = \frac{\pi}{2} + 4.\]
+
+(3)\(\begin{cases}
+x + y + z = 0, \\
+x^2 + y^2 + z^2 = 6.
+\end{cases} \quad\)在\((1, -2, 1)\)点.
+
+设\(F(x, y, z) = x + y + z\)，\(G(x, y, z) = x^2 + y^2 + z^2 - 6\)，则
+\[\frac{\partial(F, G)}{\partial(y, z)} = \begin{vmatrix}
+1 & 1 \\
+2y & 2z
+\end{vmatrix} = 2z - 2y, \quad \frac{\partial(F, G)}{\partial(z, x)} = \begin{vmatrix}
+1 & 1 \\
+2z & 2x
+\end{vmatrix} = 2x - 2z, \quad \frac{\partial(F, G)}{\partial(x, y)} = \begin{vmatrix}
+1 & 1 \\
+2x & 2y
+\end{vmatrix} = 2y - 2x\]
+因此
+\[\left.\frac{\partial(F, G)}{\partial(y, z)}\right|_{(1, -2, 1)} = 6, \quad \left.\frac{\partial(F, G)}{\partial(z, x)}\right|_{(1, -2, 1)} = 0, \quad \left.\frac{\partial(F, G)}{\partial(x, y)}\right|_{(1, -2, 1)} = -6.\]
+\[\text{切线}: \begin{cases}
+x + z = 2, \\
+y = -2,
+\end{cases}\]
+\[\text{法平面}: x - z = 0.\]
+
+(4)\(\begin{cases}
+x^2 + y^2 = R^2, \\
+x^2 + z^2 = R^2,
+\end{cases} \quad\)在\(\left(\dfrac{R}{\sqrt{2}}, \dfrac{R}{\sqrt{2}}, \dfrac{R}{\sqrt{2}}\right)\)点.
+
+若\(R = 0\)则点为原点，切线与法平面均无意义，故设\(R \neq 0\).
+\[\frac{\partial(F, G)}{\partial(y, z)} = \begin{vmatrix}
+2y & 0 \\
+0 & 2z
+\end{vmatrix} = 4yz, \quad \frac{\partial(F, G)}{\partial(z, x)} = \begin{vmatrix}
+0 & 2x \\
+2z & 0
+\end{vmatrix} = -4xz, \quad \frac{\partial(F, G)}{\partial(x, y)} = \begin{vmatrix}
+2x & 2y \\
+2x & 0
+\end{vmatrix} = -4xy\]
+因此
+\[\left.\frac{\partial(F, G)}{\partial(y, z)}\right|_{\left(\frac{R}{\sqrt{2}}, \frac{R}{\sqrt{2}}, \frac{R}{\sqrt{2}}\right)} = 2R^2, \quad \left.\frac{\partial(F, G)}{\partial(z, x)}\right|_{\left(\frac{R}{\sqrt{2}}, \frac{R}{\sqrt{2}}, \frac{R}{\sqrt{2}}\right)} = -2R^2, \quad \left.\frac{\partial(F, G)}{\partial(x, y)}\right|_{\left(\frac{R}{\sqrt{2}}, \frac{R}{\sqrt{2}}, \frac{R}{\sqrt{2}}\right)} = -2R^2.\]
+\[\text{切线}: x - \frac{R}{\sqrt{2}} = \frac{R}{\sqrt{2}} - y = \frac{R}{\sqrt{2}} - z.\]
+\[\text{法平面}: (x - \frac{R}{\sqrt{2}}) - (y - \frac{R}{\sqrt{2}}) - (z - \frac{R}{\sqrt{2}}) = 0 \Rightarrow x - y - z + \frac{R}{\sqrt{2}} = 0.\]
+
+\textbf{3.}求曲线\(x = \sin^2 t, y = \sin t \cos t, z = \cos^2 t\)在\(t = \dfrac{\pi}{2}\)所对应点处的切线的方向余弦.
+
+解：
+\[r\left(\dfrac{\pi}{2}\right) = \left(1, 0, 0\right), \quad r'\left(\dfrac{\pi}{2}\right) = \left(0, -1, 0\right).\]
+\[\text{方向余弦}: (0, -1, 0).\]
+
+\textbf{6.}求椭球面\(x^2 + 2y^2 + 3z^2 = 498\)的平行于平面\(x + 3y + 5z = 7\)的切平面.
+
+解：设\(F(x, y, z) = x^2 + 2y^2 + 3z^2 - 498\)，则在\((x_0, y_0, z_0)\)处的切平面方程为
+\[F_x(x_0, y_0, z_0)(x - x_0) + F_y(x_0, y_0, z_0)(y - y_0) + F_z(x_0, y_0, z_0)(z - z_0) = 0.\]
+由于切平面与平面\(x + 3y + 5z = 7\)平行，故存在常数\(k\)使得
+\[F_x(x_0, y_0, z_0) = k, \quad F_y(x_0, y_0, z_0) = 3k, \quad F_z(x_0, y_0, z_0) = 5k.\]
+即
+\[2x_0 = k, \quad 4y_0 = 3k, \quad 6z_0 = 5k.\]
+解得
+\[x_0 = \frac{k}{2}, \quad y_0 = \frac{3k}{4}, \quad z_0 = \frac{5k}{6}.\]
+将其代入椭球面方程得
+\[\left(\frac{k}{2}\right)^2 + 2\left(\frac{3k}{4}\right)^2 + 3\left(\frac{5k}{6}\right)^2 = 498.\]
+解得
+\[k = \pm 12.\]
+当\(k = 12\)时，\((x_0, y_0, z_0) = (6, 9, 10)\)，切平面方程为
+\[(x - 6) + 3(y - 9) + 5(z - 10) = 0 \Rightarrow x + 3y + 5z = 96.\]
+当\(k = -12\)时，\((x_0, y_0, z_0) = (-6, -9, -10)\)，切平面方程为
+\[(x + 6) + 3(y + 9) + 5(z + 10) = 0 \Rightarrow x + 3y + 5z = -96.\]
+
+\textbf{9.}设椭球面\(2x^2 + 3y^2 + z^2 = 6\)上点\(P(1, 1, 1)\)处指向外侧的法向量为\(\bm{n}\)，求函数\(u = \dfrac{\sqrt{6x^2 + 8y^2}}{z}\)在点\(P\)处沿方向\(\bm{n}\)的方向导数.
+
+解：设\(F(x, y, z) = 2x^2 + 3y^2 + z^2 - 6\)，则
+\[\operatorname{grad} F(1, 1, 1) = (4, 6, 2).\]
+取\(\bm{n} = (2, 3, 1)\)，则
+\[\operatorname{grad} u(1, 1, 1) = \left(\frac{6}{\sqrt{6 + 8}}, \frac{8}{\sqrt{6 + 8}}, -\frac{\sqrt{6 + 8}}{1^2}\right) = \left(\frac{6}{\sqrt{14}}, \frac{8}{\sqrt{14}}, -\sqrt{14}\right).\]
+\[\frac{\partial u}{\partial \bm{n}} = \operatorname{grad} u \cdot \bm{n} = \left(\frac{6}{\sqrt{14}}, \frac{8}{\sqrt{14}}, -\sqrt{14}\right) \cdot (2, 3, 1) = \frac{12 + 24 - 14}{\sqrt{14}} = \frac{22}{\sqrt{14}}.\]
+
+\textbf{11.}证明：曲线
+\[\begin{cases}
+x = a\e^t \cos t, \\
+y = a\e^t \sin t, \\
+z = a\e^t
+\end{cases}\]
+与锥面\(x^2 + y^2 = z^2\)的各母线相交的角度相同.
+
+解：注意到曲线在锥面上.
+\[r(t) = (a\e^t \cos t, a\e^t \sin t, a\e^t), \quad r'(t) = \left(a\e^t(\cos t - \sin t), a\e^t(\sin t + \cos t), a\e^t\right).\]
+在曲线上任意一点\(P(t)\)，存在一条通过该点的母线，其方向向量为从原点到\(P(t)\)的向量.于是曲线与母线在\(P(t)\)处的夹角\(\theta(t)\)满足
+\[\cos \theta(t) = \frac{r(t) \cdot r'(t)}{|r(t)||r'(t)|} = \frac{2a^2 \e^{2t}}{\sqrt{2} a \e^{t} \sqrt{3} a \e^{t}} = \frac{\sqrt{6}}{3},\]
+与\(t\)无关，故曲线与锥面各母线相交的角度相同.
+
+\section*{12.6}
+\textbf{1.}讨论下列函数的极值：
+
+(2)\(f(x, y) = x^4 + y^4 - x^2 - 2xy - y^2.\)
+
+解：\[f_x = 4x^3 - 2x - 2y, \quad f_y = 4y^3 - 2x - 2y.\]
+解方程组
+\[\begin{cases}
+4x^3 - 2x - 2y = 0, \\
+4y^3 - 2x - 2y = 0,
+\end{cases}\]
+得驻点\((0, 0), (1, 1), (-1, -1)\).
+\[f_{xx} = 12x^2 - 2, \quad f_{yy} = 12y^2 - 2, \quad f_{xy} = -2.\]
+\begin{itemize}
+\item 在\((1, 1)\)处，\(H =  96 > 0\)，且\(f_{xx}(1, 1) = 10 > 0\)，有极小值，极小值为
+\[f(1, 1) = -2.\]
+\item 在\((-1, -1)\)处，\(H =  96 > 0\)，且\(f_{xx}(-1, -1) = 10 > 0\)，有极小值，极小值为
+\[f(-1, -1) = 2.\]
+\item 在\((0, 0)\)处，\(H =  0\)，无法判定. 但在\(y = x, 0 < x < 1\)上，\(f(x, -x) = 2x^2(x^2 - 2) < 0\)；在\(y = -x\)上\(f(x, -x) = -2x^4 < 0(x \neq 0)\). 因此\((0, 0)\)是鞍点.
+\end{itemize}
+
+(4)\(f(x, y) = (y - x^2)(y - x^4).\)
+
+解：
+\[f_x =  -2x y - 4x^3y + 6x^5, \quad f_y = 2y - x^2 - x^4.\]
+解方程组
+\[\begin{cases}
+-2x y - 4x^3y + 6x^5 = 0, \\
+2y - x^2 - x^4 = 0,
+\end{cases}\]
+得驻点\((0, 0), (1, 1), (-1, 1), \left(\dfrac{1}{\sqrt{2}}, \dfrac{3}{8}\right), \left(-\dfrac{1}{\sqrt{2}}, \dfrac{3}{8}\right)\).
+\[f_{xx} = -2y - 12x^2y + 30x^4, \quad f_{yy} = 2, \quad f_{xy} = -2x - 4x^3.\]
+\begin{itemize}
+\item 在\((1, 1)\)处，\(H = -4 < 0\)，是鞍点.
+\item 在\((-1, 1)\)处，\(H = -4 < 0\)，是鞍点.
+\item 在\(\left(\dfrac{1}{\sqrt{2}}, \dfrac{3}{8}\right)\)处，\(H = 1 > 0\)，且\(f_{xx} = \dfrac{9}{2} > 0\)，是极小值点.
+\item 在\(\left(-\dfrac{1}{\sqrt{2}}, \dfrac{3}{8}\right)\)处，\(H = 1 > 0\)，且\(f_{xx} = \dfrac{9}{2} > 0\)，是极小值点.
+\item 在\((0, 0)\)处，\(H = 0\)，无法判定. 但在\(y = 0\)上，\(f(x, 0) = x^6 > 0\)；在\(y = \dfrac{1}{2}x^2\)上，\((0, 0)\)附近，\(f\left(x, \dfrac{1}{2}x^2\right) = -\dfrac{1}{4} + \dfrac{1}{2}x^6 < 0\).因此\((0, 0)\)是鞍点.
+\end{itemize}
+
+(5)\(f(x, y) = xy + \dfrac{a^3}{x} + \dfrac{b^3}{y}\)，其中常数\(a > 0, b > 0\).
+
+解：
+\[f_x = y - \frac{a^3}{x^2}, \quad f_y = x - \frac{b^3}{y^2}.\]
+解方程组
+\[\begin{cases}
+y - \dfrac{a^3}{x^2} = 0, \\
+x - \dfrac{b^3}{y^2} = 0,
+\end{cases}\]
+得驻点\(\left(\dfrac{a^2}{b}, \dfrac{b^2}{a}\right)\).
+\[f_{xx} = \frac{2a^3}{x^3}, \quad f_{yy} = \frac{2b^3}{y^3}, \quad f_{xy} = 1.\]
+在\(\left(\dfrac{a^2}{b}, \dfrac{b^2}{a}\right)\)处，
+\[H = \frac{4a^3b^3}{a^3b^3} - 1 = 3 > 0,\]
+且
+\[f_{xx} = \frac{2b^3}{a^3} > 0,\]
+故\(\left(\dfrac{a^2}{b}, \dfrac{b^2}{a}\right)\)是极小值点.
+
+(6)\(f(x, y, z) = x + \dfrac{y}{x} + \dfrac{z}{y} + \dfrac{2}{z}(x, y, z > 0)\).
+
+解：
+\[f_x = 1 - \frac{y}{x^2}, \quad f_y = \frac{1}{x} - \frac{z}{y^2}, \quad f_z = \frac{1}{y} - \frac{2}{z^2}.\]
+解方程组
+\[\begin{cases}
+1 - \dfrac{y}{x^2} = 0, \\
+\dfrac{1}{x} - \dfrac{z}{y^2} = 0, \\
+\dfrac{1}{y} - \dfrac{2}{z^2} = 0,
+\end{cases}\]
+得驻点\(\left(2^{\frac{1}{4}}, 2^{\frac{1}{2}}, 2^{\frac{3}{4}}\right)\).由基本不等式
+\[f(x, y, z) \geq 4\sqrt[4]{\frac{2y^2z^2}{x^2y^2z^2}} = 4\sqrt[4]{2},\]
+当且仅当\(x = \dfrac{y}{x} = \dfrac{z}{y} = \dfrac{2}{z}\)，即\((x, y, z) = \left(2^{\frac{1}{4}}, 2^{\frac{1}{2}}, 2^{\frac{3}{4}}\right)\)时取等号.故该点为极小值点.
+
+\textbf{3.}证明：函数\(f(x, y) = (1 + \e^y) \cos x - y \e^y\)有无穷多个极大值点，但无极小值点.
+
+解：
+\[f_x = -(1 + \e^y) \sin x, \quad f_y = \e^y \cos x - \e^y - y \e^y = \e^y(\cos x - y - 1).\]
+解方程组
+\[\begin{cases}
+-(1 + \e^y) \sin x = 0, \\
+\e^y(\cos x - y - 1) = 0,
+\end{cases}\]
+得驻点\((2k\pi, 0), ((2k + 1)\pi, -2), k \in \mathbb{Z}\).
+\[f_{xx} = -(1 + \e^y) \cos x, \quad f_{yy} = \e^y(\cos x - y - 2), \quad f_{xy} = -\e^y \sin x.\]
+\begin{itemize}
+\item 在\((2k\pi, 0)\)处，\(H = -(1 + 1)(1 - 2) - 0 = 2 > 0\)，且
+\[f_{xx} = -(1 + 1) = -2 < 0,\]
+有极大值，极大值为
+\[f(2k\pi, 0) = 2.\]
+\item 在\(((2k + 1)\pi, -2)\)处，\(H = -(1 + \e^{-2})(\e^{-2} - (-2) - 2) - 0 = -(1 + \e^{-2})(\e^{-2} + 0) < 0\)，是鞍点.
+\end{itemize}
+因此函数有无穷多个极大值点，但无极小值点.
+
+\textbf{4.}求函数\(f(x, y) = \sin x + \sin y - \sin(x + y)\)在闭区域
+\[D = \{(x, y)|x \geq 0, y \geq 0, x + y \leq 2\pi\}\]
+上的最大值与最小值.
+
+解：
+\begin{align*}
+f(x, y) &= 2\sin\left(\frac{x + y}{2}\right)\left[\cos\left(\frac{x - y}{2}\right) - \cos\left(\frac{x + y}{2}\right)\right] \\
+&= 4\sin\left(\frac{x + y}{2}\right) \sin\left(\frac{x}{2}\right) \sin\left(\frac{y}{2}\right)
+\end{align*}
+令\(u = \dfrac{x}{2}, v = \dfrac{y}{2}\)，则\(u \geq 0, v \geq 0, u + v \leq \pi\).
+\[f(x, y) = 4\sin(u + v)\sin u \sin v \geq 0.\]
+当且仅当
+\begin{itemize}
+\item \(\sin u = 0, x = 0\).
+\item \(\sin v = 0, y = 0\).
+\item \(\sin (u + v) = 0, x + y = 2\pi\).
+\end{itemize}
+时取等号，故最小值为0，在边界上取到.
+
+在区域内部，解方程组
+\[\begin{cases}
+f_x = \cos x - \cos(x + y) = 0, \\
+f_y = \cos y - \cos(x + y) = 0,
+\end{cases}\]
+得驻点\(\left(\dfrac{\pi}{3}, \dfrac{\pi}{3}\right)\).
+\[f_{xx} = -\sin x + \sin(x + y), \quad f_{yy} = -\sin y + \sin(x + y), \quad f_{xy} = \sin(x + y).\]
+在\(\left(\dfrac{\pi}{3}, \dfrac{\pi}{3}\right)\)处，
+\[H = \left(-\frac{\sqrt{3}}{2} - \frac{\sqrt{3}}{2}\right)\left(-\frac{\sqrt{3}}{2} - \frac{\sqrt{3}}{2}\right) - \left(\frac{\sqrt{3}}{2}\right)^2 = \frac{39}{4} > 0, f_{xx} < 0,\]
+有极大值，极大值为
+\[f\left(\frac{\pi}{3}, \frac{\pi}{3}\right) = \frac{3\sqrt{3}}{2}.\]
+
+\end{document} 
