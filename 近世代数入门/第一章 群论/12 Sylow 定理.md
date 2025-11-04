@@ -109,7 +109,7 @@ $$\nu_p(p^\alpha - k) = \nu_p(p^s) + \nu_p(p^{\alpha-s} - j) = s + 0 = s = \nu_p
 >设 $X$ 是由群 $G$ 所有 $\mathrm{Sylow}$ $p-$子群构成的集合，即 $X=\{ Q\leqslant G \mid Q 是 G的Sylow \ p-子群 \}$ ，任取 $P \in X$，定义如下映射 $$\displaylines{f:P \times X \to X\\(g,Q)\longmapsto g.Q:=gQg^{-1}}$$则 $f$ 决定了群 $P$ 在 $X$ 上的一个作用 .
 >断言这个群作用的不动点集 $$X_{0}=\{ Q\in X\mid xQx^{-1}=Q,\forall x \in P\}$$只有一个元素 $P$ .
 >假设 $Q \in X_{0}$，则有 $xQx^{-1}=Q,\forall x \in P$，即 $P \subset N_{G}(Q)$ .
->由于 $P,Q$ 是 $G$ 的 $\mathrm{Sylow}$ $p-$子群，自然也是 $N_{G}(Q)$ 的 $\mathrm{Sylow}$ $p-$子群(*因为 $|N_G(Q)|$ 整除 $|G|$，且 $Q$ 的阶是 $p$ 的最高幂次，又 $Q\leqslant N_{G}(Q)$*)，因此也在 $N_{G}(Q)$ 中互为共轭，由于 $Q \triangleleft N_{G}(Q)$ ，由 Corollary 1.12.1 可知 若正规则只有一个 $\mathrm{Sylow} p-$子群，从而 $P=Q$ .
+>由于 $P,Q$ 是 $G$ 的 $\mathrm{Sylow}$ $p-$子群，自然也是 $N_{G}(Q)$ 的 $\mathrm{Sylow}$ $p-$子群(*因为 $|N_G(Q)|$ 整除 $|G|$，且 $Q$ 的阶是 $p$ 的最高幂次，又 $Q\leqslant N_{G}(Q)$*)，因此也在 $N_{G}(Q)$ 中互为共轭，由于 $Q \triangleleft N_{G}(Q)$ ，由 Corollary 1.12.1 可知若正规则只有一个 $\mathrm{Sylow}$ $p-$子群，从而 $P=Q$ .
 >即 $|X_{0}|=1$，于是 $|X| \equiv |X_{0}|=1 \pmod{p}$ (*由 Property 1.12.2*) 
 
 >[!Theorem] Corollary 1.12.2
