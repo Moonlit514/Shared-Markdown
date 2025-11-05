@@ -117,7 +117,7 @@ $$\nu_p(p^\alpha - k) = \nu_p(p^s) + \nu_p(p^{\alpha-s} - j) = s + 0 = s = \nu_p
 
 >[!proof]+
 >设 $X$ 是由群 $G$ 所有 $\mathrm{Sylow}$ $p-$子群构成的集合，即 $X=\{ Q\leqslant G \mid Q 是 G的Sylow \ p-子群 \}$.  任取 $P \in X$ .
->由 $G$ 的所有的 $\mathrm{Sylow}$ $p-$子群彼此共轭知，$X$ 等于 $P$ 的 $G-$轨道，并且易知 $P$ 在 $G$ 中的稳定子群是正规化子 $N_{G}(P)$ ，即$X = \mathcal{O} _{G}(P)= \{ gPg^{-1} \mid g \in G \}$,$Stab_G(P) = N_G(P)$ . 故有
+>由 $G$ 的所有的 $\mathrm{Sylow}$ $p-$子群彼此共轭知，$X$ 等于 $P$ 的 $G-$轨道，并且易知 $P$ 在 $G$ 中的稳定子群是正规化子 $N_{G}(P)$ ，即$X = \mathcal{O} _{G}(P)= \{ gPg^{-1} \mid g \in G \}$,$Stab_G(P) = N_G(P)$(*在 Theorem 1.12.3 证明中的群作用下*) . 故有
 >$$|X|=|\mathcal{O}_{P}|=[G:Stab_G(P)]=[G:N_{G}(P)]$$
 又由 $P \subseteq N_{G}(P)$ ，得到$$[G:P]=[G:N_{G}(P)][N_{G}(P):P]=\frac{|G|}{|P|}=m$$得到$|X| \big|m$ .
  
