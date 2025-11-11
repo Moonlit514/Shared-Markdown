@@ -1,13 +1,3 @@
-# 数据结构和算法
-
-# analysisIII
-
-# conway
-conway/doc
-conway/conway
-
-# mandelbrot
-
 # LaTeX 编译生成的中间文件
 *.aux
 *.log
@@ -36,5 +26,20 @@ conway/conway
 # 编辑器临时文件
 *.swp
 *~
+
+# 最终 PDF 文件
+*.pdf
+
+# 数据结构和算法
+!数据结构和算法/Data structures and algorithm analysis in C++.pdf
+!数据结构和算法/《算法导论》第三版英文版.pdf
+
+# analysisIII
+
+# conway
+conway/doc
+conway/conway
+
+# mandelbrot
 
 *.Zone.Identifier
