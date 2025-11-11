@@ -64,6 +64,8 @@ $$\nu_p(p^\alpha - k) = \nu_p(p^s) + \nu_p(p^{\alpha-s} - j) = s + 0 = s = \nu_p
 >从而 $p^r | m \Leftrightarrow \displaystyle p^r | \binom{p^\alpha m}{p^\alpha}$ .
 
 
+
+
 >[!Theorem] Theorem 1.12.1 $\mathrm{Sylow}$第一定理
 >设 $G$ 是有限群，若存在正整数 $k$ 和素数 $p$ 满足 $p^{k} \big||G|$，则 $G$ 中一定存在一个阶为 $p^{k}$ 的子群 .
  
@@ -80,6 +82,14 @@ $$\nu_p(p^\alpha - k) = \nu_p(p^s) + \nu_p(p^{\alpha-s} - j) = s + 0 = s = \nu_p
 因此 $p^k \mid |G_{A_{0}}|$ 故 $p^k \leqslant |G_{A_{0}}|$。注意在 $G_{A_{0}}$ 的作用下之于 $A_{0}$ 内的两个元素 $a$ 和 $ga$ 可能不同，所以 $|A_{0}| \geqslant |G_{A_{0}}|$。由上述 $p^k \leqslant |G_{A_{0}}|$ 和 $p^k = |A| \geqslant |G_{A_{0}}|$ 两结论可知 $|G_{A_{0}}| = p^k$ ，$G_{A_{0}}$ 即为所求的群。
 
 
+>[!Theorem] Corollary 1.12.1 $\mathrm{Cauchy}$ 定理
+>设 $G$ 是有限群，$p$ 是素数且 $p\big| ||G$，则 $G$ 中存在阶为 $p$ 的元素 .
+
+>[!proof]+
+>由 $\mathrm{Sylow}$ 第一定理，$G$ 有 $\mathrm{Sylow}$ $p$-子群 $H$，任取 $e \ne x \in H$，则 $|x| \big||H|$ ，不妨设 $|x|=p^{r}$，则 $|x^{r-1}|=p$ .
+
+
+关于 $\mathrm{Sylow}$ $p-$子群的个数已经它们的关系，有下面的定理：
 >[!Theorem] Theorem 1.12.2 $\mathrm{Sylow}$第二定理
 >设有限群 $G$ 的阶为 $p^l m$，其中 $p$ 为素数，$l$ 是正整数且 $(p, m) = 1$。若 $P$ 为 $G$ 的一个 $\mathrm{Sylow}$ $p$-子群，则 $G$ 的任一阶为 $p^k$ ($k \leqslant l$) 的子群 $H$ 一定包含在一个与 $P$ 共轭的 $\mathrm{Sylow}$ $p$-子群中  .
 
@@ -92,14 +102,14 @@ $$\nu_p(p^\alpha - k) = \nu_p(p^s) + \nu_p(p^{\alpha-s} - j) = s + 0 = s = \nu_p
 >存在 $gP \in X$ 使得对任意 $h \in H$，均有 $h.gP=hgP=gP$ .
 >从而可知，对任意 $h \in H$ 有 $h \in g Pg^{-1}$，即 $H \subset gPg^{-1}$ .
 
->[!Theorem] Corollary 1.12.1
+>[!Theorem] Corollary 1.12.2
 >(1) 群 $G$ 中 的任意两个 $\mathrm{Sylow}$ $p-$子群共轭
 >(2) 群 $G$ 中有唯一的 $\mathrm{Sylow}$ $p-$子群 $P$ $\Leftrightarrow$  $G$ 中的 $\mathrm{Sylow}$ $p-$子群 $P \triangleleft G$ .
 
 该推论是 $\mathrm{Sylow}$ 第二定理的一种特殊情形 。
 
 >[!note] Def 1.12.3 正规化子
->设 $H$ 是群 $G$ 的任一子群，我们令 $$N_G(H) := \{g \in G \mid gHg^{-1} = H\}$$则 $N_G(H)$ 也是 $G$ 的一个子群且 $H \subset N_G(H)$。进一步，$H < N_G(H)$。通常，我们将 $N_G(H)$ 称为为 $H$ 在 $G$ 中的**正规化子**。
+>设 $H$ 是群 $G$ 的任一子群，我们令 $$N_G(H) := \{g \in G \mid gHg^{-1} = H\}$$则 $N_G(H)$ 也是 $G$ 的一个子群且 $H \subset N_G(H)$。进一步，$H \leqslant N_G(H)$。通常，我们将 $N_G(H)$ 称为为 $H$ 在 $G$ 中的**正规化子**。
 
 
 >[!Theorem] Theorem 1.12.3 $\mathrm{Sylow}$ 第三定理
