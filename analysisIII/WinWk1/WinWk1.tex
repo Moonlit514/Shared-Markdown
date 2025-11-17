@@ -1,0 +1,53 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{bm}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dif}{\mathrm{d}}
+
+\begin{document}
+\section*{13.1}
+\textbf{2.}设函数\(f(x, y)\)在矩形\(D = [0, \pi] \times [0, 1]\)上有界，而且除了曲线段\(y = \sin x, 0 \leq x \leq \pi\)外，\(f(x, y)\)在\(D\)上其他点连续.证明\(f\)在\(D\)上可积.
+
+证明：设\(|f(x, y)| \leq M, A = \{(x, y)|y = \sin x, 0 \leq x \leq \pi\}\).\(\forall \varepsilon > 0, \exists\)开矩形\(R_1, R_2, \cdots, R_n\)满足
+\[A \subseteq \bigcup_{i = 1}^{n} R_i \quad \text{且} \quad \sum_{i = 1}^{n} S(R_i) < \frac{\varepsilon}{4M}.\]
+令开集\(R = \bigcup\limits_{i = 1}^{n} R_i\)，则\(S(R) < \dfrac{\varepsilon}{4M}\).则\(f\)在闭集\(D \setminus A\)上连续从而一致连续，故\(\exists \delta > 0\)使得\(\forall (x_1, y_1), (x_2, y_2) \in D \setminus A\)满足\(\left\|(x_1, y_1) - (x_2, y_2)\right\| < \delta\)，有
+\[|f(x_1, y_1) - f(x_2, y_2)| < \frac{\varepsilon}{2\pi}.\]
+其中\(M_R = \sup f(R), m_R = \inf f(R)\).
+
+设区域\(D\)的划分\(P\)满足每个子矩形的直径小于\(\delta\)且与\(R\)相交的子矩形面积总和小于\(\dfrac{\varepsilon}{4M}\)，设集合\(S_1\)为与\(R\)相交的子矩形全体，\(S_2\)为与\(R\)交集为空的子矩形全体，则
+\[S - s = \sum_{R \in S_1} (M_R - m_R) S(R) + \sum_{R \in S_2} (M_R - m_R) S(R).\]
+由\(|f(x, y)| \leq M, \sum\limits_{R \in S_1} (M_R - m_R) S(R) \leq 2M \cdot \dfrac{\varepsilon}{4M} = \dfrac{\varepsilon}{2}, \sum\limits_{R \in S_2} (M_R - m_R) S(R) \leq \dfrac{\varepsilon}{2\pi} \cdot \pi = \dfrac{\varepsilon}{2}\).于是
+\[S - s \leq \dfrac{\varepsilon}{2} + \dfrac{\varepsilon}{2} = \varepsilon.\]
+即\(f\)在\(D\)上可积.
+
+\textbf{4.}设一元函数\(f(x)\)在\([a, b]\)上可积，\(D = [a, b] \times [c, d]\).定义二元函数
+\[F(x, y) = f(x), \quad (x, y) \in D.\]
+证明\(F(x, y)\)在\(D\)上可积.
+
+证明：由\(f(x)\)在\([a, b]\)上可积，\(\forall \varepsilon > 0, \exists\)分割\(P_x\)满足
+\[S - s = \sum_{i = 1}^{n} (M_i - m_i) \Delta x_i < \frac{\varepsilon}{d - c}.\]
+对\(D\)进行划分，其中\(x\)方向上使用划分\(P\)，\(y\)方向上使用\([c, d]\)，则
+\[S' - s' = (d - c)\sum_{i = 1}^{n} (M_i - m_i) \Delta x_i < \frac{\varepsilon}.\]
+于是\(F(x, y)\)在\(D\)上可积.
+
+\textbf{5.}设\(D\)是\(\RR^2\)上的零边界闭区域，二元函数\(f(x, y)\)和\(g(x, y)\)在\(D\)上可积.证明
+\[H(x, y) = \max\{f(x, y), g(x, y)\}\]
+和
+\[h(x, y) = \min\{f(x, y), g(x, y)\}\]
+也在\(D\)上可积.
+
+证明：注意到
+\[H = \frac{f + g + |f - g|}{2}, \quad h = \frac{f + g - |f - g|}{2},\]
+只需证\(f + g\)和\(|f - g|\)在\(D\)上可积.
+
+显然\(f + g, f - g\)可积，设\(u = f - g\)，则\(u\)可积.将\(D\)划分为\(n\)个子区域\(R_i\)，则\(\forall \varepsilon > 0\)，对\(D\)的任意划分\(P\)将\(D\)分为若干子区域\(\Delta D_i\)，记\(\sigma_i\)为\(\Delta D_i\)的面积，\(\omega_i(u) = \sup\{|u(P) - u(Q)||P, Q \in \Delta D_i\}\)，则
+\[\sum_{i = 1}^{n} \omega_i(|u|) \sigma_i \leq \sum_{i = 1}^{n} \omega_i(u) \sigma_i < \varepsilon.\]
+于是\(|f - g|\)在\(D\)上可积，从而\(H, h\)在\(D\)上可积.
+
+\end{document}
