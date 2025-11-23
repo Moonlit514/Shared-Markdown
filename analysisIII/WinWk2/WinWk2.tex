@@ -1,0 +1,238 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{bm}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dif}{\mathrm{d}}
+
+\begin{document}
+\section*{13.2}
+\textbf{2.}根据二重积分的性质，比较下列积分的大小：
+
+(2)\(\iint\limits_D \ln(x + y) \dif x \dif y\)与\(\iint\limits_D [\ln(x + y)]^2 \dif x \dif y\)，\\
+其中\(D\)为闭矩形\([3, 5] \times [0, 1]\).
+
+解：令\(t = x + y \geq 3\)，则\(\ln t > 1, \forall (x, y) \in [3, 5] \times [0, 1]\)，于是\(\ln(x + y) < [\ln(x + y)]^2\)，故
+\[\iint\limits_D \ln(x + y) \dif x \dif y < \iint\limits_D [\ln(x + y)]^2 \dif x \dif y.\]
+
+\textbf{3.}利用重积分的性质估计下列重积分的值：
+
+(2)\(\iint\limits_D \dfrac{\dif x \dif y}{100 + \cos^2 x + \sin^2 y}\)，其中\(D\)为区域\(\{(x, y)||x| + |y| \leq 10\}\).
+
+解：\(100 \leq 100 + \cos^2 x + \sin^2 y \leq 102, mD = \dfrac{1}{2} \times 20 \times 20 = 200\).
+\[\dfrac{100}{51} \leq I \leq 2.\]
+
+(3)\(\iiint\limits_\Omega \dfrac{\dif x \dif y \dif z}{1 + x^2 + y^2 + z^2}\)，其中\(\Omega\)为单位球\(\{(x, y, z)|x^2 + y^2 + z^2 \leq 1\}\).
+
+解：\(1 \leq 1 + x^2 + y^2 + z^2 \leq 2, V(\Omega) = \dfrac{4}{3}\pi\).
+\[\dfrac{2}{3}\pi \leq I \leq \dfrac{4}{3}\pi.\]
+
+\textbf{4.}计算下列重积分：
+
+(2)\(\iint\limits_D xy\e^{x^2 + y^2} \dif x \dif y\)，其中\(D\)为闭矩形\([a, b] \times [c, d]\).
+
+\begin{align*}
+\iint\limits_D xy\e^{x^2 + y^2} \dif x \dif y &= \left(\int_a^b x\e^{x^2} \dif x\right)\left(\int_a^b y\e^{y^2} \dif y\right) \\
+&= \frac{1}{4}\left(\e^{b^2} - \e^{a^2}\right)\left(\e^{d^2} - \e^{c^2}\right).
+\end{align*}
+
+(3)\(\iiint\limits_\Omega \dfrac{\dif x \dif y \dif z}{(x + y + z)^3}\)，其中\(\Omega\)为长方体\([1, 2] \times [1, 2] \times [1, 2]\).
+
+\begin{align*}
+\iiint\limits_\Omega \dfrac{\dif x \dif y \dif z}{(x + y + z)^3} &= \iint_{[1, 2] \times [1, 2]} \dif x \dif y \int_1^2 \frac{1}{(x + y + z)^3} \dif z \\
+&= \iint_{[1, 2] \times [1, 2]} \frac{1}{2}\left(\frac{1}{(x + y + 1)^2} - \frac{1}{(x + y + 2)^2}\right) \dif x \dif y \\
+&= \frac{1}{2} \int_1^2 \dif x \int_1^2 \left(\frac{1}{(x + y + 1)^2} - \frac{1}{(x + y + 2)^2}\right) \dif y \\
+&= \frac{1}{2} \int_1^2 \left(\frac{1}{x + 2} - \frac{2}{x + 3} + \frac{1}{x + 4}\right) \dif x \\
+&= \frac{7}{6} \ln\frac{2}{5}.
+\end{align*}
+
+\textbf{5.}在下列积分中改变累次积分的次序：
+
+(2)\(\int_{0}^{2a} \dif x \int_{\sqrt{2ax - x^2}}^{\sqrt{2ax}} f(x, y) \dif y \quad (a > 0)\).
+
+\[I = \int_0^a \dif y \left[\int_{\frac{y^2}{2a}}^{a - \sqrt{a^2 - y^2}} f(x, y) \dif x + \int_{a + \sqrt{a^2 - y^2}}^{2a} f(x, y) \dif x\right] + \int_{a}^{2a} \dif y \int_{\frac{y^2}{2a}}^{2a} f(x, y) \dif x.\]
+
+(4)\(\int_0^1 \dif y \int_{0}^{2y} f(x, y) \dif x + \int_1^3 \dif y \int_{0}^{3 - y} f(x, y) \dif x\).
+
+\[I = \int_0^2 \dif x \int_{\frac{x}{2}}^{3 - x} f(x, y) \dif y.\]
+
+(6)\(\int_{-1}^{1} \dif x \int_{-\sqrt{1 - x^2}}^{\sqrt{1 - x^2}} \dif y \int_{\sqrt{x^2 + y^2}}^{1} f(x, y, z) \dif z\)（改成按\(x\)方向、\(y\)方向、\(z\)方向的次序积分）.
+
+\[I = \int_0^1 \dif z \int_{-z}^{z} \dif y \int_{-\sqrt{z^2 - y^2}}^{\sqrt{z^2 - y^2}} f(x, y, z) \dif x.\]
+
+\textbf{6.}计算下列重积分：
+
+(5)\(\iint\limits_D y \dif x \dif y\)，其中\(D\)为摆线的一拱\(x = a(t - \sin t), y = a(1 - \cos y)(0 \leq t \leq 2\pi)\)与\(x\)轴所围的区域.
+
+令\(x = a(u - \sin u), y = a(1 - \cos u)v, 0 \leq u \leq 2\pi, 0 \leq v \leq 1.\)
+\[J = \frac{\partial(x, y)}{\partial(u, v)} = a^2(1 - \cos u)^2.\]
+\[I = \int_{0}^{2\pi} \dif u \int_0^1 a(1 - \cos u)v \cdot a^2(1 - \cos u)^2 \dif v = \frac{5\pi a^3}{2}.\]
+
+(8)\(\iiint\limits_\Omega xy^2z^3 \dif x \dif y \dif z\)，其中\(\Omega\)为曲面\(z = xy\)，平面\(y = x, x = 1\)和\(z = 0\)所围的区域.
+
+\[I = \int_0^1 \dif x \int_0^x \dif y \int_{0}^{xy} xy^2z^3 \dif z = \frac{1}{364}.\]
+
+(9)\(\iiint\limits_\Omega \dfrac{\dif x \dif y \dif z}{(1 + x + y + z)^3}\)，其中\(\Omega\)为平面\(x = 0, y = 0, z = 0\)和\(x + y + z = 1\)所围的平面.
+
+\[I = \int_0^1 \dif x \int_{0}^{1 - x} \dif y \int_{0}^{1 - x - y} \frac{\dif z}{(1 + x + y + z)^3} = \frac{1}{2} \ln 2 - \frac{5}{16}.\]
+
+(12)\(\iiint\limits_\Omega x^2 \dif x \dif y \dif z\)，其中\(\Omega\)为椭球体\(\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} + \dfrac{z^2}{c^2} \leq 1\).
+
+令\(x = au, y = bv, z = cw,\)
+\[J = \frac{\partial(x, y, z)}{\partial(u, v, w)} = abc.\]
+\[I = \iiint\limits_{u^2 + v^2 + w^2 \leq 1} a^2u^2 \cdot abc \dif u \dif v \dif w = a^3bc \int_{-1}^{1} \dif w \int_{-\sqrt{1 - w^2}}^{\sqrt{1 - w^2}} \dif v \int_{-\sqrt{1 - v^2 - w^2}}^{\sqrt{1 - v^2 - w^2}} u^2 \dif u = \frac{4\pi}{15}.\]
+
+\textbf{8.}求抛物线\(y^2 = 2px + p^2\)与\(y^2 = -2qx + q^2 \quad (p, q > 0)\)所围图形的面积.
+
+解：令\(y^2 = 2px + p^2 = -2qx + q^2\)，得\(x = \dfrac{q - p}{2}, y = \pm \sqrt{pq}\).由对称性，
+\[m = 2\int_{0}^{\sqrt{pq}} \left[\left(\frac{q}{2} - \frac{y^2}{2q}\right) - \left(\frac{y^2}{2p} - \frac{p}{2}\right)\right] \dif y = \frac{2}{3}(p + q)\sqrt{pq}.\]
+
+\textbf{11.}求旋转抛物面\(z = x^2 + y^2\)，三个坐标平面及平面\(x + y = 1\)所围有界区域的体积.
+
+解：
+\[V = \iint\limits_D (x^2 + y^2) \dif x \dif y = \int_0^1 \dif x \int_{0}^{1 - x} (x^2 + y^2) \dif y = \frac{1}{6}.\]
+
+\textbf{13.}设\(f(x)\)在\([0, 1]\)上连续，证明
+\[\int_0^1 \dif y \int_{y}^{\sqrt{y}} \e^y f(x) \dif x = \int_0^1 (\e^x - \e^{x^2}) f(x) \dif x.\]
+
+解：
+\[\int_0^1 \dif y \int_{y}^{\sqrt{y}} \e^y f(x) \dif x = \int_0^1 \dif x \int_{x^2}^{x} \e^y f(x) \dif y = \int_0^1 (\e^x - \e^{x^2}) f(x) \dif x.\]
+
+\textbf{18.}设\(f(x)\)在\([a, b]\)上连续，证明
+\[\iint\limits_{[a, b] \times [a, b]} \e^{f(x) - f(y)} \dif x \dif y \geq (b - a)^2.\]
+
+解：
+\begin{align*}
+I &= \int_a^b \dif y \int_a^b \e^{f(x) - f(y)} \dif x \\
+&= (b - a) \int_a^b \dif y \frac{1}{b - a} \int_a^b \e^{f(x) - f(y)} \dif x \\
+&\geq (b - a) \int_a^b \dif y \e^{\frac{1}{b - a} \int_a^b [f(x) - f(y)] \dif x} \\
+&= (b - a) \int_a^b \e^{\bar{f} - f(y)} \dif y \\
+&= (b - a)^2 \frac{1}{b - a} \int_a^b \e^{\bar{f} - f(y)} \dif y \\
+&\geq (b - a)^2 \e^{\frac{1}{b - a} \int_a^b [\bar{f} - f(y)] \dif y} \\
+&= (b - a)^2.
+\end{align*}
+
+\textbf{19.}设\(\Omega = \{(x_1, x_2, \cdots, x_n)|0 \leq x_i \leq 1, i = 1, 2, \cdots n\}\)，计算下列\(n\)重积分：
+
+(1)\(\int_\Omega (x_1^2 + x_2^2 + \cdots + x_n^2) \dif x_1 \dif x_2 \cdots \dif x_n\)；
+
+(2)\(\int_\Omega (x_1 + x_2 + \cdots + x_n)^2 \dif x_1 \dif x_2 \cdots \dif x_n\).
+
+解：(1)
+\[I = \sum_{i = 1}^{n} \int_\Omega x_i^2 \dif x_1 \dif x_2 \cdots \dif x_n = \frac{n}{3}.\]
+
+(2)
+\[I = \sum_{i = 1}^{n} \int_\Omega x_i^2 \dif x_1 \dif x_2 \cdots \dif x_n + 2\sum_{1 \leq i < j \leq n} \int_\Omega x_ix_j \dif x_1 \dif x_2 \cdots \dif x_n = \frac{n}{3} + \frac{n(n - 1)}{4} = \frac{3n^2 + n}{12}.\]
+
+\section*{13.3}
+\textbf{1.}利用极坐标计算下列二重积分：
+
+(2)\(\iint\limits_D \sqrt{x} \dif x \dif y\)，其中\(D\)是由圆周\(x^2 + y^2 = x\)所围区域.
+
+解：令\(x = r \cos\theta, y = r \sin\theta\)，圆方程变为\(r = \cos\theta \geq 0, \theta \in [-\dfrac{\pi}{2}, \dfrac{\pi}{2}]\)
+\[I = \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \dif \theta \int_{0}^{\cos \theta} \sqrt{r \cos\theta} r \dif r = \frac{8}{15}.\]
+
+(4)\(\iint\limits_D \sqrt{\dfrac{1 - x^2 - y^2}{1 + x^2 + y^2}} \dif x \dif y\)，其中\(D\)是由圆周\(x^2 + y^2 = 1\)及坐标轴所围成的在第一象限上的区域.
+
+解：令\(x = r \cos\theta, y = r \sin\theta\)，区域\(D\)对应\(0 \leq r \leq 1, 0 \leq \theta \leq \dfrac{\pi}{2}\).
+\[I = \int_{0}^{\frac{\pi}{2}} \dif \theta \int_0^1 \sqrt{\frac{1 - r^2}{1 + r^2}} r \dif r = \frac{pi^2}{8} - \frac{\pi}{4}.\]
+
+\textbf{2.}求下列图形的面积：
+
+(1)\((a_1x + b_1y + c_1)^2 + (a_2x + b_2y + c_2)^2 = 1 \quad (\delta = a_1b_2 - a_2b_1 \neq 0)\)所围的区域.
+
+解：令\(u = a_1x + b_1y + c_1, v = a_2x + b_2y + c_2\)，则方程变为\(u^2 + v^2 = 1\)，
+\[\frac{\partial(u, v)}{\partial(x, y)} = \delta,\]
+故\(\dif x \dif y = \dfrac{1}{|\delta|} \dif u \dif v\).
+\[mD = \iint\limits_{u^2 + v^2 < 1} \dif u \dif v = \frac{\pi}{|\delta|}.\]
+
+(4)曲线\(\left(\dfrac{x}{h} + \dfrac{y}{k}\right)^4 = \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2}(h, k > 0; a, b > 0)\)所围图形在\(x > 0, y > 0\)的部分.
+
+解：令\(x = hr\cos^2\theta, y = kr\sin^2\theta, r > 0, \theta \in \left(0, \dfrac{\pi}{2}\right)\).代入原方程
+\[r^2 = \frac{h^2\cos^4\theta}{a^2} + \frac{k^2\sin^4\theta}{b^2}.\]
+\[J = \frac{\partial(x, y)}{\partial(r, \theta)} = 2hkr\cos\theta\sin\theta\]
+\[mD = \int_{0}^{\frac{\pi}{2}} \dif \theta \int_{0}^{r(\theta)} 2hk\cos\theta\sin\theta \dif r = \frac{hk}{6}\left(\frac{h^2}{a^2} + \frac{k^2}{b^2}\right).\]
+
+
+\textbf{3.}求极限
+\[\lim_{\rho \to 0} \frac{1}{\pi\rho^2} \iint\limits_{x^2 + y^2 \leq \rho^2} f(x, y) \dif x \dif y,\]
+其中\(f(x, y)\)在原点附近连续.
+
+解：\(\forall \varepsilon > 0, \exists \delta > 0\)，当\(\left\|(x, y) - (0, 0)\right\| < \delta\)时，有
+\[f(0, 0) - \varepsilon < f(x, y) < f(0, 0) + \varepsilon.\]
+当\(\rho < \delta\)时
+\[\frac{1}{\pi\rho^2} (f(0, 0) - \varepsilon)\pi\rho^2 < \frac{1}{\pi\rho^2} \iint\limits_{x^2 + y^2 \leq \rho^2} f(x, y) \dif x \dif y < \frac{1}{\pi\rho^2} (f(0, 0) + \varepsilon)\pi\rho^2\]
+令\(\rho \to 0\)，由夹逼准则得到
+\[\lim_{\rho \to 0} \frac{1}{\pi\rho^2} \iint\limits_{x^2 + y^2 \leq \rho^2} f(x, y) \dif x \dif y = f(0, 0).\]
+
+\textbf{4.}选取适当的坐标变换计算下列二重积分：
+
+(2)\(\iint\limits_D \left(\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2}\right) \dif x \dif y\)，其中\(D\)是由i）椭圆\(\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1\)所围区域；ii）圆\(x^2 + y^2 = R^2\)所围的区域.
+
+i）令\(x = ar\cos\theta, y = br\sin\theta, |J| = abr\).
+\[I = \int_{0}^{2\pi} \dif \theta \int_0^1 r^2 abr \dif r = \frac{\pi ab}{2}.\]
+
+ii）令\(x = r\cos\theta, y = r\sin\theta, |J| = r\).
+\[I = \int_{0}^{2\pi} \dif \theta \int_0^R r^2\left(\frac{\cos^2\theta}{a^2} + \frac{\sin^2\theta}{b^2}\right)r \dif r = \frac{\pi R^2}{4}\left(\frac{1}{a^2} + \frac{1}{b^2}\right).\]
+
+(4)\(\iint\limits_D \e^{\frac{x - y}{x + y}} \dif x \dif y\)，其中\(D\)是由直线\(x + y = 2, x = 0\)及\(y = 0\)所围的区域.
+
+令\(u = x - y, v = x + y, |J| = \frac{1}{2}\).
+\[I = \int_0^2 \dif v \int_{-v}^{v} \e^{\frac{u}{v}} \frac{1}{2} \dif u = \e - \e^{-1}.\]
+
+(6)\(\iint\limits_D \dfrac{\sqrt{x^2 + y^2}}{\sqrt{4a^2 - x^2 - y^2}} \dif x \dif y\)，其中闭区域\(D\)是由曲线\(y = \sqrt{a^2 - x^2} - a(a > 0)\)和直线\(y = -x\)所围成.
+
+令\(x = r\cos\theta, y = r\sin\theta, |J| = r\).
+\[I = \int_{-\frac{\pi}{4}}^{0} \dif \theta \int_{0}^{-2a\sin\theta} \frac{r^2}{\sqrt{4a^2 - r^2}} \dif r = \frac{\pi^2}{16}a^2 - \frac{1}{2}a^2.\]
+
+\textbf{5.}选取适当的坐标变换计算下列三重积分：
+
+(2)\(\iiint_\Omega \sqrt{1 - \dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} - \dfrac{z^2}{c^2}} \dif x \dif y \dif z\)，其中\(\Omega\)为椭球\(\left\{(x, y, z)|\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} + \dfrac{z^2}{c^2} \leq 1 \right\}\).
+
+令\(x = ar\sin\theta\cos\varphi, y = br\sin\theta\sin\varphi, z = cr\cos\theta\)，
+\[I = abc \int_{0}^{2\pi} \dif \varphi \int_0^\pi \dif \theta \int_0^1 \sqrt{1 - r^2}r^2\sin\theta \dif r = \frac{\pi^2abc}{4}.\]
+
+(4)\(\iiint_\Omega \dfrac{z\ln(1 + x^2 + y^2 + z^2)}{1 + x^2 + y^2 + z^2} \dif x \dif y \dif z\)，其中\(\Omega\)为半球\(\{(x, y, z)|x^2 + y^2 + z^2 \leq 1, z \geq 0\}\).
+
+令\(x = r\sin\theta\cos\varphi, y = r\sin\theta\sin\varphi, z = r\cos\theta\)，
+\[I = \int_{0}^{2\pi} \dif \varphi \int_{0}^{\frac{\pi}{2}} \dif \theta \int_0^1 \frac{r^3\cos\theta \ln(1 + r^2)}{1 + r^2} \dif r = \left(\ln 2 - \frac{1}{2} - \frac{1}{4}(\ln 2)^2\right)\pi.\]
+
+(6)\(\iiint_\Omega (x^2 + y^2) \dif x \dif y \dif z\)，其中\(\Omega\)为平面曲线\(\begin{cases}
+y^2 = 2z, \\
+x = 0
+\end{cases}\)绕\(z\)轴旋转一周形成的曲面与平面\(z = 8\)所围的区域.
+
+令\(x = r\cos\theta, y = r\sin\theta, z = z\)，
+\[I = \int_{0}^{2\pi} \dif \theta \int_0^4 \dif r \int_{\frac{r^2}{2}}^{8} r^3 \dif z = \frac{1024\pi}{3}.\]
+
+(8)\(\iiint_\Omega (x + y - z)(x - y + z)(y + z - x) \dif x \dif y \dif z\)，其中闭区域
+\[\Omega = \{(x, y, z)|0 \leq x + y - z \leq 1, 0 \leq x - y + z \leq 1, 0 \leq y + z - x \leq 1\}.\]
+
+令\(u = x + y - z, v = x - y + z, w = y + z - x\)，
+\[I = \int_0^1 \dif u \int_0^1 \dif v \int_0^1 \frac{1}{4} uvw \dif w = \frac{1}{32}.\]
+
+\textbf{6.}求球面\(x^2 + y^2 + z^2 = R^2\)和圆柱面\(x^2 + y^2 = Rx(R > 0)\)所围立体的体积.
+
+解：令\(x = r\cos\theta, y = r\sin\theta, z = z\)，
+\[I = \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \dif \theta \int_{0}^{R\cos\theta} \dif r \int_{-\sqrt{R^2 - r^2}}^{R^2 - r^2} r \dif z = \frac{6\pi - 8}{9}R^3.\]
+
+\textbf{8.}求下列曲面所围空间区域的体积：
+
+(1)\(\left(\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} + \dfrac{z^2}{c^2}\right)^2 = ax(a, b, c > 0)\)；
+
+(2)\(\left(\dfrac{x}{a} + \dfrac{y}{b}\right)^2 + \left(\dfrac{z}{c}\right)^2 = 1(a, b, c > 0)\)与三张平面\(x = 0, y = 0, z = 0\)所围的在第一卦限的立体.    
+
+解：(1)令\(x = ar\cos\theta, y = br\sin\theta\cos\varphi, z = cr\sin\theta\sin\varphi\)
+\[V = abc\int_{0}^{2\pi} \dif \varphi \int_{0}^{\frac{\pi}{2}} \dif \theta \int_{0}^{\cos^{\frac{1}{3}}\theta} r^2\sin\theta \dif r = \frac{\pi}{3}abc.\]
+
+(2)对固定的\(z \in [0, c]\)，截面满足
+\[\left(\frac{x}{a} + \frac{y}{b}\right)^2 \leq 1 - \frac{z^2}{c^2}.\]
+令\(L = \sqrt{1 - \dfrac{z^2}{c^2}}\)，则\(\dfrac{x}{a} + \dfrac{y}{b} \leq L\).
+\[V = \int_0^c \frac{1}{2} \cdot aL \cdot bL \dif z = \frac{abc}{3}.\]
+
+\end{document}
