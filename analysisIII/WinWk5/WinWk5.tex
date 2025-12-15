@@ -1,0 +1,179 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{bm}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dif}{\mathrm{d}}
+
+\begin{document}
+\section*{14.2}
+\textbf{4.}计算下列第二类曲面积分：
+
+(1)\(\iint\limits_\Sigma (x + y) \dif y \dif z + (y + z) \dif z \dif x + (z + x) \dif x \dif y\)，其中\(\Sigma\)是中心在原点，边长为\(2h\)的立方体\([-h, h] \times [-h, h] \times [-h, h]\)的表面，方向取外侧.
+
+\[I = \iiint\limits_{[-h, h] \times [-h, h] \times [-h, h]} (1 + 1 + 1) \dif x \dif y \dif z = 24h^3.\]
+
+(3)\(\iint\limits_\Sigma z \dif y \dif z + x \dif z \dif x + y \dif x \dif y\)，其中\(\Sigma\)是柱面\(x^2 + y^2 = 1\)被平面\(z = 0\)和\(z = 4\)所截部分，方向取外侧.
+
+\[I = \iiint\limits_{\substack{x^2 + y^2 \leq 1 \\0 \leq z \leq 4}} 0 \dif x \dif y \dif z = 0.\]
+
+(5)\(\iint\limits_\Sigma [f(x, y, z) + x] \dif y \dif z + [2f(x, y, z) + y] \dif z \dif x + [f(x, y, z) + z] \dif x \dif y\)，其中\(f(x, y, z)\)为连续函数，\(\Sigma\)是平面\(x - y + z = 1\)在第四卦限部分，方向取上侧.
+
+\begin{align*}
+I &= \iint\limits_\Sigma f(x, y, z) \dif y \dif z + 2f(x, y, z) \dif z \dif x + f(x, y, z) \dif x \dif y + \iint\limits_\Sigma  x \dif y \dif z + y \dif z \dif x + z \dif x \dif y \\
+&= \iint\limits_{D_{xy}} (x - y + z) \dif x \dif y \\
+&= \frac{1}{2}.
+\end{align*}
+
+(8)\(\iint\limits_\Sigma \dfrac{1}{x} \dif y \dif z + \dfrac{1}{y} \dif z \dif x + \dfrac{1}{z} \dif x \dif y\)，其中\(\Sigma\)为椭球面\(\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} + \dfrac{z^2}{c^2} = 1\)，方向取外侧.
+
+\[\iint\limits_\Sigma \frac{1}{x} \dif y \dif z \overset{y = bu}{z = cv} \frac{2bc}{a}\iint\limits_\Sigma \frac{1}{\sqrt{1 - u^2 - v^2}} \dif u \dif v = \frac{4\pi bc}{a}.\]
+故
+\[I = 4\pi\left(\frac{bc}{a} - \frac{ac}{b} + \frac{ab}{c}\right).\]
+
+(9)\(\iint\limits_\Sigma x^2 \dif y \dif z + y^2 \dif z \dif x + z^2 \dif x \dif y\)，其中\(\Sigma\)是球面\((x - a)^2 + (y - b)^2 + (z - c)^2 = R^2\)，方向取外侧.
+
+\[I = \iiint\limits_{(x - a)^2 + (y - b)^2 + (z - c)^2 \leq R^2} 2x + 2y + 2z \dif x \dif y \dif z = \frac{8\pi}{3}R^3(a + b + c).\]
+
+\section*{14.3}
+\textbf{1.}利用Green公式计算下列积分：
+
+(2)\(\int\limits_L xy^2 \dif x - x^2y \dif y\)，其中\(L\)是圆周\(x^2 + y^2 = a^2\)，逆时针方向.
+
+\[I = \iint\limits_D (-2xy - 2xy) \dif x \dif y = 0.\]
+
+(4)\(\int\limits_L \e^x[(1 - \cos y) \dif x - (y - \sin y) \dif y]\)，其中\(L\)是曲线\(y = \sin x\)上从\((0, 0)\)到\((\pi, 0)\)的一段.
+
+补充线段\(L':y = 0\)从\((\pi, 0)\)到\((0, 0)\)，逆时针方向围成区域\(D\).
+\[I = \iint\limits_D \e^xy \dif S - \int_{L'} \e^x[(1 - \cos y) \dif x - (y - \sin y) \dif y] = \frac{\e^\pi - 1}{5}.\]
+
+(6)\(\int\limits_L [\e^x\sin y - b(x + y)] \dif x + (\e^x\cos y - ax) \dif y\)，其中\(a, b\)是正常数，\(L\)为从点\(A(2a, 0)\)沿曲线\(y = \sqrt{2ax - x^2}\)到点\(O(0, 0)\)的一段.
+
+补充线段\(L':y = 0\)从\((0, 0)\)到\((2a, 0)\)沿\(x\)轴，
+\[I = -\int\limits_D (b - a) \dif S - \int_{L'} [\e^x\sin y - b(x + y)] \dif x + (\e^x\cos y - ax) \dif y = \frac{a^2}{2}(\pi a + (4 - \pi)b).\]
+
+(8)\(\int\limits_L \dfrac{(x - y) \dif x + (x + 4y) \dif y}{x^2 + 4y^2}\)，其中\(L\)为单位圆周\(x^2 + y^2 = 1\)，逆时针方向.
+
+取椭圆\(x^2 + 4y^2 = \varepsilon^2\)，逆时针方向，其中\(\varepsilon > 0\)充分小.在单位圆内部挖去该椭圆所得的区域上\(\dfrac{\partial Q}{\partial x} - \dfrac{\partial P}{\partial y} = 0\).
+\[I \overset{\substack{\varepsilon\cos t \\ y = \frac{\varepsilon}{2}\sin t}}{=} \int\limits_{C_\varepsilon} \frac{1}{2} \dif t = \pi.\]
+
+(9)\(\int\limits_L \dfrac{\e^x[(x\sin y - y\cos y) \dif x + (y\cos y - y\sin y) \dif y]}{x^2 + y^2}\)，其中\(L\)是包围原点的简单光滑闭曲线，逆时针方向.
+
+\[\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 0.\]
+取圆\(L_r:x^2 + y^2 = r^2, x = r\cos t, y = r\sin t, t:0 \to 2\pi\)，于是
+\[I = \int_{0}^{2\pi} \e^{r\cos t}\cos(r\sin t) \dif t.\]
+令\(r \to 0\)，得\(I = 2\pi\).
+
+\textbf{2.}利用曲线积分，求下列曲线所围成的图形的面积：
+
+(2)抛物线\((x + y)^2 = ax(a > 0)\)与\(x\)轴.
+
+解：\(C_1:y = -x + \sqrt{ax}\)，从\((0, 0)\)到\((a, 0)\)；\(C_2:y = 0\)，从\((a, 0)\)到\((0, 0)\).
+\[S = \frac{1}{2}\oint\limits_L x \dif y - y \dif x = \frac{1}{2}\left(\int\limits_{C_1} x \dif y - y \dif x + \int\limits_{C_2} x \dif y - y \dif x\right) = \frac{a^2}{6}.\]
+
+(3)旋轮线的一段:\(\begin{cases}
+x = a(t - \sin t), \\
+y = a(1 - \cos t),
+\end{cases} \quad t \in [0, 2\pi]\)与\(x\)轴.
+
+解：\(C_1:\)旋轮线弧；\(C_2:y = 0\)，从\((0, 0)\)到\((2\pi a, 0)\). 
+\[\int\limits_{L_1} (x \dif y - y \dif x) = a^2[(t - \sin t)\sin t - (1 - \cos t)^2] \dif t = -6\pi a^2.\]
+\[\int\limits_{L_2} (x \dif y - y \dif x) = 0.\]
+因此，面积为
+\[S = \frac{1}{2}\left|\oint\limits_L x \dif y - y \dif x = \frac{1}{2}(-6\pi a^2)\right| = 3\pi a^2.\]
+
+\textbf{3.}先证明曲线积分与路径无关，再计算积分值：
+
+(2)\(\int_{(2, 1)}^{(1, 2)} \varphi(x) \dif x + \psi(y) \dif y\)，其中\(\varphi(x), \psi(y)\)为连续函数.
+
+\[\frac{\partial P}{\partial y} = 0, \quad \frac{\partial Q}{\partial x} = 0.\]
+所以曲线积分与路径无关，且
+\[\int_{(2, 1)}^{(1, 2)} \varphi(x) \dif x + \psi(y) \dif y = \int_2^1 \varphi(x) \dif x + \int_1^2 \psi(y) \dif y.\]
+
+(3)\(\int_{(1, 0)}^{(6, 8)} \dfrac{x \dif x + y \dif y}{\sqrt{x^2 + y^2}}\)，沿不通过原点的路径.
+
+\[\frac{\partial P}{\partial y} = -\frac{xy}{(x^2 + y^2)^{\frac{3}{2}}}, \quad \frac{\partial Q}{\partial x} = -\frac{xy}{(x^2 + y^2)^{\frac{3}{2}}}.\]
+所以曲线积分与路径无关，且
+\[\int_{(1, 0)}^{(6, 8)} \dfrac{x \dif x + y \dif y}{\sqrt{x^2 + y^2}} = \sqrt{6^2 + 8^2} - \sqrt{1^2 + 0^2} = 10 - 1 = 9.\]
+
+\textbf{5.}证明：\((2x\cos y + y^2\cos x) \dif x + (2y\sin x - x^2\sin y) \dif y\)在整个\(xy\)平面上是某个函数的全微分，并找出它的一个原函数.
+
+解：
+\[\frac{\partial P}{\partial y} = -2x\sin y + 2y\cos x, \quad \frac{\partial Q}{\partial x} = 2y\cos x - 2x\sin y.\]
+设\(\dif u(x, y) = P \dif x + Q \dif y\)，
+\[u = \int (2x\cos y + y^2\cos x) \dif x = x^2\cos y + y^2\sin x + \varphi(y).\]
+\[\frac{\partial u}{\partial y} = -x^2\sin y + 2y\sin x + \varphi'(y) = 2y\sin x - x^2\sin y.\]
+因此，\(\varphi'(y) = 0\)，取\(\varphi(y) = 0\).
+原函数为
+\[u(x, y) = x^2\cos y + y^2\sin x.\]
+
+\textbf{6.}设\(Q(x, y)\)在\(xy\)平面上有连续偏导数，曲线积分\(\int\limits_L 2xy \dif x + Q(x, y) \dif y\)与路径无关，并且对任意\(t\)恒有
+\[\int_{(0, 0)}^{(t, 1)} 2xy \dif x + Q(x, y) \dif y = \int_{(0, 0)}^{(1, t)} 2xy \dif x + Q(x, y) \dif y,\]
+求\(Q(x, y)\).
+
+解：
+\[\frac{\partial Q}{\partial x} = \frac{\partial}{\partial y}(2xy) = 2x,\]
+\[Q(x, y) = x^2 + C(y).\]
+
+等式左侧沿\((0, 0) \to (t, 0) \to (t, 1)\)，积分值为\(t^2 + \int_0^1 C(y) \dif y\).
+
+等式右侧沿\((0, 0) \to (0, t) \to (1, t)\)，积分值为\(t + \int_0^t C(y) \dif y\).
+
+令两者相等，对\(t\)求导得
+\[2t = 1 + C(t),\]
+\[Q(x, y) = x^2 + 2y - 1.\]
+
+\textbf{9.}利用Gauss公式计算下列曲面积分：
+
+(2)\(\iint\limits_\Sigma (x - y + z) \dif y \dif z + (y - z + x) \dif z \dif x + (z - x + y) \dif x \dif y\)，其中\(\Sigma\)为闭曲面\(|x - y + z| + |y - z + x| + |z - x + y| = 1\)，方向取外侧.
+
+\[I = \iiint_\Omega (1 + 1 + 1) \dif V = 1.\]
+
+(4)\(\iint\limits_\Sigma x \dif y \dif z + y \dif z \dif x + z \dif x \dif y\)，其中\(\Sigma\)为上半球面\(z = \sqrt{R^2 - x^2 - y^2}\)，方向取上侧.
+
+补充底面后有
+\[I = \iiint_\Omega (1 + 1 + 1) \dif V - \iint_{\text{底面}} x \dif y \dif z + y \dif z \dif x + z \dif x \dif y = 2\pi R^3.\]
+
+(6)\(\iint\limits_\Sigma (2x + z) \dif y \dif z + z \dif x \dif y\)，其中\(\Sigma\)是曲面\(z = x^2 + y^2(0 \leq z \leq 1)\)，曲面的法向量与\(z\)轴的正向的夹角为锐角.
+
+补充平面\(z = 1\).
+\[I = \iiint_\Omega (2 + 1) \dif V - \iint_{\substack{z = 1} \\ x^2 + y^2 \leq 1} (2x + z) \dif y \dif z + z \dif x \dif y = -\frac{\pi}{2}.\]
+
+(7)\(\iint\limits_\Sigma \dfrac{ax \dif y \dif z + (a + z)^2 \dif x \dif y}{(x^2 + y^2 + z^2)^{\frac{1}{2}}}(a > 0)\)，其中\(\Sigma\)是下半球面\(z = -\sqrt{a^2 - x^2 - y^2}\)，方向为上侧.
+
+\[I = \iint\limits_\Sigma x \dif y \dif z + \frac{1}{a}(a + z)^2 \dif x \dif y.\]
+补充底面后有
+\[I = \iiint\limits_\Omega \left(1 + \frac{2(a + z)}{a}\right) \dif x \dif y \dif z = -\frac{1}{2}\pi a^3.\]
+
+(8)\(\iint\limits_\Sigma \dfrac{x \dif y \dif z + y \dif z \dif x + z \dif x \dif y}{(x^2 + y^2 + z^2)^{\frac{3}{2}}}\)，其中\(\Sigma\)是
+
+(i)椭球面\(x^2 + 2y^2 + 3z^2 = 1\)，方向取外侧；
+
+设\(r = \sqrt{x^2 + y^2 + z^2}\)，则
+\[\frac{\partial\left(\dfrac{x}{r^3}\right)}{\partial x} = \frac{r^2 - 3x^2}{r^5}, \frac{\partial\left(\dfrac{y}{r^3}\right)}{\partial y} = \frac{r^2 - 3y^2}{r^5}, \frac{\partial\left(\dfrac{z}{r^3}\right)}{\partial z} = \frac{r^2 - 3z^2}{r^5}.\]
+设\(\Sigma' = \{(x, y, z)|x^2 + y^2 + z^2 = \varepsilon^2\}\)，方向向外侧，参数表示为
+\[\begin{cases}
+x = \varepsilon\sin\varphi\cos\theta, \\
+y = \varepsilon\sin\varphi\sin\theta, \\
+z = \varepsilon\cos\varphi,
+\end{cases} (\varphi, \theta) \in D' = \{0 \leq \varphi \leq \pi, 0 \leq \theta \leq 2\pi\}.\]
+则
+\[\iint\limits_{\Sigma} \frac{x \dif y \dif z + y \dif z \dif x + z \dif x \dif y}{r^3} = \iint\limits_{\Sigma'} \frac{x \dif y \dif z + y \dif z \dif x + z \dif x \dif y}{r^3} = \iint\limits_{D'} \sin\varphi \dif \varphi \dif \theta = 4\pi.\]
+
+(ii)抛物面\(1 - \dfrac{z}{5} = \dfrac{(x - 2)^2}{16} + \dfrac{(y - 1)^2}{9} \quad (z \geq 0)\)，方向取上侧.
+
+设\(\Sigma' = \left\{(x, y, z)\left|\dfrac{(x - 2)^2}{16} + \dfrac{(y - 1)^2}{9} \leq 1, z = 0\right.\right\} \setminus \left\{(x, y, z)\left|x^2 + y^2 < \varepsilon^2, z = 0\right.\right\}\)，方向向下侧.\(\Sigma'' = \{(x, y, z)|x^2 + y^2 + z^2 = \varepsilon^2, z \geq 0\}\)，方向向下侧，参数表示为
+\[\begin{cases}
+x = \varepsilon\sin\varphi\cos\theta, \\
+y = \varepsilon\sin\varphi\sin\theta, \\
+z = \varepsilon\cos\varphi,
+\end{cases} (\varphi, \theta) \in D'' = \left\{0 \leq \varphi \leq \dfrac{\pi}{2}, 0 \leq \theta \leq 2\pi\right\}.\]
+由\(\iint\limits_{\Sigma + \Sigma' + \Sigma''} \dfrac{x \dif y \dif z + y \dif z \dif x + z \dif x \dif y}{r^3} = 0\)，有
+\[\iint\limits_\Sigma \dfrac{x \dif y \dif z + y \dif z \dif x + z \dif x \dif y}{r^3} = \iint\limits_{-\Sigma''} \dfrac{x \dif y \dif z + y \dif z \dif x + z \dif x \dif y}{r^3} = \iint\limits_{D''} \sin\varphi \dif \varphi \dif \theta = 2\pi.\]
+
+\end{document}
