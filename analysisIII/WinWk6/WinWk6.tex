@@ -1,0 +1,217 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{bm}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dif}{\mathrm{d}}
+
+\begin{document}
+\section*{14.3}
+\textbf{12.}利用Stokes公式计算下列曲线积分：
+
+(2)\(\int\limits_L 3z\dif x + 5x\dif y - 2y\dif z\)，其中\(L\)是圆柱面\(x^2 + y^2 = 1\)与平面\(z = y + 3\)的交线（它是椭圆），从\(z\)轴的正向看去，是逆时针方向.
+
+\[I = \iint\limits_S (\nabla \times (3z, 5x, -2y)) \cdot \boldsymbol{n}\dif S = \iint\limits_S (-2, 3, 5) \cdot (0, -1, 1)\dif S = 2\pi.\]
+
+(4)\(\int\limits_L (y^2 - z^2)\dif x + (z^2 - x^2)\dif y + (x^2 - y^2)\dif z\)，其中\(L\)是用平面\(x + y + z = \dfrac{3}{2}\)截立方体\(0 \leq x, y, z \leq 1\)的表面所得的截痕，从\(x\)轴的正向看去，是逆时针方向.
+
+\[I = \iint\limits_S (\nabla \times ((y^2 - z^2), (z^2 - x^2), (x^2 - y^2))) \cdot \boldsymbol{n}\dif S = \iint\limits_S -\frac{2}{\sqrt{3}}(y + z, z + x, x + y) \cdot (-1, -1, -1)\dif S = -\frac{9}{2}.\]
+
+(6)\(\int\limits_L (y^2 - z^2)\dif x + (2z^2 - x^2)\dif y + (3x^2 - z^2)\dif z\)，其中\(L\)是用平面\(x + y + z = 2\)与柱面\(|x| + |y| = 1\)的交线，从\(z\)轴的正向看去，是逆时针方向.
+
+\[I = \iint\limits_S (\nabla \times ((y^2 - z^2), (2z^2 - x^2), (3x^2 - z^2))) \cdot \boldsymbol{n}\dif S = \iint\limits_S (-4z, -6x - 2z, -2x - 2y) \cdot \frac{1}{\sqrt{3}}(1, 1, 1)\dif S = -24.\]
+
+\textbf{13.}设\(f(t)\)是\(\RR\)上恒为正值的连续函数，\(L\)是逆时针方向的圆周\((x - a)^2 + (y - a)^2 = 1\).证明
+\[\int\limits_L xf(y)\dif y - \frac{y}{f(x)}\dif x \geq 2\pi.\]
+
+证明：
+\begin{align*}
+\textbf{LHS} &= \iint\limits_D f(y)\dif x\dif y + \iint\limits_D \frac{1}{f(x)}\dif x\dif y \\
+&= \int_{a - 1}^{a + 1} \left(f(t) + \frac{1}{f(t)}\right) \cdot 2\sqrt{1 - (t - a)^2}\dif t \\
+&\geq 4\int_{-1}^{1} \sqrt{1 - u^2}\dif u = 2\pi
+\end{align*}
+
+\textbf{15.}证明：若\(\Sigma\)为封闭曲面，\(\boldsymbol{l}\)为一固定向量，则
+\[\iint\limits_\Sigma \cos(\boldsymbol{n}, \boldsymbol{l})\dif S = 0,\]
+其中\(\boldsymbol{n}\)为曲面\(\Sigma\)的单位外法向量.
+
+证明：
+\begin{align*}
+\iint\limits_\Sigma \cos(\boldsymbol{n}, \boldsymbol{l})\dif S &= \iint\limits_\Sigma \frac{\boldsymbol{n} \cdot \boldsymbol{l}}{|\boldsymbol{l}|}\dif S \\
+&= \frac{1}{|\boldsymbol{l}|}\iint\limits_\Sigma \boldsymbol{l} \cdot \dif\boldsymbol{S}\\
+&= \frac{1}{|\boldsymbol{l}|}\iiint\limits_\Omega \nabla \cdot \boldsymbol{l} \dif V = 0
+\end{align*}
+
+\textbf{16.}设区域\(\Omega\)由分片光滑封闭曲面\(\Sigma\)所围成.证明：
+\[\iiint\limits_\Omega \frac{\dif x\dif y\dif z}{r} = \frac{1}{2}\iint\limits_\Sigma \cos(\boldsymbol{r}, \boldsymbol{n})\dif S,\]
+其中\(\boldsymbol{n}\)为曲面\(\Sigma\)的单位外法向量，\(\boldsymbol{r} = (x, y, z), r = \sqrt{x^2 + y^2 + z^2}\).
+
+证明：设\(\boldsymbol{F} = \dfrac{\boldsymbol{r}}{2r}, \nabla \cdot \boldsymbol{F} = \dfrac{1}{r}\)，
+\[\iiint\limits_\Omega \frac{\dif V}{r} = \iiint\limits_\Omega \nabla \cdot \boldsymbol{F}\dif V = \iint\limits_\Sigma \boldsymbol{F} \cdot \boldsymbol{n}\dif S = \iint\limits_\Sigma \left(\frac{\boldsymbol{r}}{2r}\right) \cdot \boldsymbol{n}\dif S = \frac{1}{2}\iint\limits_\Sigma \cos(\boldsymbol{r}, \boldsymbol{n})\dif S.\]
+
+\textbf{17.}设函数\(P(x, y, z), Q(x, y, z)\)和\(R(x, y, z)\)在\(\RR^3\)上具有连续偏导数.且对于任意光滑曲面\(\Sigma\)，成立
+\[\iint\limits_\Sigma P\dif y\dif z + Q\dif z\dif x + R\dif x\dif y = 0.\]
+证明：在\(\RR^3\)上，\(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \equiv 0.\)
+
+证明：设\(f(x, y, z) = \iint\limits_\Sigma P\dif y\dif z + Q\dif z\dif x + R\dif x\dif y\).
+\[\iint\limits_\Sigma P\dif y\dif z + Q\dif z\dif x + R\dif x\dif y = \iiint\limits_V \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right)\dif V = 0, \quad \forall V.\]
+假设存在点\((x_0, y_0, z_0)\)，使得\(f(x_0, y_0, z_0) \neq 0\)，不妨设\(f(x_0, y_0, z_0) > 0\)，则在点\((x_0, y_0, z_0)\)的某邻域内，恒有\(f(x, y, z) > 0\).与上式矛盾.
+
+\textbf{18.}设\(L\)是平面\(x\cos\alpha + y\cos\beta + z\cos\gamma - p = 0\)上的简单闭曲线，它所包围的区域\(D\)的面积为\(S\)，其中\((\cos\alpha, \cos\beta, \cos\gamma)\)是平面取定方向上的单位向量.证明：
+\[S = \frac{1}{2}\begin{vmatrix}
+\dif x & \dif y & \dif z \\
+\cos\alpha & \cos\beta & \cos\gamma \\
+x & y & z
+\end{vmatrix},\]
+其中\(L\)的定向与平面的定向符合右手定则.
+
+证明：
+\begin{align*}
+S &= \boldsymbol{S} \cdot \boldsymbol{n} \\
+&= \frac{1}{2}\int\limits_L (\boldsymbol{r} \times \dif\boldsymbol{r}) \cdot \boldsymbol{n} \\
+&= \frac{1}{2}\int\limits_L \begin{vmatrix}
+\dif x & \dif y & \dif z \\
+\cos\alpha & \cos\beta & \cos\gamma \\
+x & y & z
+\end{vmatrix}
+\end{align*}
+
+\section*{15.1}
+\textbf{4.}求下列函数的导数：
+
+(2)\(I(y) = \int_{y}^{y^2} \frac{\cos xy}{x}\dif x\).
+
+\[I'(y) = \frac{\cos(y^2 \cdot y)}{y^2} \cdot 2y - \frac{\cos(y \cdot y)}{y} + \int_{y}^{y^2} -\sin(xy)\dif x = \frac{3\cos(y^3) - 2\cos(y^2)}{y}.\]
+
+(3)\(F(t) = \int_{0}^{t^2} \dif x \int_{x - t}^{x + t} \sin(x^2 + y^2 - t^2)\dif y\).
+
+设\(G(x, t) = \int_{x - t}^{x + t} \sin(x^2 + y^2 - t^2)\dif y\)
+\begin{align*}
+F'(t) &= G(t^2, t) \cdot 2t + \int_{0}^{t^2} \frac{\partial G}{\partial t}(x, t)\dif x \\
+&= 2t\int_{t^2 - t}^{t^2 + t} \sin(t^4 + y^2 - t^2)\dif y + \int_{0}^{t^2} \dif x \left[\sin(2x(x + t)) + \sin(2x(x - t)) - 2t\int_{x - t}^{x + t} \cos(x^2 + y^2 - t^2)\dif y\right] \\
+&= 2t\int_{t^2 - t}^{t^2 + t} \sin(t^4 + y^2 - t^2)\dif y + \int_{0}^{t^2} \dif x \left[2\sin(2x^2)\cos(2xt) - 2t\int_{x - t}^{x + t} \cos(x^2 + y^2 - t^2)\dif y\right]
+\end{align*}
+
+\textbf{6.}设\(F(y) = \int_a^b f(x)|y - x|\dif x \quad (a < b)\)，其中\(f(x)\)为可谓函数，求\(F''(y)\).
+
+解：
+\[F'(y) = \int_a^y f(x)\dif x + \int_b^y f(x)\dif x,\]
+\[F''(y) = f(y) + f(y) = 2f(y).\]
+
+\textbf{8.}利用积分号下求导法计算下列积分：
+
+(1)\(\int_{0}^{\frac{\pi}{2}} \ln(a^2 - \sin^2 x)\dif x \quad (a > 1)\).
+
+解：设\(I(a) = \int_{0}^{\frac{\pi}{2}} \ln(a^2 - \sin^2 x)\dif x\)，
+\begin{align*}
+I'(a) &= \int_{0}^{\frac{\pi}{2}} \frac{2a}{a^2 - \sin^2 x}\dif x \\
+&= 2a\int_{0}^{\frac{\pi}{2}} \frac{2}{2a^2 + \cos 2x - 1}\dif x \\
+&= a\int_{0}^{\pi} \frac{\dif u}{2a^2 - 1 - \cos u} \\
+&= \frac{\pi}{2\sqrt{a^2 - 1}}
+\end{align*}
+\[I(a) = \int \frac{\pi}{2\sqrt{a^2 - 1}}\dif a = \frac{\pi}{2}\ln(a + \sqrt{a^2 - 1}) + C.\]
+由\(I(1) = \int_{0}^{\frac{\pi}{2}} \ln(\cos^2 x)\dif x = -\pi\ln 2\)，得\(C = -\pi\ln 2\)，故
+\[\int_{0}^{\frac{\pi}{2}} \ln(a^2 - \sin^2 x)\dif x = \frac{\pi}{2}\ln(a + \sqrt{a^2 - 1}) - \pi\ln 2.\]
+
+(3)\(\int_{0}^{\frac{\pi}{2}} \ln(a^2\sin^2 x + b^2\cos^2 x)\dif x\).
+
+解：设\(I(a, b) = \int_{0}^{\frac{\pi}{2}} \ln(a^2\sin^2 x + b^2\cos^2 x)\dif x\)，
+\begin{align*}
+\frac{\partial I}{\partial a} = &\int_{0}^{\frac{\pi}{2}} \frac{2a\sin^2 x}{a^2\sin^2 x + b^2\cos^2 x}\dif x \\
+\overset{t = \tan x}{=} &2a\int_{0}^{+\infty} \frac{t^2}{(a^2t^2 + b^2)(1 + t^2)}\dif t \\
+= &2a\int_{0}^{+\infty} \frac{1}{a^2 - b^2}\left(\frac{1}{1 + t^2} - \frac{b^2}{a^2t^2 + b^2}\right) \\
+= &\frac{2a}{a^2 - b^2}\left(\frac{\pi}{2} - \frac{\pi b}{2a}\right) = \frac{\pi}{a + b}
+\end{align*}
+\[I(a, b) = \int \frac{\pi}{a + b}\dif a = \pi\ln(a + b) + C(b).\]
+由\(I(a, a) = \pi\ln a\)，得\(C(b) = -\pi\ln 2\)，故
+\[I(a, b) = \pi\ln\frac{a + b}{2}.\]
+
+\textbf{9.}证明：第二类椭圆积分
+\[E(k) = \int_{0}^{\frac{\pi}{2}} \sqrt{1 - k^2\sin^2 t}\dif t \quad (0 < k < 1)\]
+满足微分方程
+\[E''(k) + \frac{1}{k}E'(k) + \frac{E(k)}{1 - k^2} = 0.\]
+
+解：
+\[E'(k) = -k\int_{0}^{\frac{\pi}{2}} \frac{\sin^2 t}{\sqrt{1 - k^2\sin^2 t}}\dif t,\]
+\begin{align*}
+E''(k) &= -\int_{0}^{\frac{\pi}{2}} \frac{\sin^2 t}{\sqrt{1 - k^2\sin^2 t}}\dif t - k\int_{0}^{\frac{\pi}{2}} \frac{\partial}{\partial k} \left(\frac{\sin^2 t}{\sqrt{1 - k^2\sin^2 t}}\dif t\right) \\
+&= -\int_{0}^{\frac{\pi}{2}} \frac{\sin^2 t}{\sqrt{1 - k^2\sin^2 t}}\dif t - k^2\int_{0}^{\frac{\pi}{2}} \frac{\sin^4 t}{(1 - k^2\sin^2 t)^{\frac{3}{2}}} \dif t.
+\end{align*}
+代入微分方程化简有
+\[\int_{0}^{\frac{\pi}{2}} \left[-2\frac{\sin^2 t}{\sqrt{1 - k^2\sin^2 t}}\dif t - k^2\frac{\sin^4 t}{(1 - k^2\sin^2 t)^{\frac{3}{2}}} + \frac{1}{1 - k^2}\sqrt{1 - k^2\sin^2 t}\right]\dif t = \int_{0}^{\frac{\pi}{2}}\frac{(1 - k\sin^2 t)^2}{(1 - k^2)(1 - k^2\sin^2 t)^{\frac{3}{2}}}\dif t.\]
+考虑函数
+\[u(t) = \frac{\sin t\cos t}{\sqrt{1 - k^2\sin^2 t}}, \quad u' = \frac{(1 - k\sin^2 t)^2}{(1 - k^2)(1 - k^2\sin^2 t)^{\frac{3}{2}}}.\]
+故
+\[\int_{0}^{\frac{\pi}{2}} u'(t)\dif t = u\left(\frac{\pi}{2}\right) - u(0) = 0 - 0 = 0.\]
+故得证.
+
+\textbf{11.}设\(f(x)\)在\([0, 1]\)上连续，且\(f(x) > 0\).研究函数
+\[I(y) = \int_0^1 \frac{yf(x)}{x^2 + y^2}\dif x\]
+的连续性.
+
+解：显然\(I(y)\)在\(y \neq 0\)的点连续.\(\forall \varepsilon > 0\)，取\(\eta > 0\)，当\(0 < x < \eta\)时，有\(|f(x) - f(0)| < \frac{\varepsilon}{\pi}\)，则
+\[\left|\int_0^\eta \frac{yf(x)}{x^2 + y^2}\dif x - \int_0^\eta \frac{yf(0)}{x^2 + y^2}\right| < \frac{\varepsilon}{2}.\]
+对固定的\(\eta > 0\)，取\(\delta > 0\)，使得当\(0 < |y| < \delta\)时，
+\[\left|\int_\eta^1 \frac{yf(x)}{x^2 + y^2}\dif x\right| < \frac{\varepsilon}{2}.\]
+于是
+\[\left|\int_0^1 \frac{yf(x)}{x^2 + y^2}\dif x - \int_0^\eta \frac{yf(0)}{x^2 + y^2}\dif x\right| < \varepsilon.\]
+而
+\[\lim_{y \to 0+} \frac{yf(0)}{x^2 + y^2}\dif x = \frac{\pi}{2}f(0), \quad \lim_{y \to 0-} \frac{yf(0)}{x^2 + y^2}\dif x = -\frac{\pi}{2}f(0),\]
+故\(I(y)\)在\(y = 0\)处不连续.
+
+\section*{15.2}
+\textbf{1.}证明下列含参变量反常积分在指定区间上一致收敛：
+
+(1)\(\int_{0}^{+\infty} \dfrac{\cos xy}{x^2 + y^2}\dif x, y \geq a > 0\).
+
+\[\left|\frac{\cos xy}{x^2 + y^2}\right| \leq \frac{1}{x^2 + y^2} \leq \frac{1}{x^2 + a^2},\]
+而\(\int_{0}^{+\infty} \dfrac{1}{x^2 + a^2}\dif x = \frac{\pi}{2a}\)收敛，故原积分在\(y \geq a > 0\)上一致收敛.
+
+(3)\(\int_{0}^{+\infty} x\sin x^4\cos\alpha x\dif x, a \leq \alpha \leq b\).
+
+\begin{align*}
+\int_{A}^{+\infty} x\sin x^4\cos\alpha x\dif x &= -\frac{1}{4}\int_{0}^{+\infty} \frac{\cos\alpha x}{x^2} \dif(\cos x^4) \\
+&= -\left.\frac{\cos\alpha x\cos x^4}{4x^2}\right|_{A}^{+\infty} - \frac{1}{4}\int_{A}^{+\infty} \frac{\alpha\sin\alpha x\cos x^4}{x^2}\dif x - \frac{1}{2} \int_{A}^{+\infty} \frac{\cos\alpha x\cos x^4}{x^3}\dif x,
+\end{align*}
+当\(A \to +\infty\)时，上式关于\(\alpha\)在\([a, b]\)一致收敛.
+
+\textbf{2.}说明下列含参变量反常积分在指定区间上非一致收敛：
+
+(1)\(\int_{0}^{+\infty} \dfrac{x\sin\alpha x}{\alpha(1 + x^2)}\dif x, 0 < \alpha < +\infty\).
+
+取\(\alpha_n = \frac{1}{n}\)，
+\[\int_{\frac{n\pi}{4}}^{\frac{3n\pi}{4}} \frac{x\sin\alpha_n x}{\alpha_n(1 + x^2)}\dif x \geq \frac{\sqrt{2}n^2\pi^2}{16\left(1 + \left(\dfrac{3n\pi}{4}\right)^2\right)}.\]
+
+(2)\(\int_0^1 \dfrac{1}{x^\alpha}\sin\dfrac{1}{x}\dif x, 0 < \alpha < 2\).
+
+令\(x = \dfrac{1}{t}\)，则\(\int_0^1 \dfrac{1}{x^\alpha}\sin\dfrac{1}{x}\dif x = \int_{1}^{+\infty} \dfrac{1}{t^{2 - \alpha}}\sin t\dif t\).取\(\alpha_n = 2 - \dfrac{1}{n}\)，
+\[\int_{2n\pi + \frac{\pi}{4}}^{2n\pi + \frac{3\pi}{4}} \frac{1}{t^{2 - \alpha_n}}\sin t\dif t \geq \frac{\sqrt{2}\pi}{4\left(2n\pi + \dfrac{3\pi}{4}\right)^{\frac{1}{n}}}\]
+
+\textbf{4.}讨论下列含参变量反常积分的一致收敛性：
+
+(2)\(\int_{-\infty}^{+\infty} \e^{-(x - \alpha)^2}\dif x\)，在(i)\(a < \alpha < b\)；(ii)\(-\infty < \alpha < +\infty\).
+
+(i)设\(M = \max\{|a|, |b|\}, |x - \alpha| \geq |x| - |\alpha| \geq |x| - M\)，
+\[\e^{-(x - \alpha)^2} \leq \e^{-(|x| - M)^2}.\]
+而\(\int_{-\infty}^{+\infty} \e^{-(|x| - M)^2}\dif x\)收敛，故原积分在\(a < \alpha < b\)上一致收敛.
+
+(ii)取\(\varepsilon = \frac{\sqrt{\pi}}{4} > 0. \forall N > 0\)，令\(\alpha = N\)，有
+\[\int_{N}^{+\infty} \e^{-(x - N)^2}\dif x = \int_{0}^{+\infty} \e^{-t^2}\dif t = \frac{\sqrt{\pi}}{2} > \varepsilon.\]
+故原积分在\(-\infty < \alpha < +\infty\)上不一致收敛.
+
+(4)\(\int_{0}^{+\infty}\e^{-\alpha x}\sin x\dif x\)，在(i)\(\alpha \geq \alpha_0 > 0\)；(ii)\(\alpha > 0\).
+
+(i)\(|\e^{-\alpha x}\sin x| \leq \e^{-\alpha x} \leq \e^{-\alpha_0 x}\).
+
+而\(\int_{0}^{+\infty}\e^{-\alpha_0 x}\dif x = \frac{1}{\alpha_0}\)收敛，故原积分在\(\alpha \geq \alpha_0 > 0\)上一致收敛.
+
+(ii)取\(\varepsilon = \frac{1}{\e} > 0. \forall A > 0\)，令\(\alpha = \frac{1}{A}\)，有
+\[\int_{A}^{+\infty}\e^{-\alpha x}|\sin x|\dif x \geq \int_{A}^{A + \pi}\e^{-\alpha x}|\sin x|\dif x \geq \e^{-\alpha(A + \pi)}\int_{A}^{A + \pi} |\sin x|\dif x = 2\e^{-1 - \frac{\pi}{A}} \to \frac{2}{e} > \varepsilon \quad (A \to \infty).\]
+故原积分在\(\alpha > 0\)上不一致收敛.
+
+\end{document}
