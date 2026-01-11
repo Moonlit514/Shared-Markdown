@@ -1,0 +1,72 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{bm}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dif}{\mathrm{d}}
+
+\begin{document}
+\section*{13.5}
+\textbf{5.}写出微分形式\(\dif x \wedge \dif y \wedge \dif z\)在下列变换下的表达式：
+
+(1)柱面坐标变换
+\[x = r\cos\theta, \quad y = r\sin \theta, \quad z = z;\]
+
+\[\dif x \wedge \dif y \wedge \dif z = r\dif r \wedge \dif \theta \dif z.\]
+
+(2)球面坐标变换
+\[x = r\sin\varphi\cos\theta, \quad y = r\sin\varphi\sin\theta, \quad z = \r\cos\varphi.\]
+
+\[\dif x \wedge \dif y \wedge \dif z = r^2\sin\varphi \dif r \wedge \dif \varphi \wedge \dif \theta.\]
+
+\textbf{6.}设\(\omega_j = \sum_{i = 1}^{n} a_i^j\dif x_i(j = 1, 2, \cdots, n)\)为\(\RR\)上的1-形式，证明
+\[\omega_1 \wedge \omega_2 \wedge \cdots \wedge \omega_n = \det(a_i^j)\dif x_i \wedge \dif x_2 \wedge \cdots \wedge \dif x_n.\]
+
+\begin{align*}
+&\omega_1 \wedge \omega_2 \wedge \cdots \wedge \omega_n \\
+= &\sum_{i_1, i_2, \cdots, i_n \in \{1, 2, \cdots, n\}} a_{i_1}^1 a_{i_2}^2 \cdots a_{i_n}^n \dif x_{i_1} \wedge \dif x_{i_2} \wedge \cdots \wedge \dif x_{i_n} \\
+= &\sum_{i_1, i_2, \cdots, i_n \in \{1, 2, \cdots, n\}} (-1)^{\tau(i_1, i_2, \cdots, i_n)} a_{i_1}^1 a_{i_2}^2 \cdots a_{i_n}^n \dif x_1 \wedge \dif x_2 \wedge \cdots \wedge \dif x_n \\
+= &\det(a_i^j) \dif x_1 \wedge \dif x_2 \wedge \cdots \wedge \dif x_n
+\end{align*}
+
+\section*{14.4}
+\textbf{1.}计算下列微分形式的外微分：
+
+(1)1-形式\(\omega = 2xy\dif x + x^2\dif y\).
+\[\dif\omega = 2x\dif y \wedge \dif x + 2x \dif x \wedge \dif y = 0.\]
+
+(2)1-形式\(\omega = \omega = \cos y \dif x - \sin x \dif y\).
+\[\dif\omega = -\sin y \dif y \wedge \dif x - \cos x \dif x \wedge \dif y = (\sin y - \cos x)\dif x \wedge \dif y.\]
+
+(3)2-形式\(\omega = 6z\dif x \wedge \dif y - xy \dif x \wedge \dif z\).
+\[\dif\omega = 6 \dif z \wedge \dif x \wedge \dif y - \dif y \wedge \dif x \wedge \dif z = 7\dif x \wedge \dif y \wedge \dif z.\]
+
+\textbf{4.}设在\(\RR^3\)上在一个开区域\(\Omega = (a, b) \times (c, d) \times (e, f)\)上定义了具有连续导数的函数\(a_1(z), a_2(x), a_3(y)\)，试求形如
+\[\omega = b_1(y) \dif x + b_2(z) \dif y + b_3(x) \dif z\]
+的1-形式\(\omega\)，使得
+\[\dif\omega = a_1(z) \dif y \wedge \dif z + a_2(x) \dif z \wedge \dif x + a_3(y) \dif x \wedge \dif y.\]
+
+解：
+\[\dif\omega = -b_2'(z) \dif y \wedge \dif z - b_3'(x) \dif z \wedge \dif x - b_1'(y) \dif x \wedge \dif y.\]
+对比得
+\[\omega = -\left(\int a_3(y) \dif y + C_1\right) \dif x -\left(\int a_1(z) \dif z + C_2\right) \dif y -\left(\int a_2(x) \dif x + C_3\right) \dif z\]
+
+\textbf{5.}设\(\omega = \sum\limits_{i, j = 1}^{n} a_{ij} \dif x_i \wedge \dif x_j (a_{ij} = -a_{ji}, i, j = 1, 2, \cdots, n)\)是\(\RR^2\)上的2-形式，证明
+\[\dif\omega = \frac{1}{3} \sum_{i, j, k = 1}^{n} \left(\frac{\partial a_{ij}}{\partial x_k} + \frac{\partial a_{jk}}{\partial x_i} + \frac{\partial a_{ki}}{\partial x_j}\right) \dif x_i \wedge \dif x_j \wedge \dif x_k.\]
+
+解：
+\begin{align*}
+\dif\omega &= \sum_{i, j = 1}^{n} \left(\sum_{k = 1}^{n} \frac{\partial a_{ij}}{\partial x_k} \dif x_k\right) \wedge \dif x_i \wedge \dif x_j \\
+&= \sum_{i, j, k = 1}^{n} \frac{\partial a_{ij}}{\partial x_k} \dif x_i \wedge \dif x_j \wedge \dif x_k \\
+&= \sum_{i, j, k = 1}^{n} \frac{\partial a_{ij}}{\partial x_i} \dif x_i \wedge \dif x_j \wedge \dif x_k \\
+&= \sum_{i, j, k = 1}^{n} \frac{\partial a_{ij}}{\partial x_j} \dif x_i \wedge \dif x_j \wedge \dif x_k \\
+\end{align*}
+于是
+\[\dif\omega = \frac{1}{3} \sum_{i, j, k = 1}^{n} \left(\frac{\partial a_{ij}}{\partial x_k} + \frac{\partial a_{jk}}{\partial x_i} + \frac{\partial a_{ki}}{\partial x_j}\right) \dif x_i \wedge \dif x_j \wedge \dif x_k.\]
+
+\end{document}
