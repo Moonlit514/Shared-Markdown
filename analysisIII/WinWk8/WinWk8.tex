@@ -1,0 +1,53 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{bm}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dif}{\mathrm{d}}
+
+\begin{document}
+\section*{13.5}
+\textbf{1.}计算下列外积：
+
+(2)\((\cos y\dif x + \cos x\dif y) \wedge (\sin y\dif x - \sin x\dif y)\).
+\[(\cos y\dif x + \cos x\dif y) \wedge (\sin y\dif x - \sin x\dif y) = (-\cos y\sin x - \cos x\sin y) \dif x \wedge \dif y = -\sin(x + y) \dif x \wedge \dif y.\]
+
+\textbf{2.}设
+\[\omega = a_0 + a_1\dif x_1 + a_2\dif x_1 \wedge \dif x_3 + a_3 \dif x_2 \wedge \dif x_3 \wedge \dif x_4,\]
+\[\eta = b_1\dif x_1 \wedge \dif x_2 + b_2\dif x_1 \wedge \dif x_3 + b_3\dif x_1 \wedge \dif x_2 \wedge \dif x_3 + b_4 \dif x_2 \wedge \dif x_3 \wedge \dif x_4\]
+求\(\omega + \eta\)和\(\omega \wedge \eta\).
+
+\begin{align*}
+\omega + \eta =&\ a_0 \\
+&+\ a_1\,\mathrm{d}x_1 \\
+&+\ b_1\,\mathrm{d}x_1 \wedge \mathrm{d}x_2 + (a_2 + b_2)\,\mathrm{d}x_1 \wedge \mathrm{d}x_3 \\
+&+\ b_3\,\mathrm{d}x_1 \wedge \mathrm{d}x_2 \wedge \mathrm{d}x_3 + (a_3 + b_4)\,\mathrm{d}x_2 \wedge \mathrm{d}x_3 \wedge \mathrm{d}x_4.
+\end{align*}
+\[\omega \wedge \eta = a_0 b_1\,\mathrm{d}x_1 \wedge \mathrm{d}x_2 + a_0 b_2\,\mathrm{d}x_1 \wedge \mathrm{d}x_3 + a_0 b_3\,\mathrm{d}x_1 \wedge \mathrm{d}x_2 \wedge \mathrm{d}x_3 + a_0 b_4\,\mathrm{d}x_2 \wedge \mathrm{d}x_3 \wedge \mathrm{d}x_4 + a_1 b_4\,\mathrm{d}x_1 \wedge \mathrm{d}x_2 \wedge \mathrm{d}x_3 \wedge \mathrm{d}x_4\]
+
+\textbf{3.}求
+\begin{align*}
+\omega = &x_1\dif x_1 \wedge \dif x_2 + x_3 \dif x_2 \wedge \dif x_3 + (1 + x_2^2)\dif x_1 \wedge \dif x_3 + x_2^2 \dif x_3 \wedge \dif x_1 + \\
+&(x_3^2 + x_2^2)\dif x_2 \wedge \dif x_1 \wedge \dif x_3 - x_1^2\dif x_3 \wedge \dif x_2
+\end{align*}
+的标准形式.
+\[\omega = x_1 \dif x_1 \wedge \dif x_2 + \dif x_1 \wedge \dif x_3 + (x_3 + x_1^2) \dif x_2 \wedge \dif x_3 - (x_2^2 + x_3^2)\dif x_1 \wedge \dif x_2 \wedge \dif x_3.\]
+
+\textbf{5.}写出微分形式\(\dif x \wedge \dif y \wedge \dif z\)在下列变换下的表达式：
+
+(1)柱面坐标变换
+\[x = r\cos\theta, \quad y = r\sin \theta, \quad z = z;\]
+
+\[\dif x \wedge \dif y \wedge \dif z = r\dif r \wedge \dif \theta \dif z.\]
+
+(2)球面坐标变换
+\[x = r\sin\varphi\cos\theta, \quad y = r\sin\varphi\sin\theta, \quad z = \r\cos\varphi.\]
+
+\[\dif x \wedge \dif y \wedge \dif z = r^2\sin\varphi \dif r \wedge \dif \varphi \wedge \dif \theta.\]
+
+\end{document}
