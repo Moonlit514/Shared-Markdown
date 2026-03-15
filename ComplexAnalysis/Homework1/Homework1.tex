@@ -1,0 +1,206 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{geometry}
+\usepackage{bm}
+
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\begin{document}
+\begin{enumerate}
+    \item Ex 2. \label{ex:2}
+    \begin{proof}
+        设\(z = x + iy, w = u + iv, x, y, u, v \in \mathbb{R}\)
+        \[(z, w) = z\bar{w} = (x + iy)(u - iv) = xu + yv + i(yu - xv).\]
+        \[(w, z) = w\bar{z} = (u + iv)(x - iy) = xu + yv - i(yu - xv).\]
+        相加得
+        \[(z, w) + (w, z) = 2(xu + yv),\]
+        因此
+        \[\frac{1}{2}[(z, w) + (w, z)] = xu + yv.\]
+        又因为
+        \[\mathrm{Re}(z, w) = xu + yv, \quad \langle z, w \rangle = xu + yv.\]
+        所以
+        \[\langle z, w \rangle = \frac{1}{2}[(z, w) + (w, z)] = \mathrm{Re}(z, w).\]
+    \end{proof}
+    \item Ex 3. \label{ex:3}
+    \begin{itemize}
+        \item[解] 设\(\omega = se^{i\varphi}, s \geq 0, \phi \in \mathbb{R}\).令\(z = re^{i\theta}, r \geq 0, \theta \in \mathbb{R}\),则
+        \[z^n = r^ne^{in\theta} = se^{i\varphi}.\]
+        \[\begin{cases}
+            r^n = s, \\
+            n\theta = \varphi + 2k\pi, k \in \mathbb{Z}.
+        \end{cases}\]
+        因此
+        \[r = s^{\frac{1}{n}} (r \in \mathbb{R}, r \geq 0), \quad \theta = \frac{\varphi + 2k\pi}{n}, k \in \mathbb{Z}.\]
+        当\(s > 0\)时,\(z\)有\(n\)个不同的解;当\(s = 0\)时,\(z\)有唯一的解\(z = 0\).
+    \end{itemize}
+    \item Ex 1.40. \label{ex:1.40}
+    \begin{proof}
+        设\(\{x_n\}\)收敛于\(x \in \mathbb{R}\),即\(\forall \varepsilon > 0, \exists N\)使当\(m, n > N\)时,\(|x_m - x|, |x_n - x| < \varepsilon\).由三角不等式得
+        \[x_n - x_m \leq |x_n - x| + |x - x_m| < 2\varepsilon.\]
+        因此\(\{x_n\}\)是Cauchy列.
+
+        设\(\{x_n\}\)是Cauchy列,对每个\(n\)取RCS\(\{a_{n, k}\}_{k = 1}^{\infty}\)使得\(x_n = \{a_{n, k}\}\).且\(\exists K_n\)使当\(k \geq K_n\)时有
+        \[|a_{n, k} - x_n| < \frac{1}{n}.\]
+        下证\(\{b_n\} = \{a_{n, K_n}\}\)是RCS.任意\(\varepsilon > 0\),由\(\{x_n\}\)是Cauchy列知\(\exists N\)使当\(m, n > N\)时,\(|x_m - x_n| < \varepsilon\).又因为当\(k \geq K_n\)时有
+        \[|a_{n, k} - x_n| < \frac{1}{n},\]
+        取\(M = \max\left\{N, \dfrac{1}{\varepsilon}\right\}\),当\(m, n > M\)时,\(k \geq K_n\)且\(k \geq K_m\),因此
+        \[\begin{aligned}
+            |b_n - b_m| & = |a_{n, K_n} - a_{m, K_m}| \\
+            & \leq |a_{n, K_n} - x_n| + |x_n - x_m| + |x_m - a_{m, K_m}| \\
+            & < 3\varepsilon.
+        \end{aligned}\]
+        于是\(\{b_n\}\)是RCS,设\(x = \{b_n\}\),则\(\lim\limits_{x \to \infty} |b_n - x| = 0\).\(\forall \varepsilon > 0, \exists N'\)使当\(n > N'\)时,\(|b_n - x| < \varepsilon\).取\(M' = \max\left\{\frac{1}{\varepsilon}, N'\right\}\),当\(n > M'\)时,
+        \[|x_n - x| \leq |x_n - b_n| + |b_n - x| < 2\varepsilon.\]
+        故\(x_n \to x\).综上,\(\{x_n\}\)收敛于\(x \in \mathbb{R}\)当且仅当\(\{x_n\}\)是Cauchy列.
+    \end{proof}
+    \item Ex 1.56. \label{ex:1.56}
+    \begin{itemize}
+        \item[解] 定义\(\mathbb{R}^+ := (0, +\infty) \subset \mathbb{R}\).则
+        \begin{itemize}
+            \item \(\forall x, y \in \mathbb{R}^+, x + y, xy \in \mathbb{R}^+\).
+            \item \(\forall x, x \in \mathbb{R}^+, \in -\mathbb{R}^+, x = 0\)只有一个成立.
+        \end{itemize}
+        假设存在\(\mathcal{P} \subset \mathbb{C}\)满足(ODF-1)和(ODF-2).先证\(1 \in \mathcal{P}\),否则\(-1 \in \mathcal{P}, (-1) \times (-1) = 1 \in \mathcal{P}\),矛盾.考虑\(i \neq 0\),则\(i \in \mathcal{P}\)或\(i \in -\mathcal{P}\).
+        \begin{itemize}
+            \item \(i \in \mathcal{P}, i^2 = -1 \in \mathcal{P}\),矛盾.
+            \item \(i \in -\mathcal{P}, (-i)^2 = -1 \in \mathcal{P}\),矛盾.
+        \end{itemize}
+        因此不存在这样的\(\mathcal{P}\).故\(\mathbb{C}\)不存在序.
+    \end{itemize}
+    \item Ex 1.60. \label{ex:1.60}
+    \begin{itemize}
+        \item[解] \begin{align*}
+            x^4 + 2x^3 + 2x + 1 &= 0 \\
+            x^4 + 2x^3 + x^2 &= x^2 - 2x - 1 \\
+            \left(x^2 + x + \frac{y}{2}\right)^2 &= (y + 1)x^2 + (y - 2)x + \left(\frac{y^2}{4} - 1\right) \\
+        \end{align*}
+        RHS是完全平方当且仅当
+        \[(y - 2)^2 - 4(y + 1)\left(\frac{y^2}{4} - 1\right) = 0 \quad \Rightarrow 8 - y^3 = 0.\]
+        取实根\(y = 2\),代入方程有
+        \[(x^2 + x + 1)^2 = 3x^2.\]
+        整理得
+        \[x^2 + (1 - \sqrt{3})x + 1 = 0, \quad x^2 + (1 + \sqrt{3})x + 1 = 0\]
+        解得
+        \[x = \frac{\sqrt{3} - 1 \pm i\sqrt{2\sqrt{3}}}{2} \quad \text{或} \quad x = \frac{-1 - \sqrt{3} \pm \sqrt{2\sqrt{3}}}{2}.\]
+    \end{itemize}
+    \item Ex 1.67. \label{ex:1.67.}
+    \begin{proof}
+        \[\begin{cases}
+            &p = \frac{1}{2}(2a + 2ai) = a + ai, \\
+            &q = 2a + \frac{1}{2}(2b + 2bi) = 2a + b + bi, \\
+            &r = 2a + 2b + \frac{1}{2}(2c + 2ci) = 2a + 2b + c + ci, \\
+            &s = 2a + 2b + 2c + \frac{1}{2}(2d + 2di) = 2a + 2b + 2c + d + di, \\
+            &2a + 2b + 2c + 2d = 0.
+        \end{cases}\]
+        \[r - p = a + 2b + c + (c - a)i = b - d + (c - a)i,\]
+        \[s - q = b + 2c + d + (d - b)i = c - a + (d - b)i,\]
+        故\(r - p = i(s - q)\),由复数乘法的几何意义可知结论成立.
+    \end{proof}
+    \item Ex 1.91. \label{ex:1.91}
+    \begin{proof}
+        \begin{itemize}
+            \item (EXP-1) \(\forall x > 0, e^x > 0, \dfrac{d}{dx}e^x = e^x > 0\).当\(x \to +\infty\)时,\(e^x > x, e^x \to +\infty\);当\(x \to -\infty\)时,\(e^x = \dfrac{1}{e^{-x}} \to 0\).
+            \item (EXP-2) 定义\(\cos\theta = \mathrm{Re}(e^{i\theta}), \sin\theta = \mathrm(Im)(e^{i\theta})\),则\(e^{i\theta} = \cos\theta + i\sin\theta\),且\(\cos 0 = 1, \sin 0 = 0\).求导得
+            \[ie^{i\theta} = -\sin\theta + i\cos\theta = (\cos\theta)' + i(\sin\theta)'.\]
+            由指数函数的定义，代入\(z = i\theta\)得到
+            \[\cos\theta = 1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \cdots.\]
+            于是\(\cos 2 < 0\),由介值定理存在\(\theta_0 \in (0, 2)\)使得\(\cos\theta_0 = 0\).设\(\dfrac{\pi}{2} = \inf\{\theta > 0:\cos\theta = 0\}\),则\(\cos\dfrac{\pi}{2} = 0\),且在\((0, \dfrac{\pi}{2})\)上\(\cos\theta > 0\),\(\sin\theta\)严格单调递增,故\(\sin\dfrac{\pi}{2} > \sin 0 = 0\).又\(|e^{i\theta}|^2 = \cos^2\theta + \sin^2\theta = 1 \quad \left(\cos\theta = \dfrac{e^{i\theta} + e^{-i\theta}}{2}, \sin\theta = \dfrac{e^{i\theta} - e^{-i\theta}}{2i}\right)\),得到\(\sin\dfrac{\pi}{2} = 1\).于是\(e^{\frac{i\pi}{2}} = i, e^{\pi i} = i^2 = -1, e^{2\pi i} = 1\).
+
+            设\(z = x + iy, e^z = e^xe^{iy} = 1\),故\(e^x = e^{iy} = 1, x = 0\).\(2\pi\)是\(\cos x\)和\(\sin x\)的周期(EXP-3)且是最小正周期(否则\(\exists 0 < T < 2\pi\)使\(e^{iT} = 1, e^{\frac{iT}{2}} = \pm 1\),由\(e^{i\pi} = -1\)且\(\pi < 2\pi\),矛盾),因此\(y = 2k\pi, k \in \mathbb{Z}, z = 2k\pi i\).
+            \item (EXP-3) \(e^{z + 2\pi i} = e^ze^{2\pi i} = e^z\).
+            \item (EXP-4) \(\forall \theta \in \mathbb{R}, |e^{i\theta}| = \sqrt{\cos^2\theta + \sin^2\theta} = 1\),故在单位圆上.反之对单位圆上任一点\(z = x + iy(x^2 + y^2 = 1)\),由\(\cos\theta\)在\([0, \pi]\)上严格单调递增且\(\cos 0 \cdot \cos\pi < 0, \exists! \theta_0 \in(0, \pi)\)有\(\cos\theta_0 = x, \sin\theta_0 = \sqrt{1 - x^2} \geq 0\).若\(y > 0\)取\(\theta = \theta_0\);否则取\(\theta = 2\pi - \theta_0 \in [\pi, 2\pi]\),则\(\cos(2\pi - \theta_0) = \cos\theta_0, \sin(2\pi - \theta_0) = -\sin\theta_0\),即存在\(\theta_0\)使\(e^{i\theta} = w\).由周期性可将映射推广至\(\mathbb{R}\).
+            \item (EXP-5) 设\(w \in \mathbb{C}^*\),则\(|w| > 0\).由(EXP-1)知存在唯一实数\(x\)使得\(e^x = |w|\).又由(EXP-4)存在实数\(\theta\)使得\(e^{i\theta} = \dfrac{w}{|w|}\).取\(z = x + i\theta\),则\(e^z = e^xe^{i\theta} = |w| \cdot \dfrac{w}{|w|} = w\).
+        \end{itemize}
+    \end{proof}
+    \item 1.99. \label{ex:1.99}
+    \begin{proof}
+        \begin{align*}
+            e^{3\theta i} = (e^{i\theta})^3 &= \cos 3\theta + i\sin 3\theta \\
+            &= (\cos\theta + i\sin\theta)^3 \\
+            &= \cos^3\theta + 3i\cos^2\theta\sin\theta - 3\cos\theta\sin^2\theta - i\sin^3\theta \\
+            &= (\cos^3\theta - 3\cos\theta\sin^2\theta) + i(3\cos^2\theta\sin\theta - \sin^3\theta).
+        \end{align*}
+        \begin{align*}
+            \tan 3\theta &= \frac{\sin 3\theta}{\cos 3\theta} \\
+            &= \frac{3\cos^2\theta\sin\theta - \sin^3\theta}{\cos^3\theta - 3\cos\theta\sin^2\theta} \\
+            &= \frac{\frac{3\cos^2\theta\sin\theta - \sin^3\theta}{\cos^3\theta}}{\frac{\cos^3\theta - 3\cos\theta\sin^2\theta}{\cos^3\theta}} \\
+            &= \frac{3T - T^3}{1 - 3T^2} \quad (T = \tan\theta).
+        \end{align*}
+    \end{proof}
+    \item Ex 1.105. \label{ex:1.105}
+    \begin{itemize}
+        \item[解] 设\(z = x + iy\),则
+        \[w = \cos(z) = \cos x\cosh y - i\sin x\sinh y.\]
+        记\(w = u + iv\),有
+        \[u = \cos x\cosh y, \quad v = -i\sin x\sinh y.\]
+        \begin{itemize}
+            \item 固定\(x\)为常数,当\(\cos x \sin x \neq 0\)时
+            \[\frac{u^2}{\cos^2 x} - \frac{v^2}{\sin^2 x} = \cosh^2y - \sinh^2y = 1.\]
+            是双曲线,焦距为\(2\).
+
+            当\(\cos x = 0, x = \dfrac{\pi}{2} + k\pi, k \in \mathbb{Z}, u = 0, v = \pm \sinh y\),像为虚轴\(u = 0\).
+
+            当\(\sin x = 0, x = k\pi, k \in \mathbb{Z}, v = 0, u = \pm \cosh y\),像为两条射线\(v = 0, u \geq 1 \text{或} u \leq -1\).
+            \item 固定\(y\)为常数,当\(y \neq 0\)时
+            \[\frac{u^2}{\cosh^2 y} + \frac{v^2}{\sinh^2 y} = \cos^2 x + \sin^2 x = 1.\]
+            是椭圆,焦距为\(2\).
+
+            当\(y = 0, v = 0, u = \cos x\),像为实轴上的线段\([-1, 1]\).
+        \end{itemize}
+    \end{itemize}
+    \item Ex 1.116 \label{ex:1.116}
+    \begin{itemize}
+        \item[解] \begin{align*}
+            i^i &= \exp(i\operatorname{Log} i) \\
+            &= \exp(i(\ln|i| + i\operatorname{Arg} i)) \\
+            &= e^{-\frac{\pi}{2} - 2k\pi}. \quad (k \in \mathbb{Z})
+        \end{align*}
+        取主值\(k = 0, i^i = e^{-\frac{\pi}{2}}\).
+    \end{itemize}
+    \item Ex 1.117 \label{ex:1.117}
+
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        集合 & $+/-$ & $\times/\div$ & $\cdot^n$ & $\sqrt[n]{\cdot}$ & $e^x$ & $z^x$ \\
+        \hline
+        $\mathbb{N}$ & $\times$ & $\times$ & $\checkmark$ & $\times$ & $\times$ & $\times$ \\
+        \hline
+        $\mathbb{Z}$ & $\checkmark$ & $\times$ & $\checkmark$ & $\times$ & $\times$ & $\times$ \\
+        \hline
+        $\mathbb{Q}$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\times$ & $\times$ & $\times$ \\
+        \hline
+        $\mathbb{R}$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\times$ & $\checkmark$ & $\times$ \\
+        \hline
+        $\mathbb{C}$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+        \hline
+    \end{tabular}
+    \item Ex 1.121 \label{ex:1.121}
+    \begin{proof}
+        \begin{itemize}
+            \item (a)\(\Rightarrow\)(b) 若\(A(z) = \mathscr{l}z\),则\(\forall \lambda \in \mathbb{C}, A(\lambda z) = \mathscr{l}(\lambda z) = \lambda(\mathscr{l}z) = \lambda(A(z))\).
+            \item (b)\(\Rightarrow\)(c) \(A(i) = A(i \cdot 1) = iA(1)\).
+            \item (c)\(\Rightarrow\)(d) 设\(A(1) = \alpha + i\beta, \alpha, \beta \in \mathbb{R}\)
+            \[A(i) = iA(1) = -\beta + i\alpha.\]
+            于是\(A\)在基\(\{1, i\}\)下的矩阵为\(\begin{matrix}
+                \alpha & -\beta \\
+                \beta & \alpha
+            \end{matrix}\).
+            \item (d)\(\Rightarrow\)(a) 设\(A\)的矩阵如上,则\(\forall z = x + iy\),有
+            \[A(z) = \begin{matrix}
+                \alpha & -\beta \\
+                \beta & \alpha
+            \end{matrix}\begin{matrix}
+                x \\
+                y
+            \end{matrix} = \begin{matrix}
+                \alpha x - \beta y \\
+                \beta x + \alpha y
+            \end{matrix},\]
+            对应的复数为\((\alpha x - \beta y) + i(\beta x + \alpha y) = (\alpha + i\beta)(x + iy)\).令\(\mathscr{l} = \alpha + i\beta\),则\(A(z) = \mathscr{l}z, \forall z \in \mathbb{C}\).
+        \end{itemize}
+    \end{proof}
+\end{enumerate}
+
+\end{document}
