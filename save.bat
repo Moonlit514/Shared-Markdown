@@ -14,7 +14,7 @@ cd /d "%~dp0"
 git add .
 
 :: 2. 提交（自动生成时间戳作为备注）
-git commit -m "Go: %date% %time%"
+git commit -m "LowenAtkinson: %date% %time%"
 
 :: 3. 推送到远程仓库
 git push
